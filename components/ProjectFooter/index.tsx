@@ -11,7 +11,7 @@ interface ProjectFooterProps {
 const ProjectFooter: React.FC<ProjectFooterProps> = ({ previousProject, nextProject }) => {
     return (
         <PageLayout>
-            <footer className="py-10">
+            <footer className="py-12">
                 <div className="flex justify-between items-center">
                     {/* {previousProject ? ( */}
                     <Link href={`/project/${previousProject?.slug}`} className="group">

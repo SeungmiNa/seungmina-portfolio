@@ -1,6 +1,6 @@
-import Title from "@/components/Font/Title";
 import React from "react";
-import Image from "next/image";
+import Title from "../../../../../components/Font/Title";
+import ImageContainer from "../../../../../components/ImageContainer";
 
 const DeliviousBranding = ({ item }: { item?: any }) => {
     const colors = [
@@ -65,24 +65,22 @@ const DeliviousBranding = ({ item }: { item?: any }) => {
                 <div className="max-w-2xl">
                     <Title variant="h4" className="font-semibold mb-4">Logo</Title>
                     <p className="text-base text-stone-500">
-                        The Delivious logo represents the fusion of delicious dining and innovative 
-                        delivery service. The design emphasizes simplicity and memorability while 
+                        The Delivious logo represents the fusion of delicious dining and innovative
+                        delivery service. The design emphasizes simplicity and memorability while
                         maintaining professional appeal.
                     </p>
                 </div>
-                
+
                 <div className="grid grid-cols-2 gap-8">
                     {/* Primary Logo */}
-                    <div className="bg-white rounded-lg p-12 flex items-center justify-center">
-                        <div className="text-center">
-                            <div className="mb-8 h-32 relative">
-                                {/* Replace with actual logo */}
-                                <div className="absolute inset-0 flex items-center justify-center text-4xl font-bold text-[#4963AE]">
-                                    Delivious
-                                </div>
-                            </div>
-                            <p className="text-sm text-stone-500">Primary Logo</p>
+                    <div className="bg-white rounded-lg p-12 flex flex-col items-center justify-center">
+                        <div className="w-full px-4 mb-8 h-28 relative">
+                            <ImageContainer
+                                src="/images/delivious-logo.png"
+                                alt="Delivious Logo"
+                            />
                         </div>
+                        <p className="text-sm text-stone-500">Primary Logo</p>
                     </div>
 
                     {/* Logo Mark */}
@@ -128,7 +126,7 @@ const DeliviousBranding = ({ item }: { item?: any }) => {
                 <div className="max-w-2xl">
                     <Title variant="h4" className="font-semibold mb-4">Colors</Title>
                     <p className="text-base text-stone-500">
-                        Our color palette is designed to create a welcoming and professional atmosphere 
+                        Our color palette is designed to create a welcoming and professional atmosphere
                         while ensuring excellent readability and visual hierarchy across all platforms.
                     </p>
                 </div>
@@ -140,7 +138,7 @@ const DeliviousBranding = ({ item }: { item?: any }) => {
                             <div
                                 key={color.name}
                                 className={`
-                                    w-full rounded-lg
+                                    w-full rounded-lg border border-stone-200
                                     ${isPrimary ? '-translate-y-4 shadow-lg' : ''}
                                     transition-all duration-300
                                 `}
@@ -149,7 +147,7 @@ const DeliviousBranding = ({ item }: { item?: any }) => {
                                     style={{ backgroundColor: color.hex }}
                                     className="h-32 rounded-t-lg"
                                 />
-                                <div className="p-4 bg-white rounded-b-lg border border-t-0 border-stone-200">
+                                <div className="p-4 bg-white rounded-b-lg border-t border-stone-200">
                                     <div className="font-medium mb-1">{color.name}</div>
                                     <div className="text-sm text-stone-500 mb-2">{color.hex}</div>
                                     <p className="text-sm text-stone-600">{color.description}</p>
@@ -165,14 +163,14 @@ const DeliviousBranding = ({ item }: { item?: any }) => {
                 <div className="max-w-2xl">
                     <Title variant="h4" className="font-semibold mb-4">Typography</Title>
                     <p className="text-base text-stone-500">
-                        Our typography system uses Inter, a versatile and modern typeface that 
+                        Our typography system uses Inter, a versatile and modern typeface that
                         ensures excellent readability across all devices and platforms.
                     </p>
                 </div>
 
                 <div className="bg-white rounded-lg border border-stone-200">
                     {typography.map((type, index) => (
-                        <div 
+                        <div
                             key={type.name}
                             className={`
                                 p-8 flex items-center gap-8
@@ -184,7 +182,7 @@ const DeliviousBranding = ({ item }: { item?: any }) => {
                                 <p className="text-sm text-stone-500">{type.font}</p>
                             </div>
                             <div className="flex-1">
-                                <div 
+                                <div
                                     className="mb-2"
                                     style={{
                                         fontWeight: type.weight,

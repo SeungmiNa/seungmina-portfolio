@@ -264,16 +264,16 @@ export default function DeliviousProject({ project }: DeliviousProjectProps) {
                     <div className="grid grid-cols-12 gap-8">
                         {/* Left sidebar */}
                         <nav className="hidden md:block col-span-2 sticky top-28 h-fit">
-                            <div className="flex flex-col gap-4">
+                            <div className="flex flex-col gap-2">
                                 {categories.map((category, index) => (
                                     <button
                                         key={category.name}
                                         onClick={() => scrollToCategory(index)}
                                         className={`
-                                            text-left rounded-lg text-lg
+                                            text-left rounded-lg text-lg px-3 py-1
                                             transition-all duration-200 ease-in-out
                                             ${activeCategory === index
-                                                ? 'text-blue-600 font-meidum'
+                                                ? 'text-blue-600 font-meidum bg-[#DAE0F2] rounded-full'
                                                 : 'text-stone-500 hover:text-stone-900'
                                             }
                                         `}

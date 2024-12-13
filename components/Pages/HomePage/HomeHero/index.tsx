@@ -100,7 +100,7 @@ const HomeHero: FC = () => {
                             whileTap={{ scale: 0.95 }}
                             className="inline-block transition-all duration-300 px-4 py-2 font-normal hover:font-medium text-sm hover:text-stone-900 dark:bg-white text-stone-600 dark:text-neutral-900 rounded-lg font-medium hover:scale-110 transition-all duration-200"
                         >
-                            <div className="flex items-center gap-2 ">
+                            <div className="flex items-center gap-2 animate-bounce hover:animate-none text-blue-500 hover:text-stone-900 font-semibold">
                                 Explore My Work
                                 <ChevronDownIcon className="w-4 h-4 shrink-0" />
                             </div>

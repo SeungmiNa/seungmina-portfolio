@@ -4,6 +4,7 @@ import BrandingProject from '../../../components/Pages/ProjectPages/BrandingProj
 import DeliviousProject from '../../../components/Pages/ProjectPages/DeliviousProject';
 import { Project, ProjectData } from '../../types/project';
 import ProjectFooter from '../../../components/ProjectFooter';
+import InizioProject from '../../../components/Pages/ProjectPages/InizioProject';
 
 // This would typically come from a database or API
 const getProjectData = (slug: string): Project | undefined => {
@@ -13,7 +14,7 @@ const getProjectData = (slug: string): Project | undefined => {
             description: 'We automatically save your files as you type.',
             fullDescription: 'A comprehensive project management tool that helps teams collaborate effectively.',
             image: "https://images.unsplash.com/photo-1509343256512-d77a5cb3791b?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-            type: 'default'
+            type: 'inizio'
         },
         'delivious': {
             title: 'Delivious',
@@ -48,8 +49,10 @@ const ProjectPage: React.FC<ProjectPageProps> = ({ params }) => {
     }
 
     const renderProject = () => {
+        console.log("project type", project.type);
         switch (project.type) {
             // case 'default': return <DefaultProject/>;
+            case 'inizio': return <InizioProject />;
             case 'delivious': return <DeliviousProject project={project} />;
             case 'branding': return <BrandingProject project={project} />;
         }
