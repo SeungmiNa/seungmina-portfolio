@@ -29,11 +29,11 @@ const DeliviousUXUI: React.FC<DeliviousUXUIProps> = ({
     ];
 
     return (
-        <div className="col-span-12 mx-auto px-4 py-16">
+        <div className="col-span-12 mx-auto px-4 py-24">
             <div className="space-y-8">
                 {/* Header Section */}
                 <div className="text-center mb-16">
-                    <Title className="text-4xl md:text-5xl mb-4">
+                    <Title className="text-4xl md:text-5xl mb-4" variant="h1">
                         UX/UI Design Process
                     </Title>
                     <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -72,9 +72,9 @@ const DeliviousUXUI: React.FC<DeliviousUXUIProps> = ({
 
                 {/* Process Section */}
                 <div className="mt-20">
-                    <Title className="text-3xl mb-8 text-center">
+                    {/* <Title className="text-3xl mb-8 text-center">
                         Design Process & Methodology
-                    </Title>
+                    </Title> */}
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         <div className="p-6 bg-gray-50 rounded-lg">
                             <h3 className="font-semibold text-xl mb-3">Research & Planning</h3>

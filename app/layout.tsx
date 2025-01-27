@@ -1,6 +1,14 @@
 import Navbar from "@/components/Navbar";
 import type { Metadata } from "next";
 import "../styles/globals.css"
+import { Inter, Courgette } from 'next/font/google';
+
+const inter = Inter({ subsets: ['latin'] });
+const courgette = Courgette({ 
+  weight: '400',
+  subsets: ['latin'],
+  variable: '--font-courgette',
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -14,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body className={`${inter.className} ${courgette.variable}`}>
         <Navbar />
         {children}
       </body>
