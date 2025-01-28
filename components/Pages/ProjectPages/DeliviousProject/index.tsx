@@ -76,7 +76,7 @@ export default function DeliviousProject({ project }: DeliviousProjectProps) {
             const offset = 100;
             const elementPosition = targetRef.getBoundingClientRect().top;
             const offsetPosition = elementPosition + window.pageYOffset - offset;
-            
+
             window.scrollTo({
                 top: offsetPosition,
                 behavior: 'smooth'
@@ -149,7 +149,7 @@ export default function DeliviousProject({ project }: DeliviousProjectProps) {
                                     It is a service for ordering and delivering an order using the Robot to dine at a table. User can order and check the order history. Admin user can deliver the food using the Robot.
                                 </p> */}
                                 <p className="text-stone-500">
-                                As a UX/UI Designer and UI Developer on the project, I designed and implemented an intuitive interface for a seamless dining experience, enabling customers to order and track their meals directly from their tables through an innovative kiosk and app service. My responsibilities spanned across visual design, making user flows, defining design system, and branding, ensuring a user-friendly experience from screen to table.
+                                    As a UX/UI Designer and UI Developer on the project, I designed and implemented an intuitive interface for a seamless dining experience, enabling customers to order and track their meals directly from their tables through an innovative kiosk and app service. My responsibilities spanned across visual design, making user flows, defining design system, and branding, ensuring a user-friendly experience from screen to table.
                                 </p>
                             </div>
                         </div>
@@ -238,25 +238,27 @@ export default function DeliviousProject({ project }: DeliviousProjectProps) {
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                                 {/* Feature 1 */}
                                 <div className="p-8 rounded-lg border border-stone-200 bg-white">
-                                    <div className="text-rose-500 mb-6">
-                                        <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none">
+                                    <div className="text-blue-400 mb-6 flex items-center gap-2 text-sm">
+                                        <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none">
                                             <rect width="24" height="24" fill="currentColor" fillOpacity="0.2" rx="4" />
                                         </svg>
+                                        Feature 1
                                     </div>
                                     <h4 className="text-xl font-medium text-stone-800 mb-4">
-                                        Menu browsing and ordering via app and kiosk: 
+                                        Menu browsing and ordering via app and kiosk:
                                     </h4>
                                     <p className="text-stone-500">
-                                       Offering a simple and user-friendly UI/UX.
+                                        Offering a simple and user-friendly UI/UX.
                                     </p>
                                 </div>
 
                                 {/* Feature 2 */}
                                 <div className="p-8 rounded-lg border border-stone-200 bg-white">
-                                    <div className="text-purple-500 mb-6">
-                                        <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none">
+                                <div className="text-blue-400 mb-6 flex items-center gap-2 text-sm">
+                                        <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none">
                                             <rect width="24" height="24" fill="currentColor" fillOpacity="0.2" rx="4" />
                                         </svg>
+                                        Feature 2
                                     </div>
                                     <h4 className="text-xl font-medium text-stone-800 mb-4">
                                         Real-time order status tracking
@@ -268,10 +270,11 @@ export default function DeliviousProject({ project }: DeliviousProjectProps) {
 
                                 {/* Feature 3 */}
                                 <div className="p-8 rounded-lg border border-stone-200 bg-white">
-                                    <div className="text-blue-500 mb-6">
-                                        <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none">
+                                <div className="text-blue-400 mb-6 flex items-center gap-2 text-sm">
+                                        <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none">
                                             <rect width="24" height="24" fill="currentColor" fillOpacity="0.2" rx="4" />
                                         </svg>
+                                        Feature 3
                                     </div>
                                     <h4 className="text-xl font-medium text-stone-800 mb-4">
                                         Kitchen integration system
@@ -282,13 +285,14 @@ export default function DeliviousProject({ project }: DeliviousProjectProps) {
                                 </div>
 
                                 <div className="p-8 rounded-lg border border-stone-200 bg-white">
-                                    <div className="text-blue-500 mb-6">
-                                        <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none">
+                                <div className="text-blue-400 mb-6 flex items-center gap-2 text-sm">
+                                        <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none">
                                             <rect width="24" height="24" fill="currentColor" fillOpacity="0.2" rx="4" />
                                         </svg>
+                                        Feature 4
                                     </div>
                                     <h4 className="text-xl font-medium text-stone-800 mb-4">
-                                        Delevery Robot management dashboard
+                                        Delevery Robot management
                                     </h4>
                                     <p className="text-stone-500">
                                         Monitoring robot paths, and order delivery status.

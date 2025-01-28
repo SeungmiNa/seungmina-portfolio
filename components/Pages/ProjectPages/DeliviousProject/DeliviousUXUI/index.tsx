@@ -20,9 +20,10 @@ const DeliviousUXUI: React.FC<DeliviousUXUIProps> = ({
                         UX/UI Design Process
                     </Title>
                     <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                        Leading the design process for Delivious, I focused on creating
-                        intuitive user experiences and consistent visual designs across
-                        the platform.
+                        Designed and implemented a comprehensive component library that powers 
+                        Delivious's ordering system. Created an intuitive user journey from 
+                        authentication to order completion, with carefully crafted UI elements 
+                        that maintain visual consistency while enhancing the ordering experience.
                     </p>
                 </div>
 
@@ -33,10 +34,13 @@ const DeliviousUXUI: React.FC<DeliviousUXUIProps> = ({
                         <div className="space-y-4 flex flex-col md:flex-row gap-4">
                             <div>
                                 <h4 className="text-2xl font-bold mb-2 text-[#4963AE] uppercase">
-                                    USER FLOW
+                                    USER FLOW & WIREFRAMES
                                 </h4>
                                 <p className="text-gray-600">
-                                    Created comprehensive user flows for the ordering and authentication processes, ensuring a smooth and intuitive user experience.
+                                    Mapped out the complete user journey from login to order fulfillment, 
+                                    creating intuitive pathways for both customers and staff. Each interaction 
+                                    point was carefully considered to minimize friction and enhance the 
+                                    overall dining experience.
                                 </p>
                             </div>
 
@@ -63,12 +67,18 @@ const DeliviousUXUI: React.FC<DeliviousUXUIProps> = ({
                         </div>
 
                         <div className="my-16">
-                            {/* <Image src="/images/delivious/user-flow.png" alt="User Flow" width={500} height={500} /> */}
-                            <img
-                                src={"/images/delivious/user-flow.png"}
-                                alt={"Deliviou user flow"}
-                                className="w-full h-full object-cover"
-                            />
+                            <div className="space-y-4">
+                                <img
+                                    src={"/images/delivious/user-flow.png"}
+                                    alt={"Delivious user flow diagram"}
+                                    className="w-full h-full object-cover mb-8"
+                                />
+                                <img
+                                    src={"/images/delivious/wireframes.png"}
+                                    alt={"Delivious wireframe designs"}
+                                    className="w-full h-full object-cover"
+                                />
+                            </div>
                         </div>
                     </div>
 
@@ -340,10 +350,13 @@ const DeliviousUXUI: React.FC<DeliviousUXUIProps> = ({
                     <div className="py-20">
                         <div className="text-center">
                             <h4 className="text-2xl font-bold mb-2 text-[#4963AE] uppercase">
-                                Introduction
+                                DESIGN SYSTEM & IMPLEMENTATION
                             </h4>
                             <p className="text-gray-600 max-w-2xl mx-auto">
-                                Developed reusable UI components following consistent design patterns, including buttons, forms, and navigation elements.
+                                Built a design system featuring custom components like interactive table management interfaces, and responsive 
+                                navigation elements. Each component was designed and implemented to 
+                                support the core ordering flow while ensuring a cohesive visual language 
+                                across the platform.
                             </p>
                         </div>
                         <div className="mt-8">
