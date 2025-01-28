@@ -46,7 +46,7 @@ const DeliviousBranding = ({ item }: { item?: any }) => {
     ];
 
     return (
-        <div className="col-span-12">
+        <div className="col-span-12 pb-28">
             <div className="text-center mb-24">
                 <Title className="text-4xl md:text-5xl mb-4" variant="h1">
                     Branding Identity
@@ -157,7 +157,6 @@ const DeliviousBranding = ({ item }: { item?: any }) => {
                         <div className="max-w-2xl mb-8">
                             <Title variant="h4" className="font-semibold mb-4">Typography</Title>
                         </div>
-
                         <div className="grid grid-cols-2 gap-8">
                             {typography.map((type) => (
                                 <div key={type.name}>

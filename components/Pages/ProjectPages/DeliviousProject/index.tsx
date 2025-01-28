@@ -202,7 +202,7 @@ export default function DeliviousProject({ project }: DeliviousProjectProps) {
                     {/* Approach & Goal Section */}
                     <div>
                         <div className="mb-2">
-                            <h2 className="text-base font-medium text-stone-800">Approach & Goal</h2>
+                            <h2 className="text-base font-medium text-[#4963AE]">Approach & Goal</h2>
                         </div>
 
                         <div className="space-y-1">
@@ -227,9 +227,9 @@ export default function DeliviousProject({ project }: DeliviousProjectProps) {
                                 <span className="text-[#4963AE] font-semibold text-sm">What</span>
                             </div>
 
-                            <p className="text-stone-500 text-base text-gray-300 pt-6">
+                            {/* <p className="text-stone-500 text-base text-gray-300 pt-6">
                                 These features would be essential:
-                            </p>
+                            </p> */}
                         </div>
 
                         {/* Key Features Section */}
