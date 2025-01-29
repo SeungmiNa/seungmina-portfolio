@@ -13,7 +13,7 @@ type ProjectCardProps = {
 
 const ProjectCard: FC<ProjectCardProps> = ({ title, description, image, period, role, category }) => {
     return (
-        <a className="relative h-[300px] md:h-[500px] flex flex-col group rounded-xl overflow-hidden">
+        <a className="relative h-[300px] md:h-[500px] flex flex-col group rounded-xl overflow-hidden border border-gray-300">
             <div
                 className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
                 style={{ backgroundImage: `url(${image})` }}

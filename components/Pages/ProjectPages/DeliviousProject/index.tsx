@@ -122,11 +122,16 @@ export default function DeliviousProject({ project }: DeliviousProjectProps) {
         <div className="min-h-screen">
             <div>
                 <div className='relative -mt-16 mb-12 h-[600px]'>
-                    <div
+                    {/* <div
                         className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
                         style={{ backgroundImage: `url(${project.image})` }}
                         role="img"
                         aria-label={`${project.title} hero image`}
+                    /> */}
+                    <img 
+                        src="/images/delivious/delivious-cover.svg"
+                        alt="Delivious cover"
+                        className="absolute bottom-0 left-0 w-full h-auto"
                     />
                 </div>
 
@@ -350,12 +355,11 @@ export default function DeliviousProject({ project }: DeliviousProjectProps) {
                 </div>
 
                 {/* Project Mockup */}
-                <div className='relative mb-12 h-[600px]'>
-                    <div
-                        className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
-                        style={{ backgroundImage: `url(${project.image})` }}
-                        role="img"
-                        aria-label={`${project.title} hero image`}
+                <div className='relative mb-12 h-[600px] bg-[#4963AE]'>
+                    <img 
+                        src="/images/delivious/delivious-mockup-nine-pages.svg"
+                        alt="Delivious mockup showing nine different pages"
+                        className="absolute inset-0 w-full h-full object-cover"
                     />
                 </div>
 

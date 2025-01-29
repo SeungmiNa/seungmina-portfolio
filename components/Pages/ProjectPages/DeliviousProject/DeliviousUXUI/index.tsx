@@ -73,11 +73,6 @@ const DeliviousUXUI: React.FC<DeliviousUXUIProps> = ({
                                     alt={"Delivious user flow diagram"}
                                     className="w-full h-full object-cover mb-8"
                                 />
-                                <img
-                                    src={"/images/delivious/wireframes.png"}
-                                    alt={"Delivious wireframe designs"}
-                                    className="w-full h-full object-cover"
-                                />
                             </div>
                         </div>
                     </div>
@@ -361,11 +356,12 @@ const DeliviousUXUI: React.FC<DeliviousUXUIProps> = ({
                         </div>
                         <div className="mt-8">
                             <Image
-                                src="/images/delivious/delivious-mockup.png"
+                                src="/images/delivious/delivious-mockup.svg"
                                 alt="Delivious Mockup"
                                 width={1200}
                                 height={800}
                                 className="w-full"
+                                priority
                             />
                         </div>
                     </div>
