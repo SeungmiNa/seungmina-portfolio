@@ -87,7 +87,7 @@ const ProjectList: React.FC<ProjectListProps> = ({ }) => {
     };
 
     return (
-        <div className="flex flex-col gap-7">
+        <div className="flex flex-col gap-7 font-ubuntu">
             {projectList.map((pr) => (
                 <div
                     key={pr.name}
