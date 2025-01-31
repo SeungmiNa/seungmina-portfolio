@@ -2,6 +2,11 @@
 import Image from "next/image";
 import React from "react";
 import Title from "../../../../Font/Title";
+import { BsCheckLg } from 'react-icons/bs';
+import { BsMoonFill, BsSunFill, BsPaletteFill } from 'react-icons/bs';
+import { BiMouse } from 'react-icons/bi';
+import { HiOutlineClipboardList } from 'react-icons/hi';
+import { MdOutlineAnimation } from 'react-icons/md';
 
 const InizioUXUI = () => {
     return (
@@ -12,7 +17,7 @@ const InizioUXUI = () => {
                 <div className="flex flex-col gap-6 mb-16">
                     <div className="space-y-2">
                         <div>
-                            <div className="inline-flex px-4 py-2 rounded-full bg-[#0DB9B9]/10 border border-[#0DB9B9]/30">
+                            <div className="inline-flex px-4 py-1 rounded-full bg-[#0DB9B9]/10 border border-[#0DB9B9]/30">
                                 <span className="text-sm font-medium text-[#0DB9B9]">UX / UI Design & Development</span>
                             </div>
                         </div>
@@ -47,7 +52,7 @@ const InizioUXUI = () => {
                         </div>
                     </div>
                     <div className="w-full md:w-1/2 space-y-4">
-                        <div className="inline-block bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm font-medium">
+                        <div className="uppercase inline-block border border-[#5465FF]/10 bg-[#5465FF]/20 text-[#5465FF] px-3 py-1 rounded-full text-sm font-medium">
                             NAVIGATION
                         </div>
                         <h3 className="text-2xl font-semibold">
@@ -58,15 +63,11 @@ const InizioUXUI = () => {
                         </p>
                         <ul className="space-y-2 text-gray-600">
                             <li className="flex items-center gap-2">
-                                <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                                </svg>
+                                <BsCheckLg className="w-5 h-5 text-[#5465FF]" />
                                 Smooth hamburger menu transitions
                             </li>
                             <li className="flex items-center gap-2">
-                                <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                                </svg>
+                                <BsCheckLg className="w-5 h-5 text-[#5465FF]" />
                                 Responsive breakpoints
                             </li>
                         </ul>
@@ -76,8 +77,8 @@ const InizioUXUI = () => {
                 {/* Dark/Light Mode Feature */}
                 <div className="flex flex-col-reverse md:flex-row items-center gap-8">
                     <div className="w-full md:w-1/2 space-y-4">
-                        <div className="inline-block bg-purple-100 text-purple-600 px-3 py-1 rounded-full text-sm font-medium">
-                            CUSTOMIZATION
+                        <div className="uppercase inline-block border border-[#0DB9B9]/20 bg-[#0DB9B9]/10 text-[#0DB9B9] px-3 py-1 rounded-full text-sm font-medium">
+                            Theme button
                         </div>
                         <h3 className="text-2xl font-semibold">
                             Dark & Light Mode
@@ -87,21 +88,15 @@ const InizioUXUI = () => {
                         </p>
                         <ul className="space-y-2 text-gray-600">
                             <li className="flex items-center gap-2">
-                                <svg className="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-                                </svg>
+                                <BsMoonFill className="w-5 h-5 text-[#0DB9B9]" />
                                 Smooth theme transitions
                             </li>
                             <li className="flex items-center gap-2">
-                                <svg className="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707" />
-                                </svg>
+                                <BsSunFill className="w-5 h-5 text-[#0DB9B9]" />
                                 System preference detection
                             </li>
                             <li className="flex items-center gap-2">
-                                <svg className="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
-                                </svg>
+                                <BsPaletteFill className="w-5 h-5 text-[#0DB9B9]" />
                                 Persistent theme settings
                             </li>
                         </ul>
@@ -143,7 +138,7 @@ const InizioUXUI = () => {
                         </div>
                     </div>
                     <div className="w-full md:w-1/2 space-y-4">
-                        <div className="inline-block bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm font-medium">
+                        <div className="inline-block border border-[#5465FF]/10 bg-[#5465FF]/20 text-[#5465FF] px-3 py-1 rounded-full text-sm font-medium">
                             INTERACTIONS
                         </div>
                         <h3 className="text-2xl font-semibold">
@@ -154,15 +149,11 @@ const InizioUXUI = () => {
                         </p>
                         <ul className="space-y-2 text-gray-600">
                             <li className="flex items-center gap-2">
-                                <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122" />
-                                </svg>
+                                <BiMouse className="w-5 h-5 text-[#5465FF]" />
                                 Hover effects
                             </li>
                             <li className="flex items-center gap-2">
-                                <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122" />
-                                </svg>
+                                <MdOutlineAnimation className="w-5 h-5 text-[#5465FF]" />
                                 Micro-interactions
                             </li>
                         </ul>
@@ -172,7 +163,7 @@ const InizioUXUI = () => {
                 {/* Workflow Optimization */}
                 <div className="flex flex-col md:flex-row items-center gap-8">
                     <div className="w-full md:w-1/2 space-y-4">
-                        <div className="inline-block bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm font-medium">
+                        <div className="inline-block border border-[#0DB9B9]/20 bg-[#0DB9B9]/10 text-[#0DB9B9] px-3 py-1 rounded-full text-sm font-medium">
                             WORKFLOW
                         </div>
                         <h3 className="text-2xl font-semibold">
@@ -183,15 +174,11 @@ const InizioUXUI = () => {
                         </p>
                         <ul className="space-y-2 text-gray-600">
                             <li className="flex items-center gap-2">
-                                <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
-                                </svg>
+                                <HiOutlineClipboardList className="w-5 h-5 text-[#0DB9B9]" />
                                 Intuitive navigation patterns
                             </li>
                             <li className="flex items-center gap-2">
-                                <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
-                                </svg>
+                                <HiOutlineClipboardList className="w-5 h-5 text-[#0DB9B9]" />
                                 Clear visual hierarchy
                             </li>
                         </ul>

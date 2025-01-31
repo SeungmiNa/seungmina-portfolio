@@ -1,19 +1,17 @@
 "use client";
 import React, { useState } from "react";
-import Title from "../../../../Font/Title";
-import { 
-    SiTypescript, 
-    SiReact, 
-    SiTailwindcss, 
-    SiNextdotjs,
+import { HiCode, HiTemplate } from "react-icons/hi";
+import {
     SiFigma,
     SiFramer,
-    SiGit,
-    SiJavascript
+    SiNextdotjs,
+    SiReact,
+    SiTailwindcss,
+    SiTypescript
 } from "react-icons/si";
-import { HiCode, HiTemplate } from "react-icons/hi";
+import Title from "../../../../Font/Title";
 
-interface InizioDevProps {}
+interface InizioDevProps { }
 
 interface TechStackItem {
     name: string;
@@ -96,7 +94,22 @@ const InizioDev: React.FC<InizioDevProps> = () => {
 
     return (
         <div className="max-w-7xl mx-auto px-4 py-12">
-            <section className="mb-16">
+            <div className="flex flex-col gap-6 mb-16">
+                <div className="space-y-2">
+                    <div>
+                        <div className="inline-flex px-4 py-2 rounded-full bg-[#5465FF]/10 border border-[#5465FF]/30">
+                            <span className="text-sm font-medium text-[#5465FF]">Development</span>
+                        </div>
+                    </div>
+                    <Title variant="h1" className="text-4xl md:text-5xl font-bold text-gray-900">
+                        Tech Stack
+                    </Title>
+                </div>
+                <p className="text-gray-500 max-w-2xl text-lg w-full">
+                    A comprehensive tech stack for building a modern and efficient web application.
+                </p>
+            </div>
+            {/* <section className="mb-16">
                 <Title className="mb-12">Development Impact</Title>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-blue-500 to-purple-600 p-1">
@@ -183,14 +196,14 @@ const InizioDev: React.FC<InizioDevProps> = () => {
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> */}
 
             {/* 수정된 기술 스택 섹션 */}
             <section className="mb-16">
-                <Title className="mb-8" variant="h2">Technology Stack</Title>
+                {/* <Title className="mb-8" variant="h2">Technology Stack</Title> */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
                     {techStack.map((tech) => (
-                        <div 
+                        <div
                             key={tech.name}
                             className="p-6 rounded-xl bg-white/40 backdrop-blur-sm
                                       border border-white"
@@ -266,9 +279,9 @@ const StatCard = ({ title, value, description }: { title: string, value: string,
 const TechBadge = ({ name, logo }: { name: string; logo: string }) => (
     <div className="flex flex-col items-center p-6 rounded-xl bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl transition-shadow duration-300">
         <div className="w-16 h-16 mb-4 flex items-center justify-center">
-            <img 
-                src={logo} 
-                alt={`${name} logo`} 
+            <img
+                src={logo}
+                alt={`${name} logo`}
                 className="w-full h-full object-contain"
             />
         </div>
@@ -281,8 +294,8 @@ const TechBadge = ({ name, logo }: { name: string; logo: string }) => (
 // 컬러 카드 컴포넌트
 const ColorCard = ({ name, color }: { name: string, color: string }) => (
     <div className="p-4 rounded-lg bg-white dark:bg-gray-800 shadow-lg">
-        <div 
-            className="w-full h-24 rounded-md mb-2" 
+        <div
+            className="w-full h-24 rounded-md mb-2"
             style={{ backgroundColor: color }}
         />
         <p className="font-medium">{name}</p>
