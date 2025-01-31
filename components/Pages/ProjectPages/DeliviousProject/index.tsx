@@ -23,7 +23,9 @@ interface CategoryContent {
 
 export default function DeliviousProject({ project }: DeliviousProjectProps) {
     const [activeCategory, setActiveCategory] = useState<number>(0);
-    const categoryRefs = useRef<(HTMLDivElement | null)[]>([]);
+    const contentRefs = useRef<HTMLDivElement[]>([]);
+    const categoryRefs = useRef<(HTMLElement | null)[]>([]);
+    console.log("activeCategory", activeCategory);
 
     const categories: CategoryContent[] = [
         {
@@ -60,7 +62,7 @@ export default function DeliviousProject({ project }: DeliviousProjectProps) {
             case 'Brand Identity':
                 return <DeliviousBranding />;
             case 'User Experience':
-                return <DeliviousUXUI />;
+                return <DeliviousUXUI project={project} />;
             case 'Web Development':
                 return <DeliviousDev />;
             default:
@@ -68,19 +70,34 @@ export default function DeliviousProject({ project }: DeliviousProjectProps) {
         }
     };
 
+    const scrollToCategory = (index: number) => {
+        const targetRef = categoryRefs.current[index];
+        if (targetRef) {
+            const offset = 100;
+            const elementPosition = targetRef.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+            setActiveCategory(index);
+        }
+    };
+
     useEffect(() => {
         const observerOptions: IntersectionObserverInit = {
-            root: null,
-            rootMargin: '-20% 0px',
-            threshold: [0, 0.5, 1]
+            rootMargin: '-20% 0px -70% 0px',
+            threshold: 0
         };
 
         const observerCallback: IntersectionObserverCallback = (entries) => {
             entries.forEach(entry => {
-                const index = categoryRefs.current.findIndex(ref => ref === entry.target);
-
-                if (entry.isIntersecting && entry.intersectionRatio > 0.5) {
-                    setActiveCategory(index);
+                if (entry.isIntersecting) {
+                    const index = categoryRefs.current.findIndex(ref => ref === entry.target);
+                    if (index !== -1) {
+                        setActiveCategory(index);
+                    }
                 }
             });
         };
@@ -94,22 +111,27 @@ export default function DeliviousProject({ project }: DeliviousProjectProps) {
         return () => observer.disconnect();
     }, []);
 
-    const scrollToCategory = (index: number) => {
-        categoryRefs.current[index]?.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-        });
+    const setContentRef = (el: HTMLElement | null, categoryIndex: number, contentIndex: number) => {
+        if (el && contentRefs.current) {
+            const index = categoryIndex * categories[0].content.length + contentIndex;
+            contentRefs.current[index] = el as HTMLDivElement;
+        }
     };
 
     return (
         <div className="min-h-screen">
             <div>
                 <div className='relative -mt-16 mb-12 h-[600px]'>
-                    <div
+                    {/* <div
                         className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
                         style={{ backgroundImage: `url(${project.image})` }}
                         role="img"
                         aria-label={`${project.title} hero image`}
+                    /> */}
+                    <img 
+                        src="/images/delivious/delivious-cover.svg"
+                        alt="Delivious cover"
+                        className="absolute bottom-0 left-0 w-full h-auto"
                     />
                 </div>
 
@@ -118,18 +140,21 @@ export default function DeliviousProject({ project }: DeliviousProjectProps) {
                     <div>
                         {/* Project Title & Description */}
                         <div className="mb-20">
-                            <h1 className="text-[80px] font-bold text-[#4963AE] leading-tight">
-                                Delivious
+                            <h1 className="text-[100px] leading-tight font-[Courgette]">
+                                Deliv<span className="text-[#4963AE]">ious</span>
                             </h1>
                             <h2 className="text-3xl text-stone-800 mb-12 font-medium">
                                 Ordering & Dining with seamless delivery robot service
                             </h2>
-                            <div className="max-w-3xl space-y-4">
+                            <div className="max-w-4xl space-y-4">
                                 <p className="text-stone-500">
-                                    Dining experience by integrating innovative kiosk and app services, enabling customers to effortlessly order and enjoy their favorite meals at their table.
+                                    It is a service for ordering and delivering an order using the Robot to dine at a table. User can order and check the order history. Admin user can deliver the food using the Robot.
                                 </p>
-                                <p className="text-gray-300">
-                                    나는 이 프로젝트에 이런 역할을 해서 어떤 디자인을 했다 | 디자인할때 어디에 중점을 두고 어떤플로우를 만들었는지.
+                                {/* <p className="text-stone-500">
+                                    It is a service for ordering and delivering an order using the Robot to dine at a table. User can order and check the order history. Admin user can deliver the food using the Robot.
+                                </p> */}
+                                <p className="text-stone-500">
+                                    As a UX/UI Designer and UI Developer on the project, I designed and implemented an intuitive interface for a seamless dining experience, enabling customers to order and track their meals directly from their tables through an innovative kiosk and app service. My responsibilities spanned across visual design, making user flows, defining design system, and branding, ensuring a user-friendly experience from screen to table.
                                 </p>
                             </div>
                         </div>
@@ -162,6 +187,10 @@ export default function DeliviousProject({ project }: DeliviousProjectProps) {
                                 <h3 className="text-[#4963AE] text-base mb-4 font-semibold">Skills</h3>
                                 <div className="ml-0.5 space-y-1 text-stone-600">
                                     <p>Figma</p>
+                                    <p>React</p>
+                                    <p>TypeScript</p>
+                                    <p>Tailwind</p>
+                                    <p>Adobe Illustrator</p>
                                 </div>
                             </div>
 
@@ -178,82 +207,100 @@ export default function DeliviousProject({ project }: DeliviousProjectProps) {
                     {/* Approach & Goal Section */}
                     <div>
                         <div className="mb-2">
-                            <h2 className="text-base font-medium text-stone-800">Approach & Goal</h2>
+                            <h2 className="text-base font-medium text-[#4963AE]">Approach & Goal</h2>
                         </div>
 
                         <div className="space-y-1">
                             <div className="flex items-center gap-2">
                                 <h3 className="text-3xl font-semibold text-stone-800">
-                                    Struggling with multiple subscriptions and payments
+                                    Diners seeking convenience and restaurants wanting efficiency
                                 </h3>
                                 <span className="text-[#4963AE] font-semibold text-sm">Who</span>
                             </div>
 
                             <div className="flex items-center gap-2">
                                 <h3 className="text-3xl font-semibold text-stone-800">
-                                    If there is app for easy tracking and notifications
+                                    Through an app and kiosk with robot delivery
                                 </h3>
                                 <span className="text-[#4963AE] font-semibold text-sm">How</span>
                             </div>
 
                             <div className="flex items-center gap-2">
                                 <h3 className="text-3xl font-semibold text-stone-800">
-                                    Making timely payments and a more organized, convenient life.
+                                    A smoother, tech-driven dining experience.
                                 </h3>
                                 <span className="text-[#4963AE] font-semibold text-sm">What</span>
                             </div>
 
-                            <p className="text-stone-500 text-base text-gray-300 pt-6">
-                                어떤 리서치를 진행했고 어떤 기능 들이있으면 좋겠다고 생각했는지
-                            </p>
+                            {/* <p className="text-stone-500 text-base text-gray-300 pt-6">
+                                These features would be essential:
+                            </p> */}
                         </div>
 
                         {/* Key Features Section */}
                         <div className="mt-20">
                             <h3 className="text-base font-semibold text-stone-400 mb-2">KEY FEATURES</h3>
-                            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                                 {/* Feature 1 */}
                                 <div className="p-8 rounded-lg border border-stone-200 bg-white">
-                                    <div className="text-rose-500 mb-6">
-                                        <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none">
+                                    <div className="text-blue-400 mb-6 flex items-center gap-2 text-sm">
+                                        <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none">
                                             <rect width="24" height="24" fill="currentColor" fillOpacity="0.2" rx="4" />
                                         </svg>
+                                        Feature 1
                                     </div>
                                     <h4 className="text-xl font-medium text-stone-800 mb-4">
-                                        Feature 1
+                                        Menu browsing and ordering via app and kiosk:
                                     </h4>
                                     <p className="text-stone-500">
-                                        Feature 1 description
+                                        Offering a simple and user-friendly UI/UX.
                                     </p>
                                 </div>
 
                                 {/* Feature 2 */}
                                 <div className="p-8 rounded-lg border border-stone-200 bg-white">
-                                    <div className="text-purple-500 mb-6">
-                                        <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none">
+                                <div className="text-blue-400 mb-6 flex items-center gap-2 text-sm">
+                                        <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none">
                                             <rect width="24" height="24" fill="currentColor" fillOpacity="0.2" rx="4" />
                                         </svg>
+                                        Feature 2
                                     </div>
                                     <h4 className="text-xl font-medium text-stone-800 mb-4">
-                                        Feature 2
+                                        Real-time order status tracking
                                     </h4>
                                     <p className="text-stone-500">
-                                        Feature 2 description
+                                        Allowing customers to monitor their order progress.
                                     </p>
                                 </div>
 
                                 {/* Feature 3 */}
                                 <div className="p-8 rounded-lg border border-stone-200 bg-white">
-                                    <div className="text-blue-500 mb-6">
-                                        <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none">
+                                <div className="text-blue-400 mb-6 flex items-center gap-2 text-sm">
+                                        <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none">
                                             <rect width="24" height="24" fill="currentColor" fillOpacity="0.2" rx="4" />
                                         </svg>
+                                        Feature 3
                                     </div>
                                     <h4 className="text-xl font-medium text-stone-800 mb-4">
-                                        Feature 3
+                                        Kitchen integration system
                                     </h4>
                                     <p className="text-stone-500">
-                                        Feature 3 description
+                                        Delivering orders from the kiosk and app directly to the kitchen in real-time.
+                                    </p>
+                                </div>
+
+                                <div className="p-8 rounded-lg border border-stone-200 bg-white">
+                                <div className="text-blue-400 mb-6 flex items-center gap-2 text-sm">
+                                        <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none">
+                                            <rect width="24" height="24" fill="currentColor" fillOpacity="0.2" rx="4" />
+                                        </svg>
+                                        Feature 4
+                                    </div>
+                                    <h4 className="text-xl font-medium text-stone-800 mb-4">
+                                        Delevery Robot management
+                                    </h4>
+                                    <p className="text-stone-500">
+                                        Monitoring robot paths, and order delivery status.
                                     </p>
                                 </div>
                             </div>
@@ -273,7 +320,7 @@ export default function DeliviousProject({ project }: DeliviousProjectProps) {
                                             text-left rounded-lg text-lg px-3 py-1
                                             transition-all duration-200 ease-in-out
                                             ${activeCategory === index
-                                                ? 'text-blue-600 font-meidum bg-[#DAE0F2] rounded-full'
+                                                ? 'text-blue-600 font-medium bg-[#DAE0F2] rounded-full'
                                                 : 'text-stone-500 hover:text-stone-900'
                                             }
                                         `}
@@ -289,19 +336,15 @@ export default function DeliviousProject({ project }: DeliviousProjectProps) {
                             {categories.map((category, categoryIndex) => (
                                 <section
                                     key={category.name}
-                                    ref={el => {
-                                        if (el) categoryRefs.current[categoryIndex] = el;
-                                    }}
+                                    ref={(el) => categoryRefs.current[categoryIndex] = el}
                                     className="min-h-screen mb-20"
+                                    id={`category-${categoryIndex}`}
                                 >
-                                    {/* <header className="mb-8">
-                                        <h2 className="text-2xl font-light mb-4">
-                                            {category.name}
-                                        </h2>
-                                    </header> */}
-
-                                    {category.content.map((item) => (
-                                        <div key={item.title} className="grid grid-cols-12 gap-6">
+                                    {category.content.map((item, contentIndex) => (
+                                        <div
+                                            key={item.title}
+                                            className="grid grid-cols-12 gap-6"
+                                        >
                                             {renderContent(item)}
                                         </div>
                                     ))}
@@ -312,12 +355,11 @@ export default function DeliviousProject({ project }: DeliviousProjectProps) {
                 </div>
 
                 {/* Project Mockup */}
-                <div className='relative mb-12 h-[600px]'>
-                    <div
-                        className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
-                        style={{ backgroundImage: `url(${project.image})` }}
-                        role="img"
-                        aria-label={`${project.title} hero image`}
+                <div className='relative mb-12 h-[600px] bg-[#4963AE]'>
+                    <img 
+                        src="/images/delivious/delivious-mockup-nine-pages.svg"
+                        alt="Delivious mockup showing nine different pages"
+                        className="absolute inset-0 w-full h-full object-cover"
                     />
                 </div>
 

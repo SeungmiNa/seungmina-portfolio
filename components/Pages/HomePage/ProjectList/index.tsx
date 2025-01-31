@@ -35,41 +35,41 @@ const ProjectList: React.FC<ProjectListProps> = ({ }) => {
             Icon: FileTextIcon,
             name: "Delivious",
             slug: "delivious",
-            description: "Search through all your files in one place.",
+            description: "Al Delivery and Order Services in Restaurant",
             href: "/",
             cta: "Learn more",
-            background: "https://images.unsplash.com/photo-1472214103451-9374bd1c798e?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            background: "/images/delivious/delivious-cover.svg",
             className: "lg:col-start-1 lg:col-end-2 lg:row-start-1 lg:row-end-3",
             period: "2022.04 ~ 2022.06",
             role: "UX/UI Designer, Frontend Developer",
             category: "Kiosk Design",
         },
-        {
-            Icon: FileTextIcon,
-            name: "Landing Page",
-            slug: "landing-page",
-            description: "Supports 100+ languages and counting.",
-            href: "/",
-            cta: "Learn more",
-            background: "https://images.unsplash.com/photo-1465189684280-6a8fa9b19a7a?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-            className: "lg:col-start-1 lg:col-end-2 lg:row-start-3 lg:row-end-4",
-            period: "2024.01 ~ 2024.03",
-            role: "UX/UI Designer",
-            category: "Web Design",
-        },
-        {
-            Icon: CalendarIcon,
-            name: "Branding Design",
-            slug: "branding-design",
-            description: "Use the calendar to filter your files by date.",
-            href: "/",
-            cta: "Learn more",
-            background: "https://images.unsplash.com/photo-1509343256512-d77a5cb3791b?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-            className: "lg:col-start-3 lg:col-end-3 lg:row-start-1 lg:row-end-2",
-            period: "2024.01 ~ 2024.03",
-            role: "Branding Designer",
-            category: "Branding Design",
-        },
+        // {
+        //     Icon: FileTextIcon,
+        //     name: "Landing Page",
+        //     slug: "landing-page",
+        //     description: "Supports 100+ languages and counting.",
+        //     href: "/",
+        //     cta: "Learn more",
+        //     background: "https://images.unsplash.com/photo-1465189684280-6a8fa9b19a7a?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        //     className: "lg:col-start-1 lg:col-end-2 lg:row-start-3 lg:row-end-4",
+        //     period: "2024.01 ~ 2024.03",
+        //     role: "UX/UI Designer",
+        //     category: "Web Design",
+        // },
+        // {
+        //     Icon: CalendarIcon,
+        //     name: "Branding Design",
+        //     slug: "branding-design",
+        //     description: "Use the calendar to filter your files by date.",
+        //     href: "/",
+        //     cta: "Learn more",
+        //     background: "https://images.unsplash.com/photo-1509343256512-d77a5cb3791b?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        //     className: "lg:col-start-3 lg:col-end-3 lg:row-start-1 lg:row-end-2",
+        //     period: "2024.01 ~ 2024.03",
+        //     role: "Branding Designer",
+        //     category: "Branding Design",
+        // },
         // {
         //     Icon: BellIcon,
         //     name: "Notifications",
@@ -87,7 +87,7 @@ const ProjectList: React.FC<ProjectListProps> = ({ }) => {
     };
 
     return (
-        <div className="flex flex-col gap-7">
+        <div className="flex flex-col gap-7 font-ubuntu">
             {projectList.map((pr) => (
                 <div
                     key={pr.name}
