@@ -86,3 +86,12 @@ const ProjectPage: React.FC<ProjectPageProps> = ({ params }) => {
 }
 
 export default ProjectPage;
+
+export async function generateStaticParams() {
+  // Use the same slugs defined in getAdjacentProjects
+  const projectSlugs = ['delivious', 'inizio-conceptcraft'];
+  
+  return projectSlugs.map((slug) => ({
+    slug: slug,
+  }))
+}
