@@ -119,7 +119,7 @@ export default function DeliviousProject({ project }: DeliviousProjectProps) {
     };
 
     return (
-        <div className="min-h-screen">
+        <div className="min-h-screen bg-[#FAFAFA]">
             <div>
                 <div className='relative -mt-16 mb-12 h-[600px]'>
                     {/* <div

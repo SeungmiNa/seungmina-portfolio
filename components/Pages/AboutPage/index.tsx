@@ -1,8 +1,6 @@
 "use client";
-import Title from "@/components/Font/Title";
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail, MapPin } from 'lucide-react';
-import Image from "next/image";
 import Link from "next/link";
 import { FC, useState } from "react";
 import ResumeModal from "./ResumeModal";
@@ -99,13 +97,13 @@ const AboutPage: FC<AboutPageProps> = ({ className = "" }) => {
                             Hello, I'm Seungmi.
                         </h1>
                         <p className="text-xl text-foreground/80 font-medium">
-                            A UX/UI Designer based in the Bay Area, passionate about creating 
+                            A UX/UI Designer based in the Bay Area, passionate about creating
                             intuitive and delightful digital experiences.
                         </p>
                         <p className="text-muted-foreground leading-relaxed">
-                            With a keen eye for detail and a user-centered approach, I transform 
-                            complex challenges into elegant solutions. I specialize in creating 
-                            beautiful, usable experiences that bridge the gap between user needs 
+                            With a keen eye for detail and a user-centered approach, I transform
+                            complex challenges into elegant solutions. I specialize in creating
+                            beautiful, usable experiences that bridge the gap between user needs
                             and business goals.
                         </p>
                     </div>
@@ -120,8 +118,8 @@ const AboutPage: FC<AboutPageProps> = ({ className = "" }) => {
                                 </div>
                                 <div className="flex items-center gap-2">
                                     <Mail className="w-4 h-4" />
-                                    <a href="mailto:naissme0@gmail.com" 
-                                       className="hover:text-foreground hover:underline transition-colors">
+                                    <a href="mailto:naissme0@gmail.com"
+                                        className="hover:text-foreground hover:underline transition-colors">
                                         naissme0@gmail.com
                                     </a>
                                 </div>
@@ -129,27 +127,29 @@ const AboutPage: FC<AboutPageProps> = ({ className = "" }) => {
                         </div>
 
                         <div className="flex items-center gap-4">
-                            <Button variant="default" 
-                                    className="rounded-full px-6 hover:scale-105 transition-transform">
+                            <Button
+                                variant="default"
+                                className="rounded-full px-6 hover:scale-105 transition-transform"
+                                onClick={() => window.location.href = "mailto:naissme0@gmail.com"}>
                                 Contact Me 👋
                             </Button>
                             <Button
                                 variant="outline"
                                 className="bg-white rounded-full px-6 hover:scale-105 transition-transform"
-                                onClick={() => setIsResumeModalOpen(true)}
+                                onClick={() => window.open('/2025-seungmi-na.pdf', '_blank')}
                             >
                                 View Resume
                             </Button>
                             <div className="flex gap-2">
                                 <Link href="https://linkedin.com/in/seungmi-na" target="_blank">
-                                    <Button variant="ghost" size="icon" 
-                                            className="rounded-full hover:scale-105 transition-transform">
+                                    <Button variant="ghost" size="icon"
+                                        className="hover:!bg-white rounded-full hover:scale-105 transition-transform">
                                         <Linkedin className="w-5 h-5" />
                                     </Button>
                                 </Link>
                                 <Link href="https://github.com/SeungmiNa" target="_blank">
-                                    <Button variant="ghost" size="icon" 
-                                            className="rounded-full hover:scale-105 transition-transform">
+                                    <Button variant="ghost" size="icon"
+                                        className="hover:!bg-white rounded-full hover:scale-105 transition-transform">
                                         <Github className="w-5 h-5" />
                                     </Button>
                                 </Link>
@@ -166,13 +166,13 @@ const AboutPage: FC<AboutPageProps> = ({ className = "" }) => {
                         </h2>
                         <div className="max-w-3xl space-y-4">
                             <p className="text-muted-foreground leading-relaxed">
-                                I bring a comprehensive skill set that combines technical proficiency with 
-                                design expertise, allowing me to create end-to-end solutions from concept 
+                                I bring a comprehensive skill set that combines technical proficiency with
+                                design expertise, allowing me to create end-to-end solutions from concept
                                 to implementation.
                             </p>
                             <p className="text-muted-foreground leading-relaxed">
-                                My technical foundation combined with design expertise enables me to bridge 
-                                the gap between design and development, creating seamless and engaging user 
+                                My technical foundation combined with design expertise enables me to bridge
+                                the gap between design and development, creating seamless and engaging user
                                 experiences while maintaining clean, efficient code.
                             </p>
                         </div>
@@ -196,9 +196,9 @@ const AboutPage: FC<AboutPageProps> = ({ className = "" }) => {
                                         >
                                             <span className="text-xl w-8 h-8 flex items-center justify-center
                                                            bg-accent rounded-lg group-hover:bg-background
-                                                           transition-colors" 
-                                                  role="img" 
-                                                  aria-label={skill.name}>
+                                                           transition-colors"
+                                                role="img"
+                                                aria-label={skill.name}>
                                                 {skill.icon}
                                             </span>
                                             <span className="text-sm font-medium">
@@ -246,23 +246,23 @@ const AboutPage: FC<AboutPageProps> = ({ className = "" }) => {
                                  pt-8 text-sm text-muted-foreground border-t border-border">
                     <p>© 2024 Seungmi Na. All rights reserved.</p>
                     <div className="flex gap-6">
-                        <Link href="https://www.linkedin.com/in/seungmi-na/" 
-                              target="_blank" 
-                              className="hover:text-foreground transition-colors">
+                        <Link href="https://www.linkedin.com/in/seungmi-na/"
+                            target="_blank"
+                            className="hover:text-foreground transition-colors">
                             <Linkedin className="w-5 h-5" />
                         </Link>
-                        <Link href="https://github.com/SeungmiNa" 
-                              target="_blank" 
-                              className="hover:text-foreground transition-colors">
+                        <Link href="https://github.com/SeungmiNa"
+                            target="_blank"
+                            className="hover:text-foreground transition-colors">
                             <Github className="w-5 h-5" />
                         </Link>
                     </div>
                 </footer>
             </div>
-            
-            <ResumeModal 
-                isOpen={isResumeModalOpen} 
-                onClose={() => setIsResumeModalOpen(false)} 
+
+            <ResumeModal
+                isOpen={isResumeModalOpen}
+                onClose={() => setIsResumeModalOpen(false)}
             />
         </main>
     );
