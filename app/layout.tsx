@@ -22,6 +22,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/s-favicon.ico" />
+      </head>
       <body className={`${inter.className} ${courgette.variable}`}>
         <Navbar />
         {children}
