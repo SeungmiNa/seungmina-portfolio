@@ -22,13 +22,13 @@ const ProjectList: React.FC<ProjectListProps> = ({ }) => {
             Icon: FileTextIcon,
             name: "Inizio - ConceptCraft",
             slug: "inizio-conceptcraft",
-            description: "We automatically save your files as you type.",
+            description: "AI-Powered Idea-to-Project Platform",
             href: "/",
             cta: "Learn more",
-            background: "https://images.unsplash.com/photo-1509343256512-d77a5cb3791b?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            background: "/images/inizio/inizio-cover.png",
             className: "lg:row-start-1 lg:row-end-4 lg:col-start-2 lg:col-end-3",
             period: "2023.02 ~ Present",
-            role: "UX/UI Designer",
+            role: "UX/UI Designer, UI Developer",
             category: "Web Design",
         },
         {
@@ -38,7 +38,7 @@ const ProjectList: React.FC<ProjectListProps> = ({ }) => {
             description: "Al Delivery and Order Services in Restaurant",
             href: "/",
             cta: "Learn more",
-            background: "/images/delivious/delivious-cover.svg",
+            background: "/images/delivious/delivious-cover.png",
             className: "lg:col-start-1 lg:col-end-2 lg:row-start-1 lg:row-end-3",
             period: "2022.04 ~ 2022.06",
             role: "UX/UI Designer, Frontend Developer",
@@ -87,7 +87,7 @@ const ProjectList: React.FC<ProjectListProps> = ({ }) => {
     };
 
     return (
-        <div className="flex flex-col gap-7 font-ubuntu">
+        <div className="flex flex-col gap-7">
             {projectList.map((pr) => (
                 <div
                     key={pr.name}

@@ -13,7 +13,7 @@ type ProjectCardProps = {
 
 const ProjectCard: FC<ProjectCardProps> = ({ title, description, image, period, role, category }) => {
     return (
-        <a className="relative h-[300px] md:h-[500px] flex flex-col group rounded-xl overflow-hidden border border-gray-300">
+        <a className="relative h-[300px] md:h-[500px] flex flex-col group rounded-xl overflow-hidden border border-gray-300 bg-black">
             <div
                 className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
                 style={{ backgroundImage: `url(${image})` }}
@@ -24,8 +24,8 @@ const ProjectCard: FC<ProjectCardProps> = ({ title, description, image, period, 
                 <div className="transition-colors duration-300 flex flex-col rounded-xl overflow-hidden">
                     <div className="flex flex-col grow justify-end p-4 space-y-2 transform transition-all duration-300 group-hover:-translate-y-2">
                         <Title variant="h4" className="font-semibold text-white">{title}</Title>
-                        <p className="text-sm text-stone-300">{period} | {role} | {category}</p>
-                        <p className="text-stone-300">{description}</p>
+                        <p className="text-sm text-stone-200">{period} | {role} | {category}</p>
+                        <p className="text-stone-200">{description}</p>
 
                         <div className="hidden group-hover:block transition-all duration-300">
                             <div className="pt-4 transform transition-all duration-300 translate-y-4 group-hover:translate-y-0">
