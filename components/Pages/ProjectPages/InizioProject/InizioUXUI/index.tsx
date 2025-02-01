@@ -5,7 +5,7 @@ import Title from "../../../../Font/Title";
 import { BsCheckLg } from 'react-icons/bs';
 import { BiMoon, BiSun, BiPalette } from 'react-icons/bi';
 import { BiMouse } from 'react-icons/bi';
-import { HiOutlineClipboardList } from 'react-icons/hi';
+// import { HiOutlineClipboardList } from 'react-icons/hi';
 import { MdOutlineAnimation } from 'react-icons/md';
 
 const InizioUXUI = () => {
@@ -144,7 +144,7 @@ const InizioUXUI = () => {
                             </li>
                             <li className="flex items-start gap-2">
                                 <MdOutlineAnimation className="w-5 h-5 text-[#5465FF] shrink-0" />
-                                Developed a universal 'ping' animation for all buttons on hover, capturing user attention and providing lively feedback.
+                                Developed a universal &apos;ping&apos; animation for all buttons on hover, capturing user attention and providing lively feedback.
                             </li>
                         </ul>
                     </div>

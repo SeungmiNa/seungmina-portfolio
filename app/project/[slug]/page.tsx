@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
 import React from 'react';
-import BrandingProject from '../../../components/Pages/ProjectPages/BrandingProject';
+// import BrandingProject from '../../../components/Pages/ProjectPages/BrandingProject';
 import DeliviousProject from '../../../components/Pages/ProjectPages/DeliviousProject';
 import { Project, ProjectData } from '../../types/project';
 import ProjectFooter from '../../../components/ProjectFooter';

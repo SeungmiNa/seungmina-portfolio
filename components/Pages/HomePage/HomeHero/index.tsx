@@ -27,7 +27,7 @@ const HomeHero: FC = () => {
                         transition={{ duration: 0.5 }}
                     >
                         <span className="inline-block px-5 py-2 bg-white/80 dark:bg-neutral-900/80 backdrop-blur-sm rounded-full text-sm font-medium text-neutral-600 dark:text-neutral-300 border border-neutral-200/50 dark:border-neutral-700/50 shadow-sm">
-                            Hello, I'm Seungmi 👋
+                            Hello, I&apos;m Seungmi 👋
                         </span>
                     </motion.div>
 
