@@ -3,7 +3,7 @@ import Image from "next/image";
 import React from "react";
 import Title from "../../../../Font/Title";
 import { BsCheckLg } from 'react-icons/bs';
-import { BsMoonFill, BsSunFill, BsPaletteFill } from 'react-icons/bs';
+import { BiMoon, BiSun, BiPalette } from 'react-icons/bi';
 import { BiMouse } from 'react-icons/bi';
 import { HiOutlineClipboardList } from 'react-icons/hi';
 import { MdOutlineAnimation } from 'react-icons/md';
@@ -26,7 +26,7 @@ const InizioUXUI = () => {
                         </Title>
                     </div>
                     <p className="text-gray-500 max-w-2xl text-lg w-full mx-auto">
-                    Enhancing user experience through modern UI implementations.
+                        Enhancing user experience through modern UI implementations.
                     </p>
                 </div>
                 {/* Abstract shapes background */}
@@ -38,13 +38,13 @@ const InizioUXUI = () => {
             </div>
 
             {/* Features Section */}
-            <div className="space-y-24">
+            <div className="space-y-16">
                 {/* Navigation Feature */}
-                <div className="flex flex-col md:flex-row items-center gap-8">
+                <div className="flex flex-col md:flex-row items-center gap-12">
                     <div className="w-full md:w-1/2 bg-gray-100 rounded-2xl overflow-hidden">
                         <div className="relative aspect-[4/3]">
                             <Image
-                                src="/images/navigation-demo.png" // Add your actual image path
+                                src="/images/inizio/inizio-navigation.png"
                                 alt="Navigation demonstration"
                                 fill
                                 className="object-cover"
@@ -59,16 +59,16 @@ const InizioUXUI = () => {
                             Responsive Navigation System
                         </h3>
                         <p className="text-gray-600">
-                            A modern navigation system with smooth transitions and mobile-first design. Features include:
+                        Implemented a dynamic navigation system that expands and collapses smoothly on hover, enhancing user interaction across devices.
                         </p>
                         <ul className="space-y-2 text-gray-600">
-                            <li className="flex items-center gap-2">
-                                <BsCheckLg className="w-5 h-5 text-[#5465FF]" />
-                                Smooth hamburger menu transitions
+                            <li className="flex items-start gap-2">
+                                <BsCheckLg className="w-5 h-5 text-[#5465FF] shrink-0" />
+                                Smooth hamburger menu transitions to open and close navigation
                             </li>
-                            <li className="flex items-center gap-2">
-                                <BsCheckLg className="w-5 h-5 text-[#5465FF]" />
-                                Responsive breakpoints
+                            <li className="flex items-start gap-2">
+                                <BsCheckLg className="w-5 h-5 text-[#5465FF] shrink-0" />
+                                Engineered/Designed hover effects to intuitively expand and collapse menus
                             </li>
                         </ul>
                     </div>
@@ -84,42 +84,32 @@ const InizioUXUI = () => {
                             Dark & Light Mode
                         </h3>
                         <p className="text-gray-600">
-                            Implemented a seamless theme switching system for better user experience:
+                        Developed a theme button for manually switching between dark and light modes, enhancing user control and accessibility
                         </p>
                         <ul className="space-y-2 text-gray-600">
-                            <li className="flex items-center gap-2">
-                                <BsMoonFill className="w-5 h-5 text-[#0DB9B9]" />
-                                Smooth theme transitions
+                            <li className="flex items-start gap-2">
+                                <BiMoon className="w-5 h-5 text-[#0DB9B9] shrink-0" />
+                                Implemented a theme button to manually toggle between dark and light modes.
                             </li>
-                            <li className="flex items-center gap-2">
-                                <BsSunFill className="w-5 h-5 text-[#0DB9B9]" />
-                                System preference detection
+                            <li className="flex items-start gap-2">
+                                <BiSun className="w-5 h-5 text-[#0DB9B9] shrink-0" />
+                                Enabled smooth transitions to ensure a visually appealing changeover.
                             </li>
-                            <li className="flex items-center gap-2">
-                                <BsPaletteFill className="w-5 h-5 text-[#0DB9B9]" />
-                                Persistent theme settings
+                            <li className="flex items-start gap-2">
+                                <BiPalette className="w-5 h-5 text-[#0DB9B9] shrink-0" />
+                                Ensured persistent theme settings that maintain user choices across sessions.
                             </li>
                         </ul>
                     </div>
                     <div className="w-full md:w-1/2 bg-gray-100 rounded-2xl overflow-hidden">
                         <div className="relative aspect-[4/3]">
-                            <div className="absolute inset-0 grid grid-cols-2">
-                                <div className="bg-white">
-                                    <Image
-                                        src="/images/light-mode.png" // Add your light mode screenshot
-                                        alt="Light mode demonstration"
-                                        fill
-                                        className="object-cover"
-                                    />
-                                </div>
-                                <div className="bg-gray-900">
-                                    <Image
-                                        src="/images/dark-mode.png" // Add your dark mode screenshot
-                                        alt="Dark mode demonstration"
-                                        fill
-                                        className="object-cover"
-                                    />
-                                </div>
+                            <div className="absolute inset-0">
+                                <Image
+                                    src="/images/inizio/inizio-theme.png"
+                                    alt="Theme mode demonstration"
+                                    fill
+                                    className="object-cover"
+                                />
                             </div>
                         </div>
                     </div>
@@ -130,7 +120,7 @@ const InizioUXUI = () => {
                     <div className="w-full md:w-1/2 bg-gray-100 rounded-2xl overflow-hidden">
                         <div className="relative aspect-[4/3]">
                             <Image
-                                src="/images/interactive-elements.png" // Add your actual image path
+                                src="/images/inizio/inizio-hover.png"
                                 alt="Interactive elements demonstration"
                                 fill
                                 className="object-cover"
@@ -145,53 +135,18 @@ const InizioUXUI = () => {
                             Hover Interactions
                         </h3>
                         <p className="text-gray-600">
-                            Created intuitive hover effects and micro-interactions for better user feedback:
+                        Refined user engagement with rich content tooltips and dynamic animations upon hovering
                         </p>
                         <ul className="space-y-2 text-gray-600">
-                            <li className="flex items-center gap-2">
-                                <BiMouse className="w-5 h-5 text-[#5465FF]" />
-                                Hover effects
+                            <li className="flex items-start gap-2">
+                                <BiMouse className="w-5 h-5 text-[#5465FF] shrink-0" />
+                                Implemented rich content tooltips that display detailed information when users hover over interface elements, enhancing understanding without cluttering the UI.
                             </li>
-                            <li className="flex items-center gap-2">
-                                <MdOutlineAnimation className="w-5 h-5 text-[#5465FF]" />
-                                Micro-interactions
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                {/* Workflow Optimization */}
-                <div className="flex flex-col md:flex-row items-center gap-8">
-                    <div className="w-full md:w-1/2 space-y-4">
-                        <div className="inline-block border border-[#0DB9B9]/20 bg-[#0DB9B9]/10 text-[#0DB9B9] px-3 py-1 rounded-full text-sm font-medium">
-                            WORKFLOW
-                        </div>
-                        <h3 className="text-2xl font-semibold">
-                            Workflow Integration
-                        </h3>
-                        <p className="text-gray-600">
-                            Streamlined user workflows with intuitive navigation patterns and clear visual hierarchy:
-                        </p>
-                        <ul className="space-y-2 text-gray-600">
-                            <li className="flex items-center gap-2">
-                                <HiOutlineClipboardList className="w-5 h-5 text-[#0DB9B9]" />
-                                Intuitive navigation patterns
-                            </li>
-                            <li className="flex items-center gap-2">
-                                <HiOutlineClipboardList className="w-5 h-5 text-[#0DB9B9]" />
-                                Clear visual hierarchy
+                            <li className="flex items-start gap-2">
+                                <MdOutlineAnimation className="w-5 h-5 text-[#5465FF] shrink-0" />
+                                Developed a universal 'ping' animation for all buttons on hover, capturing user attention and providing lively feedback.
                             </li>
                         </ul>
-                    </div>
-                    <div className="w-full md:w-1/2 bg-gray-100 rounded-2xl overflow-hidden">
-                        <div className="relative aspect-[4/3]">
-                            <Image
-                                src="/images/workflow-optimization.png" // Add your actual image path
-                                alt="Workflow optimization demonstration"
-                                fill
-                                className="object-cover"
-                            />
-                        </div>
                     </div>
                 </div>
             </div>

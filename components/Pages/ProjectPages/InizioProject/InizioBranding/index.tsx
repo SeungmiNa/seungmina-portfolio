@@ -76,23 +76,23 @@ const InizioBranding = () => {
                             <div className="grid grid-cols-5 gap-4">
                                 <div className="space-y-3">
                                     <div className="w-full aspect-square bg-gradient-to-r from-[#0DB9B9] to-[#5465FF] rounded-lg shadow-lg border" />
-                                    <p className="text-sm text-gray-500 text-center">Gradient</p>
+                                    <p className="text-xs text-gray-500 text-center">Gradient</p>
                                 </div>
                                 <div className="space-y-3">
                                     <div className="w-full aspect-square bg-[#0DB9B9] rounded-lg shadow-lg border" />
-                                    <p className="text-sm text-gray-500 text-center">Primary</p>
+                                    <p className="text-xs text-gray-500 text-center">Primary</p>
                                 </div>
                                 <div className="space-y-3">
                                     <div className="w-full aspect-square bg-[#5465FF] rounded-lg shadow-lg border" />
-                                    <p className="text-sm text-gray-500 text-center">Secondary</p>
+                                    <p className="text-xs text-gray-500 text-center">Secondary</p>
                                 </div>
                                 <div className="space-y-3">
                                     <div className="w-full aspect-square bg-[#F5F5F5] rounded-lg shadow-lg border" />
-                                    <p className="text-sm text-gray-500 text-center">Light</p>
+                                    <p className="text-xs text-gray-500 text-center">Light</p>
                                 </div>
                                 <div className="space-y-3">
                                     <div className="w-full aspect-square bg-[#212121] rounded-lg shadow-lg border" />
-                                    <p className="text-sm text-gray-500 text-center">Dark</p>
+                                    <p className="text-xs text-gray-500 text-center">Dark</p>
                                 </div>
                             </div>
                         </div>
