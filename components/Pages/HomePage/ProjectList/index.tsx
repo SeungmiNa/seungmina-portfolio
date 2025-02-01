@@ -1,20 +1,20 @@
 'use client';
 import { FileTextIcon } from "@radix-ui/react-icons";
-import { CalendarIcon } from "lucide-react";
+// import { CalendarIcon } from "lucide-react";
 import { useRouter } from "next/navigation";
 import React from "react";
 import ProjectCard from "./ProjectCard";
 
-interface Project {
-    id: string;
-    title: string;
-    description: string;
-}
+// interface Project {
+//     id: string;
+//     title: string;
+//     description: string;
+// }
 
-interface ProjectListProps {
-}
+// interface ProjectListProps {
+// }
 
-const ProjectList: React.FC<ProjectListProps> = ({ }) => {
+const ProjectList: React.FC = () => {
     const router = useRouter();
 
     const projectList = [

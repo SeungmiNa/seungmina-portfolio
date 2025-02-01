@@ -1,8 +1,8 @@
 import Title from "@/components/Font/Title";
-import { Project } from "next/dist/build/swc";
 import Image from "next/image";
 import React from "react";
 import { BsBag, BsCalendar3, BsChevronRight, BsPerson, BsSearch, BsTrash } from 'react-icons/bs';
+import { Project } from "@/app/types/project";
 
 interface DeliviousUXUIProps {
     project: Project;
@@ -20,9 +20,9 @@ const DeliviousUXUI: React.FC<DeliviousUXUIProps> = ({
                         UX/UI Design Process
                     </Title>
                     <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                        Designed and implemented a comprehensive component library that powers 
-                        Delivious's ordering system. Created an intuitive user journey from 
-                        authentication to order completion, with carefully crafted UI elements 
+                        Designed and implemented a comprehensive component library that powers
+                        Delivious&apos;s ordering system. Created an intuitive user journey from
+                        authentication to order completion, with carefully crafted UI elements
                         that maintain visual consistency while enhancing the ordering experience.
                     </p>
                 </div>
@@ -37,9 +37,9 @@ const DeliviousUXUI: React.FC<DeliviousUXUIProps> = ({
                                     USER FLOW & WIREFRAMES
                                 </h4>
                                 <p className="text-gray-600">
-                                    Mapped out the complete user journey from login to order fulfillment, 
-                                    creating intuitive pathways for both customers and staff. Each interaction 
-                                    point was carefully considered to minimize friction and enhance the 
+                                    Mapped out the complete user journey from login to order fulfillment,
+                                    creating intuitive pathways for both customers and staff. Each interaction
+                                    point was carefully considered to minimize friction and enhance the
                                     overall dining experience.
                                 </p>
                             </div>
@@ -68,7 +68,7 @@ const DeliviousUXUI: React.FC<DeliviousUXUIProps> = ({
 
                         <div className="my-16">
                             <div className="space-y-4">
-                                <img
+                                <Image
                                     src={"/images/delivious/user-flow.png"}
                                     alt={"Delivious user flow diagram"}
                                     className="w-full h-full object-cover mb-8"
@@ -185,7 +185,7 @@ const DeliviousUXUI: React.FC<DeliviousUXUIProps> = ({
                                     {/* Size Selection */}
                                     <div className="bg-gray-200 rounded-xl">
                                         <div className="relative aspect-square">
-                                            <img
+                                            <Image
                                                 src="https://cdn.pixabay.com/photo/2016/08/03/05/33/latte-1565931_1280.jpg"
                                                 alt="Coffee cup"
                                                 className="w-full h-full object-cover rounded-lg"
@@ -208,7 +208,7 @@ const DeliviousUXUI: React.FC<DeliviousUXUIProps> = ({
                                     {/* Temperature Selection */}
                                     <div className="bg-gray-200 rounded-xl">
                                         <div className="relative aspect-square">
-                                            <img
+                                            <Image
                                                 src="https://cdn.pixabay.com/photo/2016/08/03/05/33/latte-1565931_1280.jpg"
                                                 alt="Coffee cup"
                                                 className="w-full h-full object-cover rounded-lg"
@@ -227,7 +227,7 @@ const DeliviousUXUI: React.FC<DeliviousUXUIProps> = ({
                                     {/* Selected State Example */}
                                     <div className="bg-gray-200 rounded-xl">
                                         <div className="relative aspect-square">
-                                            <img
+                                            <Image
                                                 src="https://cdn.pixabay.com/photo/2016/08/03/05/33/latte-1565931_1280.jpg"
                                                 alt="Coffee cup"
                                                 className="w-full h-full object-cover rounded-lg"
@@ -348,9 +348,9 @@ const DeliviousUXUI: React.FC<DeliviousUXUIProps> = ({
                                 DESIGN SYSTEM & IMPLEMENTATION
                             </h4>
                             <p className="text-gray-600 max-w-2xl mx-auto">
-                                Built a design system featuring custom components like interactive table management interfaces, and responsive 
-                                navigation elements. Each component was designed and implemented to 
-                                support the core ordering flow while ensuring a cohesive visual language 
+                                Built a design system featuring custom components like interactive table management interfaces, and responsive
+                                navigation elements. Each component was designed and implemented to
+                                support the core ordering flow while ensuring a cohesive visual language
                                 across the platform.
                             </p>
                         </div>

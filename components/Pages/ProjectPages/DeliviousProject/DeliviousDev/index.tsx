@@ -1,5 +1,5 @@
 import Title from "@/components/Font/Title";
-import Link from "next/link";
+// import Link from "next/link";
 import React from "react";
 import { FaReact } from "react-icons/fa";
 import { SiEslint, SiFigma, SiPrettier, SiTailwindcss, SiTypescript } from "react-icons/si";

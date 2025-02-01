@@ -11,7 +11,7 @@ import {
 } from "react-icons/si";
 import Title from "../../../../Font/Title";
 
-interface InizioDevProps { }
+// interface InizioDevProps { }
 
 interface TechStackItem {
     name: string;
@@ -20,25 +20,25 @@ interface TechStackItem {
     category: string;
 }
 
-const InizioDev: React.FC<InizioDevProps> = () => {
+const InizioDev: React.FC = () => {
     const [isDarkMode, setIsDarkMode] = useState(false);
 
-    const themeColors = {
-        light: {
-            primary: '#4F46E5',
-            secondary: '#EC4899',
-            background: '#FFFFFF',
-            text: '#1F2937',
-            // 실제 사용했던 다른 색상들도 추가
-        },
-        dark: {
-            primary: '#818CF8',
-            secondary: '#F472B6',
-            background: '#111827',
-            text: '#F9FAFB',
-            // 실제 사용했던 다른 색상들도 추가
-        }
-    };
+    // const themeColors = {
+    //     light: {
+    //         primary: '#4F46E5',
+    //         secondary: '#EC4899',
+    //         background: '#FFFFFF',
+    //         text: '#1F2937',
+    //         // 실제 사용했던 다른 색상들도 추가
+    //     },
+    //     dark: {
+    //         primary: '#818CF8',
+    //         secondary: '#F472B6',
+    //         background: '#111827',
+    //         text: '#F9FAFB',
+    //         // 실제 사용했던 다른 색상들도 추가
+    //     }
+    // };
 
     const techStack: TechStackItem[] = [
         {
@@ -230,10 +230,10 @@ const InizioDev: React.FC<InizioDevProps> = () => {
                     <Title variant="h3">UI Component System</Title>
                     <div className="max-w-4xl">
                         <p className="text-base text-gray-500 mb-4">
-                            I designed and implemented a modular UI component system focusing on consistency 
-                            and reusability. Each component was built with Tailwind CSS and React, featuring 
-                            seamless dark/light mode transitions and responsive designs. The system includes 
-                            customizable buttons, modals, badges, and theme controls that maintain visual 
+                            I designed and implemented a modular UI component system focusing on consistency
+                            and reusability. Each component was built with Tailwind CSS and React, featuring
+                            seamless dark/light mode transitions and responsive designs. The system includes
+                            customizable buttons, modals, badges, and theme controls that maintain visual
                             coherence across the application.
                         </p>
                         <div className="flex flex-wrap gap-3 text-sm text-gray-500">
@@ -260,7 +260,7 @@ const InizioDev: React.FC<InizioDevProps> = () => {
                     <div className="p-6 rounded-2xl bg-white/40 backdrop-blur-sm border border-white/60">
                         <h3 className="text-xl font-semibold text-gray-800 mb-2">Buttons</h3>
                         <p className="text-sm text-gray-600 mb-6">Customizable button components with various styles, sizes, and states</p>
-                        
+
                         {/* Button Groups */}
                         <div className="space-y-4">
                             {/* Primary Buttons */}
@@ -359,7 +359,7 @@ const InizioDev: React.FC<InizioDevProps> = () => {
                             </div>
                             <div className="relative">
                                 <span className="absolute inset-0.5 rounded-full bg-[#0DB9B9]/30 animate-ping"></span>
-                                <button 
+                                <button
                                     onClick={() => setIsDarkMode(!isDarkMode)}
                                     className="relative p-3 rounded-full bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 
                                                transition-all duration-300 shadow-lg hover:shadow-xl
@@ -427,14 +427,14 @@ const InizioDev: React.FC<InizioDevProps> = () => {
                             </div>
                         </div>
 
-                        
+
                     </div>
 
                     {/* Badges & Tags */}
                     <div className="p-6 rounded-2xl bg-white/40 backdrop-blur-sm border border-white/60">
                         <h3 className="text-xl font-semibold text-gray-800">Badges</h3>
                         <p className="text-sm text-gray-600 mb-6">Customizable badges and tags for various states and categories</p>
-                        
+
                         {/* Subtle Badges */}
                         <div className="mb-6">
                             <h4 className="text-sm font-medium text-gray-700 mb-3">Subtle Variants</h4>
@@ -462,10 +462,10 @@ const InizioDev: React.FC<InizioDevProps> = () => {
                             <h4 className="text-sm font-medium text-gray-700 mb-3">Solid Variants</h4>
                             <div className="flex flex-wrap gap-2">
                                 <span className="px-3 py-1 text-sm font-medium text-white bg-[#0DB9B9] rounded-full shadow-sm">
-                                Primary
+                                    Primary
                                 </span>
                                 <span className="px-3 py-1 text-sm font-medium text-white bg-[#5465FF] rounded-full shadow-sm">
-                                Secondary
+                                    Secondary
                                 </span>
                                 <span className="px-3 py-1 text-sm font-medium text-white bg-[#2C5530] rounded-full shadow-sm">
                                     Success
@@ -497,48 +497,48 @@ const InizioDev: React.FC<InizioDevProps> = () => {
 };
 
 // 통계 카드 컴포넌트
-const StatCard = ({ title, value, description }: { title: string, value: string, description: string }) => (
-    <div className="p-6 rounded-lg bg-white dark:bg-gray-800 shadow-lg">
-        <h3 className="text-lg font-semibold mb-2">{title}</h3>
-        <p className="text-3xl font-bold text-primary mb-2">{value}</p>
-        <p className="text-gray-600 dark:text-gray-400">{description}</p>
-    </div>
-);
+// const StatCard = ({ title, value, description }: { title: string, value: string, description: string }) => (
+//     <div className="p-6 rounded-lg bg-white dark:bg-gray-800 shadow-lg">
+//         <h3 className="text-lg font-semibold mb-2">{title}</h3>
+//         <p className="text-3xl font-bold text-primary mb-2">{value}</p>
+//         <p className="text-gray-600 dark:text-gray-400">{description}</p>
+//     </div>
+// );
 
 // 수정된 기술 뱃지 컴포넌트
-const TechBadge = ({ name, logo }: { name: string; logo: string }) => (
-    <div className="flex flex-col items-center p-6 rounded-xl bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl transition-shadow duration-300">
-        <div className="w-16 h-16 mb-4 flex items-center justify-center">
-            <img
-                src={logo}
-                alt={`${name} logo`}
-                className="w-full h-full object-contain"
-            />
-        </div>
-        <span className="text-lg font-medium text-gray-800 dark:text-gray-200">
-            {name}
-        </span>
-    </div>
-);
+// const TechBadge = ({ name, logo }: { name: string; logo: string }) => (
+//     <div className="flex flex-col items-center p-6 rounded-xl bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl transition-shadow duration-300">
+//         <div className="w-16 h-16 mb-4 flex items-center justify-center">
+//             <img
+//                 src={logo}
+//                 alt={`${name} logo`}
+//                 className="w-full h-full object-contain"
+//             />
+//         </div>
+//         <span className="text-lg font-medium text-gray-800 dark:text-gray-200">
+//             {name}
+//         </span>
+//     </div>
+// );
 
 // 컬러 카드 컴포넌트
-const ColorCard = ({ name, color }: { name: string, color: string }) => (
-    <div className="p-4 rounded-lg bg-white dark:bg-gray-800 shadow-lg">
-        <div
-            className="w-full h-24 rounded-md mb-2"
-            style={{ backgroundColor: color }}
-        />
-        <p className="font-medium">{name}</p>
-        <p className="text-sm text-gray-600 dark:text-gray-400">{color}</p>
-    </div>
-);
+// const ColorCard = ({ name, color }: { name: string, color: string }) => (
+//     <div className="p-4 rounded-lg bg-white dark:bg-gray-800 shadow-lg">
+//         <div
+//             className="w-full h-24 rounded-md mb-2"
+//             style={{ backgroundColor: color }}
+//         />
+//         <p className="font-medium">{name}</p>
+//         <p className="text-sm text-gray-600 dark:text-gray-400">{color}</p>
+//     </div>
+// );
 
 // 컴포넌트 쇼케이스 카드
-const ComponentShowcase = ({ title, description }: { title: string, description: string }) => (
-    <div className="p-6 rounded-lg bg-white dark:bg-gray-800 shadow-lg">
-        <h3 className="text-lg font-semibold mb-2">{title}</h3>
-        <p className="text-gray-600 dark:text-gray-400">{description}</p>
-    </div>
-);
+// const ComponentShowcase = ({ title, description }: { title: string, description: string }) => (
+//     <div className="p-6 rounded-lg bg-white dark:bg-gray-800 shadow-lg">
+//         <h3 className="text-lg font-semibold mb-2">{title}</h3>
+//         <p className="text-gray-600 dark:text-gray-400">{description}</p>
+//     </div>
+// );
 
 export default InizioDev;   

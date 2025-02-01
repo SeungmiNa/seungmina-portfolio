@@ -9,18 +9,18 @@ interface AboutPageProps {
     className?: string;
 }
 
-interface Skill {
-    name: string;
-    category?: string;
-}
+// interface Skill {
+//     name: string;
+//     category?: string;
+// }
 
-interface Hobby {
-    name: string;
-    image: string;
-    description: string;
-}
+// interface Hobby {
+//     name: string;
+//     image: string;
+//     description: string;
+// }
 
-const AboutPage: FC<AboutPageProps> = ({ className = "" }) => {
+const AboutPage: FC<AboutPageProps> = ({ /*className = ""*/ }) => {
     const [isResumeModalOpen, setIsResumeModalOpen] = useState(false);
 
     const skillCategories = [
@@ -68,23 +68,23 @@ const AboutPage: FC<AboutPageProps> = ({ className = "" }) => {
         }
     ];
 
-    const hobbies: Hobby[] = [
-        {
-            name: "Piano",
-            image: "/piano.jpg",
-            description: "Playing piano helps me find harmony in design, just like in music."
-        },
-        {
-            name: "Hiking",
-            image: "/hiking.jpg",
-            description: "Nature inspires my creativity and helps me maintain a fresh perspective."
-        },
-        {
-            name: "Drawing",
-            image: "/drawing.jpg",
-            description: "Sketching allows me to quickly visualize ideas and explore creative solutions."
-        },
-    ];
+    // const hobbies: Hobby[] = [
+    //     {
+    //         name: "Piano",
+    //         image: "/piano.jpg",
+    //         description: "Playing piano helps me find harmony in design, just like in music."
+    //     },
+    //     {
+    //         name: "Hiking",
+    //         image: "/hiking.jpg",
+    //         description: "Nature inspires my creativity and helps me maintain a fresh perspective."
+    //     },
+    //     {
+    //         name: "Drawing",
+    //         image: "/drawing.jpg",
+    //         description: "Sketching allows me to quickly visualize ideas and explore creative solutions."
+    //     },
+    // ];
 
     return (
         <main className="min-h-screen">
@@ -94,16 +94,16 @@ const AboutPage: FC<AboutPageProps> = ({ className = "" }) => {
                     {/* Profile Content */}
                     <div className="max-w-3xl space-y-6">
                         <h1 className="text-5xl font-bold tracking-tight text-foreground">
-                            Hello, I'm Seungmi.
+                            Hello, I&apos;m Seungmi.
                         </h1>
                         <p className="text-xl text-foreground/80 font-medium">
                             A UX/UI Designer based in the Bay Area, passionate about creating
                             intuitive and delightful digital experiences.
                         </p>
                         <p className="text-muted-foreground leading-relaxed">
-                            I am passionate about creating beautiful designs that improve user experience. 
-                            I specialize in developing designs that are visually striking and highly functional, 
-                            with a meticulous eye for detail and a focus on the user's needs.
+                            I am passionate about creating beautiful designs that improve user experience.
+                            I specialize in developing designs that are visually striking and highly functional,
+                            with a meticulous eye for detail and a focus on the user&apos;s needs.
                         </p>
                     </div>
 

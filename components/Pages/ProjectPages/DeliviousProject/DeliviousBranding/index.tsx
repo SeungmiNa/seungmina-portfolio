@@ -1,7 +1,7 @@
 import React from "react";
 import Title from "../../../../../components/Font/Title";
 
-const DeliviousBranding = ({ item }: { item?: any }) => {
+const DeliviousBranding = (/*{ item }: { item?: any }*/) => {
     const colors = [
         {
             type: 'primary',
@@ -52,7 +52,7 @@ const DeliviousBranding = ({ item }: { item?: any }) => {
                     Branding Identity
                 </Title>
                 <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                    I developed Delivious' brand identity by designing the logo, selecting the typography with Courgette and Open Sans, and choosing a color palette centered around blue to define the branding effectively.
+                    I developed Delivious&apos; brand identity by designing the logo, selecting the typography with Courgette and Open Sans, and choosing a color palette centered around blue to define the branding effectively.
                 </p>
             </div>
 
@@ -121,7 +121,7 @@ const DeliviousBranding = ({ item }: { item?: any }) => {
                             <Title variant="h4" className="font-semibold mb-4">Colors</Title>
                         </div>
                         <p className="max-w-3xl text-stone-500">
-                            The 'Delivious' color palette uses modern, appealing shades of blue as the primary color, complemented by white for contrast and backgrounds, light gray for subtle accents and disabled states, and dark gray for text and high-contrast elements.
+                            The &apos;Delivious&apos; color palette uses modern, appealing shades of blue as the primary color, complemented by white for contrast and backgrounds, light gray for subtle accents and disabled states, and dark gray for text and high-contrast elements.
                         </p>
                     </div>
                     <div className="flex gap-4">

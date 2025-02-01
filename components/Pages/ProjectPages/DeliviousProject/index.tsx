@@ -1,6 +1,7 @@
 'use client';
 import { Project } from '@/app/types/project';
 import React, { useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
 import DeliviousBranding from './DeliviousBranding';
 import DeliviousDev from './DeliviousDev';
 import DeliviousUXUI from './DeliviousUXUI';
@@ -23,7 +24,7 @@ interface CategoryContent {
 
 export default function DeliviousProject({ project }: DeliviousProjectProps) {
     const [activeCategory, setActiveCategory] = useState<number>(0);
-    const contentRefs = useRef<HTMLDivElement[]>([]);
+    // const contentRefs = useRef<HTMLDivElement[]>([]);
     const categoryRefs = useRef<(HTMLElement | null)[]>([]);
     console.log("activeCategory", activeCategory);
 
@@ -111,12 +112,12 @@ export default function DeliviousProject({ project }: DeliviousProjectProps) {
         return () => observer.disconnect();
     }, []);
 
-    const setContentRef = (el: HTMLElement | null, categoryIndex: number, contentIndex: number) => {
-        if (el && contentRefs.current) {
-            const index = categoryIndex * categories[0].content.length + contentIndex;
-            contentRefs.current[index] = el as HTMLDivElement;
-        }
-    };
+    // const setContentRef = (el: HTMLElement | null, categoryIndex: number, contentIndex: number) => {
+    //     if (el && contentRefs.current) {
+    //         const index = categoryIndex * categories[0].content.length + contentIndex;
+    //         contentRefs.current[index] = el as HTMLDivElement;
+    //     }
+    // };
 
     return (
         <div className="min-h-screen bg-[#FAFAFA]">
@@ -128,7 +129,7 @@ export default function DeliviousProject({ project }: DeliviousProjectProps) {
                         role="img"
                         aria-label={`${project.title} hero image`}
                     /> */}
-                    <img 
+                    <Image
                         src="/images/delivious/delivious-cover.svg"
                         alt="Delivious cover"
                         className="absolute bottom-0 left-0 w-full h-auto"
@@ -259,7 +260,7 @@ export default function DeliviousProject({ project }: DeliviousProjectProps) {
 
                                 {/* Feature 2 */}
                                 <div className="p-8 rounded-lg border border-stone-200 bg-white">
-                                <div className="text-blue-400 mb-6 flex items-center gap-2 text-sm">
+                                    <div className="text-blue-400 mb-6 flex items-center gap-2 text-sm">
                                         <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none">
                                             <rect width="24" height="24" fill="currentColor" fillOpacity="0.2" rx="4" />
                                         </svg>
@@ -275,7 +276,7 @@ export default function DeliviousProject({ project }: DeliviousProjectProps) {
 
                                 {/* Feature 3 */}
                                 <div className="p-8 rounded-lg border border-stone-200 bg-white">
-                                <div className="text-blue-400 mb-6 flex items-center gap-2 text-sm">
+                                    <div className="text-blue-400 mb-6 flex items-center gap-2 text-sm">
                                         <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none">
                                             <rect width="24" height="24" fill="currentColor" fillOpacity="0.2" rx="4" />
                                         </svg>
@@ -290,7 +291,7 @@ export default function DeliviousProject({ project }: DeliviousProjectProps) {
                                 </div>
 
                                 <div className="p-8 rounded-lg border border-stone-200 bg-white">
-                                <div className="text-blue-400 mb-6 flex items-center gap-2 text-sm">
+                                    <div className="text-blue-400 mb-6 flex items-center gap-2 text-sm">
                                         <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none">
                                             <rect width="24" height="24" fill="currentColor" fillOpacity="0.2" rx="4" />
                                         </svg>
@@ -336,11 +337,11 @@ export default function DeliviousProject({ project }: DeliviousProjectProps) {
                             {categories.map((category, categoryIndex) => (
                                 <section
                                     key={category.name}
-                                    ref={(el) => categoryRefs.current[categoryIndex] = el}
+                                    ref={(el) => { categoryRefs.current[categoryIndex] = el }}
                                     className="min-h-screen mb-20"
                                     id={`category-${categoryIndex}`}
                                 >
-                                    {category.content.map((item, contentIndex) => (
+                                    {category.content.map((item /*,contentIndex*/) => (
                                         <div
                                             key={item.title}
                                             className="grid grid-cols-12 gap-6"
@@ -356,7 +357,7 @@ export default function DeliviousProject({ project }: DeliviousProjectProps) {
 
                 {/* Project Mockup */}
                 <div className='relative mb-12 h-[600px] bg-[#4963AE]'>
-                    <img 
+                    <Image
                         src="/images/delivious/delivious-mockup-nine-pages.svg"
                         alt="Delivious mockup showing nine different pages"
                         className="absolute inset-0 w-full h-full object-cover"

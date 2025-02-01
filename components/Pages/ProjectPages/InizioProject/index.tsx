@@ -90,7 +90,7 @@ const InizioProject = () => {
                             streamlines the journey from concept to implementation with intelligent features and intuitive design.
                         </p>
                         <p>
-                            As the UI/UX Designer, I led the product's design process, transforming complex technical requirements
+                            As the UI/UX Designer, I led the product&apos;s design process, transforming complex technical requirements
                             into elegant, user-friendly digital solutions. I collaborated closely with cross-functional teams to
                             deliver intuitive and accessible user interfaces while maintaining meticulous attention to detail and
                             creating intuitive interactions.
