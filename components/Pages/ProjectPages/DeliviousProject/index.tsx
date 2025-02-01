@@ -133,6 +133,8 @@ export default function DeliviousProject({ project }: DeliviousProjectProps) {
                         src="/images/delivious/delivious-cover.svg"
                         alt="Delivious cover"
                         className="absolute bottom-0 left-0 w-full h-auto"
+                        fill
+                        priority
                     />
                 </div>
 
@@ -361,6 +363,8 @@ export default function DeliviousProject({ project }: DeliviousProjectProps) {
                         src="/images/delivious/delivious-mockup-nine-pages.svg"
                         alt="Delivious mockup showing nine different pages"
                         className="absolute inset-0 w-full h-full object-cover"
+                        fill
+                        priority
                     />
                 </div>
 

@@ -67,11 +67,14 @@ const DeliviousUXUI: React.FC<DeliviousUXUIProps> = ({
                         </div>
 
                         <div className="my-16">
-                            <div className="space-y-4">
+                            <div className="space-y-4 relative w-full aspect-[16/9]">
                                 <Image
                                     src={"/images/delivious/user-flow.png"}
                                     alt={"Delivious user flow diagram"}
-                                    className="w-full h-full object-cover mb-8"
+                                    className="w-full h-auto object-contain"
+                                    fill
+                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
+                                    priority
                                 />
                             </div>
                         </div>
@@ -186,9 +189,11 @@ const DeliviousUXUI: React.FC<DeliviousUXUIProps> = ({
                                     <div className="bg-gray-200 rounded-xl">
                                         <div className="relative aspect-square">
                                             <Image
-                                                src="https://cdn.pixabay.com/photo/2016/08/03/05/33/latte-1565931_1280.jpg"
+                                                src="/public/images/delivious/latte.jpg"
                                                 alt="Coffee cup"
                                                 className="w-full h-full object-cover rounded-lg"
+                                                fill
+                                                priority
                                             />
                                             {/* Size Options */}
                                             <div className="absolute inset-0 flex flex-col justify-center items-center gap-3 rounded-lg bg-black/60">
@@ -209,9 +214,11 @@ const DeliviousUXUI: React.FC<DeliviousUXUIProps> = ({
                                     <div className="bg-gray-200 rounded-xl">
                                         <div className="relative aspect-square">
                                             <Image
-                                                src="https://cdn.pixabay.com/photo/2016/08/03/05/33/latte-1565931_1280.jpg"
+                                                src="/public/images/delivious/latte.jpg"
                                                 alt="Coffee cup"
                                                 className="w-full h-full object-cover rounded-lg"
+                                                fill
+                                                priority
                                             />
                                             <div className="absolute inset-0 flex flex-col justify-center items-center gap-3 rounded-lg bg-black/60">
                                                 <button className="bg-white text-[#4963AE] px-8 py-2 rounded-md text-sm hover:bg-[#E6E7F3] transition-colors duration-200 w-32">
@@ -228,9 +235,11 @@ const DeliviousUXUI: React.FC<DeliviousUXUIProps> = ({
                                     <div className="bg-gray-200 rounded-xl">
                                         <div className="relative aspect-square">
                                             <Image
-                                                src="https://cdn.pixabay.com/photo/2016/08/03/05/33/latte-1565931_1280.jpg"
+                                                src="/public/images/delivious/latte.jpg"
                                                 alt="Coffee cup"
                                                 className="w-full h-full object-cover rounded-lg"
+                                                fill
+                                                priority
                                             />
                                             <div className="absolute inset-0 flex items-center justify-center rounded-lg bg-black/60">
                                                 <div className="bg-white rounded-full p-4">
