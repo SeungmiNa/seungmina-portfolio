@@ -25,7 +25,7 @@ const AboutPage: FC<AboutPageProps> = ({ className = "" }) => {
 
     const skillCategories = [
         {
-            title: "Programming Languages",
+            title: "Languages",
             skills: [
                 { name: "JavaScript", icon: "📜" },
                 { name: "TypeScript", icon: "🔷" },
