@@ -101,10 +101,9 @@ const AboutPage: FC<AboutPageProps> = ({ className = "" }) => {
                             intuitive and delightful digital experiences.
                         </p>
                         <p className="text-muted-foreground leading-relaxed">
-                            With a keen eye for detail and a user-centered approach, I transform
-                            complex challenges into elegant solutions. I specialize in creating
-                            beautiful, usable experiences that bridge the gap between user needs
-                            and business goals.
+                            I am passionate about creating beautiful designs that improve user experience. 
+                            I specialize in developing designs that are visually striking and highly functional, 
+                            with a meticulous eye for detail and a focus on the user's needs.
                         </p>
                     </div>
 
