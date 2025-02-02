@@ -1,5 +1,6 @@
 "use client";
 import { Button } from "@/components/ui/button";
+import { withBasePath } from "@/utils/paths";
 import { Github, Linkedin, Mail, MapPin } from 'lucide-react';
 import Link from "next/link";
 import { FC } from "react";
@@ -133,7 +134,7 @@ const AboutPage: FC<AboutPageProps> = ({ /*className = ""*/ }) => {
                             <Button
                                 variant="outline"
                                 className="bg-white rounded-full px-6 hover:scale-105 transition-transform"
-                                onClick={() => window.open('/2025-seungmi-na.pdf', '_blank')}
+                                onClick={() => window.open(withBasePath('/2025-seungmi-na.pdf'), '_blank')}
                             >
                                 View Resume
                             </Button>
