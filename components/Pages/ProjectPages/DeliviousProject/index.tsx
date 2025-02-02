@@ -1,7 +1,7 @@
 'use client';
 import { Project } from '@/app/types/project';
-import React, { useEffect, useRef, useState } from 'react';
-import Image from 'next/image';
+import ImageContainer from '@/components/ImageContainer';
+import { useEffect, useRef, useState } from 'react';
 import DeliviousBranding from './DeliviousBranding';
 import DeliviousDev from './DeliviousDev';
 import DeliviousUXUI from './DeliviousUXUI';
@@ -129,13 +129,10 @@ export default function DeliviousProject({ project }: DeliviousProjectProps) {
                         role="img"
                         aria-label={`${project.title} hero image`}
                     /> */}
-                    <Image
-                        src="/images/delivious/delivious-cover.svg"
+                    <ImageContainer
+                        image="/images/delivious/delivious-cover.svg"
                         alt="Delivious cover"
                         className="absolute bottom-0 left-0 w-full h-auto"
-                        fill
-                        priority
-                        unoptimized
                     />
                 </div>
 
@@ -360,13 +357,11 @@ export default function DeliviousProject({ project }: DeliviousProjectProps) {
 
                 {/* Project Mockup */}
                 <div className='relative mb-12 h-[600px] bg-[#4963AE]'>
-                    <Image
-                        src="/images/delivious/delivious-mockup-nine-pages.svg"
+                    <ImageContainer
+                        image="/images/delivious/delivious-mockup-nine-pages.svg"
                         alt="Delivious mockup showing nine different pages"
                         className="absolute inset-0 w-full h-full object-cover"
-                        fill
-                        priority
-                        unoptimized
+                        innerClassName="w-full !h-full"
                     />
                 </div>
 

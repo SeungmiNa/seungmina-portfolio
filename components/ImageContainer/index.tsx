@@ -1,22 +1,19 @@
-import Image from 'next/image';
 import React from 'react';
 
 interface ImageContainerProps {
     image: string;
     alt: string;
     className?: string;
+    innerClassName?: string;
 }
 
-const ImageContainer: React.FC<ImageContainerProps> = ({ image, alt, className, ...props }) => {
+const ImageContainer: React.FC<ImageContainerProps> = ({ image, alt, className, innerClassName, ...props }) => {
     return (
         <div className={`relative w-full h-full ${className || ''}`}>
-            <Image
+            <img
                 src={image}
                 alt={alt}
-                fill
-                style={{ objectFit: 'contain' }}
-                priority
-                unoptimized
+                className={`w-full h-auto object-contain ${innerClassName || ''}`}
                 {...props}
             />
         </div>

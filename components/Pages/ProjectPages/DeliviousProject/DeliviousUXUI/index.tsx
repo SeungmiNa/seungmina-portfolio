@@ -1,8 +1,8 @@
+import { Project } from "@/app/types/project";
 import Title from "@/components/Font/Title";
-import Image from "next/image";
+import ImageContainer from "@/components/ImageContainer";
 import React from "react";
 import { BsBag, BsCalendar3, BsChevronRight, BsPerson, BsSearch, BsTrash } from 'react-icons/bs';
-import { Project } from "@/app/types/project";
 
 interface DeliviousUXUIProps {
     project: Project;
@@ -67,15 +67,11 @@ const DeliviousUXUI: React.FC<DeliviousUXUIProps> = ({
                         </div>
 
                         <div className="my-16">
-                            <div className="space-y-4 relative w-full aspect-[16/9]">
-                                <Image
-                                    src={"/images/delivious/user-flow.png"}
-                                    alt={"Delivious user flow diagram"}
-                                    className="w-full h-auto object-contain"
-                                    fill
-                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
-                                    priority
-                                    unoptimized
+                            <div className="space-y-4 relative w-full h-auto">
+                                <ImageContainer
+                                    image="/images/delivious/user-flow.png"
+                                    alt="Delivious user flow diagram"
+                                    className="absolute inset-0 w-full h-full object-cover"
                                 />
                             </div>
                         </div>
@@ -189,13 +185,10 @@ const DeliviousUXUI: React.FC<DeliviousUXUIProps> = ({
                                     {/* Size Selection */}
                                     <div className="bg-gray-200 rounded-xl">
                                         <div className="relative aspect-square">
-                                            <Image
-                                                src="/public/images/delivious/latte.jpg"
+                                            <ImageContainer
+                                                image="/images/delivious/latte.jpg"
                                                 alt="Coffee cup"
-                                                className="w-full h-full object-cover rounded-lg"
-                                                fill
-                                                priority
-                                                unoptimized
+                                                className="absolute inset-0 w-full h-full object-cover rounded-lg"
                                             />
                                             {/* Size Options */}
                                             <div className="absolute inset-0 flex flex-col justify-center items-center gap-3 rounded-lg bg-black/60">
@@ -215,13 +208,10 @@ const DeliviousUXUI: React.FC<DeliviousUXUIProps> = ({
                                     {/* Temperature Selection */}
                                     <div className="bg-gray-200 rounded-xl">
                                         <div className="relative aspect-square">
-                                            <Image
-                                                src="/public/images/delivious/latte.jpg"
+                                            <ImageContainer
+                                                image="/images/delivious/latte.jpg"
                                                 alt="Coffee cup"
-                                                className="w-full h-full object-cover rounded-lg"
-                                                fill
-                                                priority
-                                                unoptimized
+                                                className="absolute inset-0 w-full h-full object-cover rounded-lg"
                                             />
                                             <div className="absolute inset-0 flex flex-col justify-center items-center gap-3 rounded-lg bg-black/60">
                                                 <button className="bg-white text-[#4963AE] px-8 py-2 rounded-md text-sm hover:bg-[#E6E7F3] transition-colors duration-200 w-32">
@@ -237,13 +227,10 @@ const DeliviousUXUI: React.FC<DeliviousUXUIProps> = ({
                                     {/* Selected State Example */}
                                     <div className="bg-gray-200 rounded-xl">
                                         <div className="relative aspect-square">
-                                            <Image
-                                                src="/public/images/delivious/latte.jpg"
+                                            <ImageContainer
+                                                image="/images/delivious/latte.jpg"
                                                 alt="Coffee cup"
-                                                className="w-full h-full object-cover rounded-lg"
-                                                fill
-                                                priority
-                                                unoptimized
+                                                className="absolute inset-0 w-full h-full object-cover rounded-lg"
                                             />
                                             <div className="absolute inset-0 flex items-center justify-center rounded-lg bg-black/60">
                                                 <div className="bg-white rounded-full p-4">
@@ -368,14 +355,10 @@ const DeliviousUXUI: React.FC<DeliviousUXUIProps> = ({
                             </p>
                         </div>
                         <div className="mt-8">
-                            <Image
-                                src="/images/delivious/delivious-mockup.svg"
+                            <ImageContainer
+                                image="/images/delivious/delivious-mockup.svg"
                                 alt="Delivious Mockup"
-                                width={1200}
-                                height={800}
                                 className="w-full"
-                                priority
-                                unoptimized
                             />
                         </div>
                     </div>
