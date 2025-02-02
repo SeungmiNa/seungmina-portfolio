@@ -4,26 +4,22 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
 import SolidButton from "../Buttons/SolidButton";
+import { getBasePath } from '@/utils/paths';
 
 interface NavbarProps {
   className?: string;
 }
 
 export const goToProjects = () => {
-  // Get the base URL without any path segments
   const baseUrl = window.location.origin;
+  const basePath = getBasePath();
   
-  // Extract the base path from the current pathname
-  const basePath = window.location.pathname.split('/')[1];
-  
-  // Check if we're not on the home page
-  if (window.location.pathname !== `/${basePath}/`) {
-    // Always redirect to the home page with #projects
-    window.location.href = `${baseUrl}/#projects`;
+  // Check if we're not on the home page (need to handle basePath in the comparison)
+  if (window.location.pathname !== `${basePath}/`) {
+    window.location.href = `${baseUrl}${basePath}/#projects`;
     return;
   }
 
-  // If we're already on the home page, just scroll
   const projectsSection = document.getElementById("projects");
   if (projectsSection) {
     projectsSection.scrollIntoView({ behavior: "smooth" });
@@ -32,6 +28,11 @@ export const goToProjects = () => {
 
 const Navbar: React.FC<NavbarProps> = ({ className = "" }) => {
   const pathname = usePathname();
+  const basePath = getBasePath();
+
+  // Update the active state check to account for basePath
+  const isHome = pathname === `${basePath}/` || pathname === '/';
+  const isAbout = pathname === `${basePath}/about` || pathname === '/about';
 
   const handleContactClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
@@ -61,10 +62,10 @@ const Navbar: React.FC<NavbarProps> = ({ className = "" }) => {
         SEUNGMI NA
       </Link>
       <div className="flex space-x-6">
-        <NavLink onClick={goToProjects} active={pathname === "/"}>
+        <NavLink onClick={goToProjects} active={isHome}>
           Projects
         </NavLink>
-        <NavLink href="/about" active={pathname === "/about"}>
+        <NavLink href="/about" active={isAbout}>
           About
         </NavLink>
         {/* Add more navigation links as needed */}
