@@ -1,7 +1,7 @@
 'use client';
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import React from "react";
 import SolidButton from "../Buttons/SolidButton";
 
@@ -10,16 +10,23 @@ interface NavbarProps {
 }
 
 export const goToProjects = () => {
+  // Get the base URL without any path segments
+  const baseUrl = window.location.origin;
+  
+  // Extract the base path from the current pathname
+  const basePath = window.location.pathname.split('/')[1];
+  
   // Check if we're not on the home page
-  if (window.location.pathname !== '/') {
-    window.location.href = '/#projects';
+  if (window.location.pathname !== `/${basePath}/`) {
+    // Always redirect to the home page with #projects
+    window.location.href = `${baseUrl}/#projects`;
     return;
   }
 
   // If we're already on the home page, just scroll
-  const goToProjects = document.getElementById("projects");
-  if (goToProjects) {
-    goToProjects.scrollIntoView({ behavior: "smooth" });
+  const projectsSection = document.getElementById("projects");
+  if (projectsSection) {
+    projectsSection.scrollIntoView({ behavior: "smooth" });
   }
 };
 
