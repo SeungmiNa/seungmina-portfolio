@@ -135,6 +135,7 @@ export default function DeliviousProject({ project }: DeliviousProjectProps) {
                         className="absolute bottom-0 left-0 w-full h-auto"
                         fill
                         priority
+                        unoptimized
                     />
                 </div>
 
@@ -365,6 +366,7 @@ export default function DeliviousProject({ project }: DeliviousProjectProps) {
                         className="absolute inset-0 w-full h-full object-cover"
                         fill
                         priority
+                        unoptimized
                     />
                 </div>
 

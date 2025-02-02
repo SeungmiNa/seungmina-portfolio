@@ -17,6 +17,7 @@ const InizioProject = () => {
                             fill
                             className="object-cover"
                             priority
+                            unoptimized
                         />
                     </div>
                     <div className="max-w-7xl mx-auto relative h-full z-20 px-4">

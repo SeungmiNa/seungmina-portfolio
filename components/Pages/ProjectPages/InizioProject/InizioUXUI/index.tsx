@@ -48,6 +48,7 @@ const InizioUXUI = () => {
                                 alt="Navigation demonstration"
                                 fill
                                 className="object-cover"
+                                unoptimized
                             />
                         </div>
                     </div>
@@ -109,6 +110,7 @@ const InizioUXUI = () => {
                                     alt="Theme mode demonstration"
                                     fill
                                     className="object-cover"
+                                    unoptimized
                                 />
                             </div>
                         </div>
@@ -124,6 +126,7 @@ const InizioUXUI = () => {
                                 alt="Interactive elements demonstration"
                                 fill
                                 className="object-cover"
+                                unoptimized
                             />
                         </div>
                     </div>

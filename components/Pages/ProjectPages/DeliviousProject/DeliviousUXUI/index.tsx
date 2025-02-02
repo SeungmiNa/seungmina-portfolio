@@ -75,6 +75,7 @@ const DeliviousUXUI: React.FC<DeliviousUXUIProps> = ({
                                     fill
                                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
                                     priority
+                                    unoptimized
                                 />
                             </div>
                         </div>
@@ -194,6 +195,7 @@ const DeliviousUXUI: React.FC<DeliviousUXUIProps> = ({
                                                 className="w-full h-full object-cover rounded-lg"
                                                 fill
                                                 priority
+                                                unoptimized
                                             />
                                             {/* Size Options */}
                                             <div className="absolute inset-0 flex flex-col justify-center items-center gap-3 rounded-lg bg-black/60">
@@ -219,6 +221,7 @@ const DeliviousUXUI: React.FC<DeliviousUXUIProps> = ({
                                                 className="w-full h-full object-cover rounded-lg"
                                                 fill
                                                 priority
+                                                unoptimized
                                             />
                                             <div className="absolute inset-0 flex flex-col justify-center items-center gap-3 rounded-lg bg-black/60">
                                                 <button className="bg-white text-[#4963AE] px-8 py-2 rounded-md text-sm hover:bg-[#E6E7F3] transition-colors duration-200 w-32">
@@ -240,6 +243,7 @@ const DeliviousUXUI: React.FC<DeliviousUXUIProps> = ({
                                                 className="w-full h-full object-cover rounded-lg"
                                                 fill
                                                 priority
+                                                unoptimized
                                             />
                                             <div className="absolute inset-0 flex items-center justify-center rounded-lg bg-black/60">
                                                 <div className="bg-white rounded-full p-4">
@@ -371,6 +375,7 @@ const DeliviousUXUI: React.FC<DeliviousUXUIProps> = ({
                                 height={800}
                                 className="w-full"
                                 priority
+                                unoptimized
                             />
                         </div>
                     </div>
