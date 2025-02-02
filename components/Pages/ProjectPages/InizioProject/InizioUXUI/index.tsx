@@ -3,6 +3,7 @@ import { BiMoon, BiMouse, BiPalette, BiSun } from 'react-icons/bi';
 import { BsCheckLg } from 'react-icons/bs';
 import Title from "../../../../Font/Title";
 // import { HiOutlineClipboardList } from 'react-icons/hi';
+import ImageContainer from '@/components/ImageContainer';
 import { MdOutlineAnimation } from 'react-icons/md';
 
 const InizioUXUI = () => {
@@ -40,8 +41,8 @@ const InizioUXUI = () => {
                 <div className="flex flex-col md:flex-row items-center gap-12">
                     <div className="w-full md:w-1/2 bg-gray-100 rounded-2xl overflow-hidden">
                         <div className="relative aspect-[4/3]">
-                            <img
-                                src="/images/inizio/inizio-navigation.png"
+                            <ImageContainer
+                                image="/images/inizio/inizio-navigation.svg"
                                 alt="Navigation demonstration"
                                 className="object-cover w-full h-full absolute top-0 left-0"
                             />
@@ -100,10 +101,10 @@ const InizioUXUI = () => {
                     <div className="w-full md:w-1/2 bg-gray-100 rounded-2xl overflow-hidden">
                         <div className="relative aspect-[4/3]">
                             <div className="absolute inset-0">
-                                <img
-                                    src="/images/inizio/inizio-theme.png"
+                                <ImageContainer
+                                    image="/images/inizio/inizio-theme.svg"
                                     alt="Theme mode demonstration"
-                                    className="object-cover w-full h-full"
+                                    className="object-cover w-full h-full absolute top-0 left-0"
                                 />
                             </div>
                         </div>
@@ -114,8 +115,8 @@ const InizioUXUI = () => {
                 <div className="flex flex-col md:flex-row items-center gap-8">
                     <div className="w-full md:w-1/2 bg-gray-100 rounded-2xl overflow-hidden">
                         <div className="relative aspect-[4/3]">
-                            <img
-                                src="/images/inizio/inizio-hover.png"
+                            <ImageContainer
+                                image="/images/inizio/inizio-hover.svg"
                                 alt="Interactive elements demonstration"
                                 className="object-cover w-full h-full absolute top-0 left-0"
                             />

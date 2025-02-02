@@ -4,6 +4,7 @@ import { FileTextIcon } from "@radix-ui/react-icons";
 import { useRouter } from "next/navigation";
 import React from "react";
 import ProjectCard from "./ProjectCard";
+import { withBasePath } from "@/utils/paths";
 
 // interface Project {
 //     id: string;
@@ -25,7 +26,7 @@ const ProjectList: React.FC = () => {
             description: "AI-Powered Idea-to-Project Platform",
             href: "/",
             cta: "Learn more",
-            background: "/images/inizio/inizio-cover.png",
+            background: withBasePath("/images/inizio/inizio-cover.png"),
             className: "lg:row-start-1 lg:row-end-4 lg:col-start-2 lg:col-end-3",
             period: "2023.02 ~ Present",
             role: "UX/UI Designer, UI Developer",
@@ -38,7 +39,7 @@ const ProjectList: React.FC = () => {
             description: "Al Delivery and Order Services in Restaurant",
             href: "/",
             cta: "Learn more",
-            background: "/images/delivious/delivious-cover.png",
+            background: withBasePath("/images/delivious/delivious-cover.png"),
             className: "lg:col-start-1 lg:col-end-2 lg:row-start-1 lg:row-end-3",
             period: "2022.04 ~ 2022.06",
             role: "UX/UI Designer, Frontend Developer",
