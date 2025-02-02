@@ -1,4 +1,5 @@
 import React from 'react';
+import { withBasePath } from '@/utils/paths';
 
 interface ImageContainerProps {
     image: string;
@@ -11,7 +12,7 @@ const ImageContainer: React.FC<ImageContainerProps> = ({ image, alt, className, 
     return (
         <div className={`relative w-full h-full ${className || ''}`}>
             <img
-                src={image}
+                src={withBasePath(image)}
                 alt={alt}
                 className={`w-full h-auto object-contain ${innerClassName || ''}`}
                 {...props}
