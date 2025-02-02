@@ -2,7 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail, MapPin } from 'lucide-react';
 import Link from "next/link";
-import { FC, useState } from "react";
+import { FC } from "react";
 
 interface AboutPageProps {
     className?: string;
@@ -20,7 +20,6 @@ interface AboutPageProps {
 // }
 
 const AboutPage: FC<AboutPageProps> = ({ /*className = ""*/ }) => {
-    const [isResumeModalOpen, setIsResumeModalOpen] = useState(false);
 
     const skillCategories = [
         {
