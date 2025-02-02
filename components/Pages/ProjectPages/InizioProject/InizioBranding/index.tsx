@@ -1,6 +1,5 @@
 "use client";
-import Image from "next/image";
-import React from "react";
+import ImageContainer from "@/components/ImageContainer";
 import Title from "../../../../Font/Title";
 import InizioHoriLogo from "../../../../Logo/InizioHoriLogo";
 import InizioSymbolLogo from "../../../../Logo/InizioSymbolLogo";
@@ -30,7 +29,7 @@ const InizioBranding = () => {
             <div className="max-w-7xl mx-auto px-4 pb-24">
                 {/* Typography & Logo Types */}
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-32">
-                    
+
 
                     <div className="flex flex-col justify-center gap-5">
                         {/* varient */}
@@ -99,14 +98,10 @@ const InizioBranding = () => {
 
                         {/* logo */}
                         <div className="relative aspect-square flex items-center justify-center bg-white/60 p-8 bg-white/60 rounded-xl">
-                            <Image
-                                src="/images/inizio/inizio-branding-logo.svg"
+                            <ImageContainer
+                                image="/images/inizio/inizio-branding-logo.svg"
                                 alt="inizio-branding-logo"
-                                width={400}
-                                height={400}
-                                className="object-contain"
-                                priority
-                                unoptimized
+                                className="absolute inset-0 w-full h-full object-contain"
                             />
                         </div>
                     </div>
@@ -183,13 +178,10 @@ const InizioBranding = () => {
                         </p>
                     </div>
                     <div className="relative h-[800px] overflow-hidden">
-                        <Image
-                            src="/images/inizio/inizio-design-system.svg"
+                        <ImageContainer
+                            image="/images/inizio/inizio-design-system.svg"
                             alt="inizio-design-system"
-                            fill
-                            className="object-cover"
-                            priority
-                            unoptimized
+                            className="absolute inset-0 w-full h-full object-contain"
                         />
                     </div>
                 </div>

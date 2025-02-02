@@ -1,10 +1,7 @@
 "use client";
-import Image from "next/image";
-import React from "react";
-import Title from "../../../../Font/Title";
+import { BiMoon, BiMouse, BiPalette, BiSun } from 'react-icons/bi';
 import { BsCheckLg } from 'react-icons/bs';
-import { BiMoon, BiSun, BiPalette } from 'react-icons/bi';
-import { BiMouse } from 'react-icons/bi';
+import Title from "../../../../Font/Title";
 // import { HiOutlineClipboardList } from 'react-icons/hi';
 import { MdOutlineAnimation } from 'react-icons/md';
 
@@ -43,12 +40,10 @@ const InizioUXUI = () => {
                 <div className="flex flex-col md:flex-row items-center gap-12">
                     <div className="w-full md:w-1/2 bg-gray-100 rounded-2xl overflow-hidden">
                         <div className="relative aspect-[4/3]">
-                            <Image
+                            <img
                                 src="/images/inizio/inizio-navigation.png"
                                 alt="Navigation demonstration"
-                                fill
-                                className="object-cover"
-                                unoptimized
+                                className="object-cover w-full h-full absolute top-0 left-0"
                             />
                         </div>
                     </div>
@@ -60,7 +55,7 @@ const InizioUXUI = () => {
                             Responsive Navigation System
                         </h3>
                         <p className="text-gray-600">
-                        Implemented a dynamic navigation system that expands and collapses smoothly on hover, enhancing user interaction across devices.
+                            Implemented a dynamic navigation system that expands and collapses smoothly on hover, enhancing user interaction across devices.
                         </p>
                         <ul className="space-y-2 text-gray-600">
                             <li className="flex items-start gap-2">
@@ -85,7 +80,7 @@ const InizioUXUI = () => {
                             Dark & Light Mode
                         </h3>
                         <p className="text-gray-600">
-                        Developed a theme button for manually switching between dark and light modes, enhancing user control and accessibility
+                            Developed a theme button for manually switching between dark and light modes, enhancing user control and accessibility
                         </p>
                         <ul className="space-y-2 text-gray-600">
                             <li className="flex items-start gap-2">
@@ -105,12 +100,10 @@ const InizioUXUI = () => {
                     <div className="w-full md:w-1/2 bg-gray-100 rounded-2xl overflow-hidden">
                         <div className="relative aspect-[4/3]">
                             <div className="absolute inset-0">
-                                <Image
+                                <img
                                     src="/images/inizio/inizio-theme.png"
                                     alt="Theme mode demonstration"
-                                    fill
-                                    className="object-cover"
-                                    unoptimized
+                                    className="object-cover w-full h-full"
                                 />
                             </div>
                         </div>
@@ -121,12 +114,10 @@ const InizioUXUI = () => {
                 <div className="flex flex-col md:flex-row items-center gap-8">
                     <div className="w-full md:w-1/2 bg-gray-100 rounded-2xl overflow-hidden">
                         <div className="relative aspect-[4/3]">
-                            <Image
+                            <img
                                 src="/images/inizio/inizio-hover.png"
                                 alt="Interactive elements demonstration"
-                                fill
-                                className="object-cover"
-                                unoptimized
+                                className="object-cover w-full h-full absolute top-0 left-0"
                             />
                         </div>
                     </div>
@@ -138,7 +129,7 @@ const InizioUXUI = () => {
                             Hover Interactions
                         </h3>
                         <p className="text-gray-600">
-                        Refined user engagement with rich content tooltips and dynamic animations upon hovering
+                            Refined user engagement with rich content tooltips and dynamic animations upon hovering
                         </p>
                         <ul className="space-y-2 text-gray-600">
                             <li className="flex items-start gap-2">

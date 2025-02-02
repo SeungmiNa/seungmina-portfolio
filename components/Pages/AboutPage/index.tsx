@@ -3,7 +3,6 @@ import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail, MapPin } from 'lucide-react';
 import Link from "next/link";
 import { FC, useState } from "react";
-import ResumeModal from "./ResumeModal";
 
 interface AboutPageProps {
     className?: string;
@@ -258,11 +257,6 @@ const AboutPage: FC<AboutPageProps> = ({ /*className = ""*/ }) => {
                     </div>
                 </footer>
             </div>
-
-            <ResumeModal
-                isOpen={isResumeModalOpen}
-                onClose={() => setIsResumeModalOpen(false)}
-            />
         </main>
     );
 };
