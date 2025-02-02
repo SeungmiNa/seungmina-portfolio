@@ -11,6 +11,6 @@ export const metadata: Metadata = {
   title: 'Seungmi Na Portfolio',
   description: 'Portfolio website of Seungmi Na',
   icons: {
-    icon: '/s-favicon.ico',
+    icon: '/public/s-favicon.ico',
   },
 }

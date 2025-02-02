@@ -48,6 +48,7 @@ const ResumeModal: React.FC<ResumeModalProps> = ({
                             height={1131}
                             className="w-full h-auto rounded-lg"
                             priority
+                            unoptimized
                         />
                     </div>
                 </div>

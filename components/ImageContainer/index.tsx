@@ -16,6 +16,7 @@ const ImageContainer: React.FC<ImageContainerProps> = ({ image, alt, className, 
                 fill
                 style={{ objectFit: 'contain' }}
                 priority
+                unoptimized
                 {...props}
             />
         </div>

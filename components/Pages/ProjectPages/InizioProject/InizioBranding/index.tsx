@@ -106,6 +106,7 @@ const InizioBranding = () => {
                                 height={400}
                                 className="object-contain"
                                 priority
+                                unoptimized
                             />
                         </div>
                     </div>
@@ -188,6 +189,7 @@ const InizioBranding = () => {
                             fill
                             className="object-cover"
                             priority
+                            unoptimized
                         />
                     </div>
                 </div>
