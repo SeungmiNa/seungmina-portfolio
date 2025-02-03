@@ -2,7 +2,7 @@
 
 import { getBasePath } from '@/utils/paths';
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import React from "react";
 import SolidButton from "../Buttons/SolidButton";
 
@@ -29,6 +29,7 @@ export const goToProjects = () => {
 const Navbar: React.FC<NavbarProps> = ({ className = "" }) => {
   const pathname = usePathname();
   const basePath = getBasePath();
+  const router = useRouter();
 
   // Update the active state check to account for basePath
   const isHome = pathname === `${basePath}/` || pathname === '/';
@@ -37,6 +38,11 @@ const Navbar: React.FC<NavbarProps> = ({ className = "" }) => {
   const handleContactClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     window.location.href = "mailto:naissme0@gmail.com";
+  };
+
+  const handleAboutClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    router.push(`${basePath}/about`);
   };
 
   // const scrollToProjects = (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -64,7 +70,10 @@ const Navbar: React.FC<NavbarProps> = ({ className = "" }) => {
         <NavLink onClick={goToProjects} active={isHome}>
           Projects
         </NavLink>
-        <NavLink href="/about" active={isAbout}>
+        <NavLink 
+          onClick={handleAboutClick}
+          active={isAbout}
+        >
           About
         </NavLink>
         {/* Add more navigation links as needed */}
