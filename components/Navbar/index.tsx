@@ -1,10 +1,10 @@
 'use client';
 
+import { getBasePath } from '@/utils/paths';
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
 import SolidButton from "../Buttons/SolidButton";
-import { getBasePath } from '@/utils/paths';
 
 interface NavbarProps {
   className?: string;
@@ -13,7 +13,7 @@ interface NavbarProps {
 export const goToProjects = () => {
   const baseUrl = window.location.origin;
   const basePath = getBasePath();
-  
+
   // Check if we're not on the home page (need to handle basePath in the comparison)
   if (window.location.pathname !== `${basePath}/`) {
     window.location.href = `${baseUrl}${basePath}/#projects`;
@@ -38,7 +38,6 @@ const Navbar: React.FC<NavbarProps> = ({ className = "" }) => {
     e.preventDefault();
     window.location.href = "mailto:naissme0@gmail.com";
   };
-
 
   // const scrollToProjects = (e: React.MouseEvent<HTMLAnchorElement>) => {
   //   e.preventDefault();
@@ -65,7 +64,7 @@ const Navbar: React.FC<NavbarProps> = ({ className = "" }) => {
         <NavLink onClick={goToProjects} active={isHome}>
           Projects
         </NavLink>
-        <NavLink href={`${basePath}/about`} active={isAbout}>
+        <NavLink href="/about" active={isAbout}>
           About
         </NavLink>
         {/* Add more navigation links as needed */}
@@ -74,7 +73,6 @@ const Navbar: React.FC<NavbarProps> = ({ className = "" }) => {
         title="Contact"
         onClick={handleContactClick}
       />
-
     </nav>
   );
 };
