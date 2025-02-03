@@ -65,7 +65,7 @@ const Navbar: React.FC<NavbarProps> = ({ className = "" }) => {
         <NavLink onClick={goToProjects} active={isHome}>
           Projects
         </NavLink>
-        <NavLink href="/about" active={isAbout}>
+        <NavLink href={`${basePath}/about`} active={isAbout}>
           About
         </NavLink>
         {/* Add more navigation links as needed */}
