@@ -2,7 +2,7 @@
 
 import { getBasePath } from '@/utils/paths';
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import React from "react";
 import SolidButton from "../Buttons/SolidButton";
 
@@ -29,7 +29,6 @@ export const goToProjects = () => {
 const Navbar: React.FC<NavbarProps> = ({ className = "" }) => {
   const pathname = usePathname();
   const basePath = getBasePath();
-  const router = useRouter();
 
   // Update the active state check to account for basePath
   const isHome = pathname === `${basePath}/` || pathname === '/';
@@ -40,27 +39,6 @@ const Navbar: React.FC<NavbarProps> = ({ className = "" }) => {
     window.location.href = "mailto:naissme0@gmail.com";
   };
 
-  const handleAboutClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    router.push(`${basePath}/about`);
-  };
-
-  // const scrollToProjects = (e: React.MouseEvent<HTMLAnchorElement>) => {
-  //   e.preventDefault();
-  //   const projectsSection = document.getElementById('projects');
-
-  //   if (projectsSection) {
-  //     const offset = 80; // Adjust this value based on your navbar height
-  //     const elementPosition = projectsSection.getBoundingClientRect().top;
-  //     const offsetPosition = elementPosition + window.pageYOffset - offset;
-
-  //     window.scrollTo({
-  //       top: offsetPosition,
-  //       behavior: 'smooth'
-  //     });
-  //   }
-  // };
-
   return (
     <nav className={`container mx-auto w-full shadow bg-white/50 backdrop-blur-md rounded-full flex justify-between items-center p-2 mt-2 sticky top-2 z-[100] ${className}`}>
       <Link href="/" className="tracking-tight ml-4 text-lg tracking-noraml font-semibold text-gray-950 hover:text-gray-700 transition-colors mb-2 sm:mb-0">
@@ -70,10 +48,7 @@ const Navbar: React.FC<NavbarProps> = ({ className = "" }) => {
         <NavLink onClick={goToProjects} active={isHome}>
           Projects
         </NavLink>
-        <NavLink 
-          onClick={handleAboutClick}
-          active={isAbout}
-        >
+        <NavLink href="/about" active={isAbout}>
           About
         </NavLink>
         {/* Add more navigation links as needed */}
