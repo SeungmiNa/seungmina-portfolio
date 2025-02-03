@@ -1,5 +1,4 @@
 import HomePage from "@/components/Pages/HomePage";
-import { Metadata } from 'next';
 
 export default function Home() {
   return (
@@ -7,10 +6,3 @@ export default function Home() {
   );
 }
 
-export const metadata: Metadata = {
-  title: 'Seungmi Na Portfolio',
-  description: 'Portfolio website of Seungmi Na',
-  icons: {
-    icon: '/public/s-favicon.ico',
-  },
-}
