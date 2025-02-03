@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import { Courgette, Inter } from 'next/font/google';
 import "../styles/globals.css";
 import { Metadata } from 'next';
+import { withBasePath } from "@/utils/paths";
 
 const inter = Inter({ subsets: ['latin'] });
 const courgette = Courgette({
@@ -14,9 +15,9 @@ export const metadata: Metadata = {
   title: 'Seungmi Na Portfolio',
   description: 'Seungmi Na',
   icons: {
-    icon: '/favicon.ico',
-    shortcut: '/favicon.ico',
-    apple: '/favicon.ico',
+    icon: withBasePath('/favicon.ico'),
+    shortcut: withBasePath('/favicon.ico'),
+    apple: withBasePath('/favicon.ico'),
   },
 }
 

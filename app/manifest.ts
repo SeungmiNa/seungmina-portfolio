@@ -1,3 +1,4 @@
+import { withBasePath } from '@/utils/paths'
 import { MetadataRoute } from 'next'
 
 export default function manifest(): MetadataRoute.Manifest {
@@ -9,7 +10,7 @@ export default function manifest(): MetadataRoute.Manifest {
     display: 'standalone',
     icons: [
       {
-        src: '/favicon.ico',
+        src: withBasePath('/favicon.ico'),
         sizes: '256x256',
         type: 'image/x-icon',
       },
