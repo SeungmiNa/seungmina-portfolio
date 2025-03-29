@@ -1,7 +1,15 @@
+const withMT = require("@material-tailwind/react/utils/withMT");
+
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+module.exports = withMT({
     darkMode: ["class"],
-    content: ["app/**/*.{ts,tsx}", "components/**/*.{ts,tsx}"],
+    content: [
+      "app/**/*.{ts,tsx}",
+      "components/**/*.{ts,tsx}",
+      // Add Material Tailwind component paths
+      "node_modules/@material-tailwind/react/components/**/*.{js,ts,jsx,tsx}",
+      "node_modules/@material-tailwind/react/theme/components/**/*.{js,ts,jsx,tsx}",
+    ],
     theme: {
       extend: {
         colors: {
@@ -50,5 +58,5 @@ module.exports = {
       },
     },
     plugins: [require("tailwindcss-animate")],
-  }
+});
   

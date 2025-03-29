@@ -2,6 +2,7 @@ import ImageContainer from '@/components/ImageContainer';
 import InizioBranding from "./InizioBranding";
 import InizioDev from "./InizioDev";
 import InizioUXUI from "./InizioUXUI";
+import InizioCaseStudy from './InizioCaseStudy';
 
 const InizioProject = () => {
     return (
@@ -139,6 +140,7 @@ const InizioProject = () => {
             <div className="container mx-auto px-4 sm:px-0 flex flex-col gap-24">
                 <InizioBranding />
                 <InizioUXUI />
+                <InizioCaseStudy />
                 <InizioDev />
             </div>
         </>
