@@ -74,12 +74,12 @@ const NavLink: React.FC<NavLinkProps> = ({ href, onClick, active, children }) =>
       href={href ?? ""}
       onClick={onClick}
       className={`h-full flex flex-col items-center relative text-base font-medium ${active
-        ? "text-blue-600 hover:text-gray-600 font-medium"
+        ? "text-[#2563EB] hover:text-gray-600 font-medium"
         : "text-gray-900 hover:text-gray-600 font-medium"
         } transition-colors`}
     >
       {children}
-      {active && <div className="absolute -top-1 h-1 w-1 rounded-full bg-blue-600" />}
+      {active && <div className="absolute -top-1 h-1 w-1 rounded-full bg-[#2563EB]" />}
     </Link>
   );
 };

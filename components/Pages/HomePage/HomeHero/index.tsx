@@ -8,7 +8,7 @@ import type { FC } from "react";
 
 const HomeHero: FC = () => {
     return (
-        <div className="relative min-h-[90vh] w-full flex items-center justify-center">
+        <div className="relative min-h-[100vh] w-full flex items-center justify-center">
             {/* Abstract Background Elements */}
             <div className="absolute inset-0 overflow-hidden">
                 <div className="absolute top-1/4 right-1/4 w-[600px] h-[600px] bg-gradient-to-r from-purple-300/30 to-pink-300/30 rounded-full blur-[130px] animate-pulse" />
@@ -19,14 +19,14 @@ const HomeHero: FC = () => {
             <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:60px_60px] dark:bg-grid-black/[0.02]" />
 
             {/* Main Content */}
-            <div className="container mx-auto px-4 relative z-10">
+            <div className="container mx-auto px-8 pb-24 z-10">
                 <div className="max-w-4xl mx-auto text-center">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5 }}
                     >
-                        <span className="inline-block px-5 py-2 bg-white/80 dark:bg-neutral-900/80 backdrop-blur-sm rounded-full text-sm font-medium text-neutral-600 dark:text-neutral-300 border border-neutral-200/50 dark:border-neutral-700/50 shadow-sm">
+                        <span className="inline-block px-5 py-2 bg-white/80 backdrop-blur-sm rounded-full text-sm font-medium text-neutral-600 border border-neutral-200/50 shadow-sm">
                             Hello, I&apos;m Seungmi 👋
                         </span>
                     </motion.div>
@@ -37,7 +37,7 @@ const HomeHero: FC = () => {
                         transition={{ duration: 0.5, delay: 0.1 }}
                         className="mt-8"
                     >
-                        <Title variant="h1" className="text-5xl md:text-6xl lg:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-neutral-950 via-neutral-700 to-neutral-950 dark:from-white dark:via-neutral-200 dark:to-white leading-tight">
+                        <Title variant="h1" className="text-5xl md:text-6xl lg:text-7xl font-bold text-black !leading-[1.2]">
                             Bridging Design & Development
                         </Title>
                     </motion.div>
@@ -46,7 +46,7 @@ const HomeHero: FC = () => {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0.15 }}
-                        className="mt-6"
+                        className="mt-10"
                     >
                         <span className="text-xl md:text-2xl text-neutral-800 dark:text-neutral-200 font-light tracking-wide">
                             UX/UI Designer & UI Developer
@@ -57,9 +57,9 @@ const HomeHero: FC = () => {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0.2 }}
-                        className="mt-8 text-base text-neutral-600 dark:text-neutral-300 leading-relaxed max-w-2xl mx-auto"
+                        className="pt-8 text-base text-neutral-600 dark:text-neutral-300 leading-relaxed max-w-2xl mx-auto"
                     >
-                        Specializing in developing <b>UX/UI</b> strategies and innovative <b>design systems</b> for dynamic projects. I enhance <b>user interactions</b> with mobile-friendly interfaces crafted using <b>TypeScript</b>, <b>Tailwind CSS</b>, and <b>Figma</b>. My engineering foundation enables me to build robust, <b>reusable UI components</b> with <b>React</b>, <b>Next.js</b>, <b>shadcn/ui</b> and <b>Headless UI</b>. This dual focus on design aesthetics and technical functionality ensures my projects not only look great but also function seamlessly, boosting user satisfaction and engagement.
+                        I specialize in crafting innovative <b>design systems</b> and <b>UX/UI</b> solutions that enhance <b>user interactions</b>. Building with <b>TypeScript</b>, <b>React</b>, <b>Next.js</b>, and <b>Tailwind CSS</b>, I create elegant <b>reusable UI components</b> powered by <b>shadcn/ui</b> and <b>Headless UI</b>. I bring designs to life from <b>Figma</b> to production, ensuring seamless user experiences.
                     </motion.p>
 
                     {/* Core Skills */}
@@ -96,7 +96,7 @@ const HomeHero: FC = () => {
                             whileTap={{ scale: 0.95 }}
                             className="group px-4 py-2 font-normal hover:font-medium text-sm hover:text-stone-900 dark:bg-white text-stone-600 dark:text-neutral-900 rounded-lg font-medium hover:scale-110 transition-all duration-200"
                         >
-                            <div className="flex items-center gap-2 text-base animate-bounce hover:animate-none text-blue-500 hover:text-stone-900 font-semibold">
+                            <div className="flex items-center gap-2 text-base animate-bounce hover:animate-none text-[#2563EB] hover:text-stone-900 font-semibold">
                                 Explore My Work
                                 <ChevronDownIcon className="w-4 h-4 shrink-0" />
                             </div>

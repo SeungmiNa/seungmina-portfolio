@@ -6,7 +6,7 @@ interface PageLayoutProps {
 
 export default function PageLayout({ children }: PageLayoutProps) {
     return (
-        <div className="container mx-auto px-4 sm:px-0">
+        <div className="container mx-auto">
             {children}
         </div>
     );
