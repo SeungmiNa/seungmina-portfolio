@@ -149,13 +149,10 @@ export default function DeliviousProject({ project }: DeliviousProjectProps) {
                             </h2>
                             <div className="max-w-4xl space-y-4">
                                 <p className="text-stone-500">
-                                    It is a service for ordering and delivering an order using the Robot to dine at a table. User can order and check the order history. Admin user can deliver the food using the Robot.
+                                    A robot-assisted dining service that enables customers to order food and track deliveries to their table. The system serves both customers placing orders and staff managing robot deliveries.
                                 </p>
-                                {/* <p className="text-stone-500">
-                                    It is a service for ordering and delivering an order using the Robot to dine at a table. User can order and check the order history. Admin user can deliver the food using the Robot.
-                                </p> */}
                                 <p className="text-stone-500">
-                                    As a UX/UI Designer and UI Developer on the project, I designed and implemented an intuitive interface for a seamless dining experience, enabling customers to order and track their meals directly from their tables through an innovative kiosk and app service. My responsibilities spanned across visual design, making user flows, defining design system, and branding, ensuring a user-friendly experience from screen to table.
+                                    As UX/UI Designer and UI Developer, I created an intuitive interface for the kiosk and app service. My work included visual design, user flows, design system development, and branding to ensure a seamless dining experience.
                                 </p>
                             </div>
                         </div>
@@ -321,7 +318,7 @@ export default function DeliviousProject({ project }: DeliviousProjectProps) {
                                             text-left rounded-lg text-lg px-3 py-1
                                             transition-all duration-200 ease-in-out
                                             ${activeCategory === index
-                                                ? 'text-blue-600 font-medium bg-[#DAE0F2] rounded-full'
+                                                ? 'text-[#2563EB] font-medium bg-[#DAE0F2] rounded-full'
                                                 : 'text-stone-500 hover:text-stone-900'
                                             }
                                         `}

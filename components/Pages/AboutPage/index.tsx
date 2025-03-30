@@ -128,7 +128,8 @@ const AboutPage: FC<AboutPageProps> = ({ /*className = ""*/ }) => {
                             <Button
                                 variant="default"
                                 className="rounded-full px-6 hover:scale-105 transition-transform"
-                                onClick={() => window.location.href = "mailto:naissme0@gmail.com"}>
+                                // onClick={() => window.location.href = "mailto:naissme0@gmail.com"}>
+                                onClick={()=>window.location.href = "mailto:naissme0@gmail.com"}>
                                 Contact Me 👋
                             </Button>
                             <Button
@@ -242,7 +243,7 @@ const AboutPage: FC<AboutPageProps> = ({ /*className = ""*/ }) => {
                 {/* Footer */}
                 <footer className="flex flex-col sm:flex-row justify-between items-center gap-4 
                                  pt-8 text-sm text-muted-foreground border-t border-border">
-                    <p>© 2024 Seungmi Na. All rights reserved.</p>
+                    <p>© 2025 Seungmi Na. All rights reserved.</p>
                     <div className="flex gap-6">
                         <Link href="https://www.linkedin.com/in/seungmi-na/"
                             target="_blank"

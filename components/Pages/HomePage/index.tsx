@@ -45,7 +45,7 @@ const HomePage: FC<HomePageProps> = ({
                     <HomeHero />
                 </div>
 
-                <section id="projects" className="py-24">
+                <section id="projects" className="px-4 py-24">
                     <ProjectList />
                 </section>
             </div>

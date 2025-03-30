@@ -87,7 +87,7 @@ const DeliviousDev: React.FC = () => {
                             className="p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300"
                         >
                             <div className="flex items-center space-x-4 mb-4">
-                                <tech.icon className="w-8 h-8 text-blue-600" />
+                                <tech.icon className="w-8 h-8 text-[#2563EB]" />
                                 <h3 className="text-xl font-semibold">{tech.name}</h3>
                             </div>
                             <p className="text-gray-600">{tech.description}</p>

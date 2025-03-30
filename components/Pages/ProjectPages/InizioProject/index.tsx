@@ -26,9 +26,9 @@ const InizioProject = () => {
                                 </h1>
 
                                 <p className="text-[#A3B3B3] text-base max-w-3xl">
-                                    Led the design and development of the AI platform, that guides users from initial idea to project realization, enhancing the product development journey.
+                                    Led the design and development of ConceptCraft, an AI platform that streamlines product development from ideation to execution.
                                 </p>
-                                <p className='text-sm text-[#A3B3B3]'>Below is the link to the ConceptCraft landing page, which I led the design for and implemented.</p>
+                                <p className='text-sm text-[#A3B3B3]'>View the ConceptCraft landing page I designed and built:</p>
 
                                 <div className="flex flex-wrap items-center gap-6">
                                     <a
@@ -83,15 +83,14 @@ const InizioProject = () => {
                     <h2 className="text-3xl text-stone-800 mb-12 font-medium">AI-Powered Idea-to-Project Platform</h2>
                     <div className="space-y-4 text-stone-500 mb-20 max-w-4xl">
                         <p>
-                            ConceptCraft is a flagship product that empowers users to transform their ideas into real projects
-                            through AI-powered idea generation, market analysis, and additional capabilities. The platform
-                            streamlines the journey from concept to implementation with intelligent features and intuitive design.
+                            ConceptCraft helps users transform ideas into real projects through AI-powered ideation, 
+                            market analysis, and project planning tools. The platform offers an intuitive interface 
+                            to guide users from concept to implementation.
                         </p>
                         <p>
-                            As the UI/UX Designer, I led the product&apos;s design process, transforming complex technical requirements
-                            into elegant, user-friendly digital solutions. I collaborated closely with cross-functional teams to
-                            deliver intuitive and accessible user interfaces while maintaining meticulous attention to detail and
-                            creating intuitive interactions.
+                            As Lead UI/UX Designer, I spearheaded the design process from concept to delivery, 
+                            architecting complex technical features into intuitive solutions. I established the design system 
+                            and led cross-functional collaboration to ensure seamless user experiences across the platform.
                         </p>
                     </div>
 
