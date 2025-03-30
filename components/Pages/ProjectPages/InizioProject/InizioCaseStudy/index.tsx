@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import Image from 'next/image';
 import { Carousel, IconButton } from "@material-tailwind/react";
 import Title from "@/components/Font/Title";
 import ImageContainer from "@/components/ImageContainer";
@@ -46,7 +45,7 @@ const InizioCaseStudy = () => {
                             {/* First Feedback Card */}
                             <div className="bg-white rounded-xl p-6 border border-gray-300">
                                 <blockquote className="text-gray-900 text-base font-medium mb-6 leading-relaxed">
-                                    "Sometimes I just want to <span className="text-[#5465FF] font-semibold">tweak a few words</span> or a sentence in my mission statement, but it feels like I have to go through <span className="text-[#5465FF] font-semibold">hoops</span> to do it."
+                                    &quot;Sometimes I just want to <span className="text-[#5465FF] font-semibold">tweak a few words</span> or a sentence in my mission statement, but it feels like I have to go through <span className="text-[#5465FF] font-semibold">hoops</span> to do it.&quot;
                                 </blockquote>
                                 <div className="flex items-center gap-4">
                                     <div>
@@ -58,7 +57,7 @@ const InizioCaseStudy = () => {
                             {/* Second Feedback Card */}
                             <div className="bg-white rounded-xl p-6 border border-gray-300">
                                 <blockquote className="text-gray-900 text-base font-medium mb-6 leading-relaxed">
-                                    "I wish there was a way to <span className="text-[#5465FF] font-semibold">experiment with different phrasings</span> without losing my original idea."
+                                    &quot;I wish there was a way to <span className="text-[#5465FF] font-semibold">experiment with different phrasings</span> without losing my original idea.&quot;
                                 </blockquote>
                                 <div className="flex items-center gap-4">
                                     <div>

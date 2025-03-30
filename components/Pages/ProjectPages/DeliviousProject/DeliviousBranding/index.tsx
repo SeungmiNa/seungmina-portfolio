@@ -52,7 +52,7 @@ const DeliviousBranding = (/*{ item }: { item?: any }*/) => {
                     Branding Identity
                 </Title>
                 <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                    I crafted Delivious' visual identity through a distinctive logo design, pairing the elegant Courgette with modern Open Sans typography, and establishing a confident blue-centric color system that reflects the brand's innovative spirit.
+                    I crafted Delivious&apos; visual identity through a distinctive logo design, pairing the elegant Courgette with modern Open Sans typography, and establishing a confident blue-centric color system that reflects the brand&apos;s innovative spirit.
                 </p>
             </div>
 
