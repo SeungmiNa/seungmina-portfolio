@@ -19,16 +19,16 @@ const InizioUXUI = () => {
                                 <span className="text-sm font-medium text-[#0DB9B9]">UX / UI Design & Development</span>
                             </div>
                         </div>
-                        <Title variant="h1" className="text-4xl md:text-5xl font-bold text-gray-900">
+                        <Title variant="h2" className="font-bold text-gray-900">
                             Interactive UI Elements
                         </Title>
                     </div>
-                    <p className="text-gray-500 max-w-2xl text-lg w-full mx-auto">
+                    <p className="text-gray-500 max-w-2xl text-base lg:text-lg w-full mx-auto">
                         Enhancing user experience through modern UI implementations.
                     </p>
                 </div>
                 {/* Abstract shapes background */}
-                <div className="absolute top-0 left-0 w-full h-full">
+                <div className="absolute top-0 left-0 w-full h-full z-[-10]">
                     <div className="absolute top-12 left-20 w-32 h-32 bg-[#5465FF]/40 rounded-full blur-2xl"></div>
                     <div className="absolute top-10 left-30 w-32 h-32 bg-white/20 rounded-full blur-2xl"></div>
                     <div className="absolute bottom-10 right-20 w-40 h-40 bg-[#0DB9B9]/40 rounded-full blur-2xl"></div>
@@ -38,8 +38,8 @@ const InizioUXUI = () => {
             {/* Features Section */}
             <div className="space-y-16">
                 {/* Navigation Feature */}
-                <div className="flex flex-col md:flex-row items-center gap-12">
-                    <div className="w-full md:w-1/2 bg-gray-100 rounded-2xl overflow-hidden">
+                <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+                    <div className="w-full md:w-1/2 bg-gray-100 rounded-2xl overflow-hidden border border-gray-300">
                         <div className="relative aspect-[4/3]">
                             <ImageContainer
                                 image="/images/inizio/inizio-navigation.svg"
@@ -52,9 +52,9 @@ const InizioUXUI = () => {
                         <div className="uppercase inline-block border border-[#5465FF]/10 bg-[#5465FF]/20 text-[#5465FF] px-3 py-1 rounded-full text-sm font-medium">
                             NAVIGATION
                         </div>
-                        <h3 className="text-2xl font-semibold">
+                            <Title variant="h4" className="font-semibold">
                             Responsive Navigation System
-                        </h3>
+                            </Title>
                         <p className="text-gray-600">
                             Implemented a dynamic navigation system that expands and collapses smoothly on hover, enhancing user interaction across devices.
                         </p>
@@ -77,9 +77,9 @@ const InizioUXUI = () => {
                         <div className="uppercase inline-block border border-[#0DB9B9]/20 bg-[#0DB9B9]/10 text-[#0DB9B9] px-3 py-1 rounded-full text-sm font-medium">
                             Theme button
                         </div>
-                        <h3 className="text-2xl font-semibold">
+                        <Title variant="h4" className="font-semibold">
                             Dark & Light Mode
-                        </h3>
+                        </Title>
                         <p className="text-gray-600">
                             Developed a theme button for manually switching between dark and light modes, enhancing user control and accessibility
                         </p>
@@ -126,9 +126,9 @@ const InizioUXUI = () => {
                         <div className="inline-block border border-[#5465FF]/10 bg-[#5465FF]/20 text-[#5465FF] px-3 py-1 rounded-full text-sm font-medium">
                             INTERACTIONS
                         </div>
-                        <h3 className="text-2xl font-semibold">
+                        <Title variant="h4" className="font-semibold">
                             Hover Interactions
-                        </h3>
+                        </Title>
                         <p className="text-gray-600">
                             Refined user engagement with rich content tooltips and dynamic animations upon hovering
                         </p>

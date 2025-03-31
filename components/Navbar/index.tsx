@@ -40,24 +40,26 @@ const Navbar: React.FC<NavbarProps> = ({ className = "" }) => {
   };
 
   return (
-    <nav className={`container mx-auto w-full shadow bg-white/50 backdrop-blur-md rounded-full flex justify-between items-center p-2 mt-2 sticky top-2 z-[100] ${className}`}>
-      <Link href="/" className="tracking-tight ml-4 text-lg tracking-noraml font-semibold text-gray-950 hover:text-gray-700 transition-colors mb-2 sm:mb-0">
-        SEUNGMI NA
-      </Link>
-      <div className="flex space-x-6">
-        <NavLink onClick={goToProjects} active={isHome}>
-          Projects
-        </NavLink>
-        <NavLink href="/about" active={isAbout}>
-          About
-        </NavLink>
-        {/* Add more navigation links as needed */}
-      </div>
-      <SolidButton
-        title="Contact"
-        onClick={handleContactClick}
-      />
-    </nav>
+    <div className="mx-2">
+      <nav className={`container mx-auto w-full shadow bg-white/50 backdrop-blur-md rounded-full flex justify-between items-center p-2 mt-2 sticky top-2 z-[100] ${className}`}>
+        <Link href="/" className="tracking-tight ml-3 text-lg tracking-noraml font-semibold text-gray-950 hover:text-gray-700 transition-colors">
+          SEUNGMI NA
+        </Link>
+        <div className="flex space-x-6">
+          <NavLink onClick={goToProjects} active={isHome}>
+            Projects
+          </NavLink>
+          <NavLink href="/about" active={isAbout}>
+            About
+          </NavLink>
+          {/* Add more navigation links as needed */}
+        </div>
+        <SolidButton
+          title="Contact"
+          onClick={handleContactClick}
+        />
+      </nav>
+    </div>
   );
 };
 

@@ -9,23 +9,24 @@ type ProjectCardProps = {
     period: string;
     role: string;
     category: string;
+    imageClassName?: string;
 };
 
-const ProjectCard: FC<ProjectCardProps> = ({ title, description, image, period, role, category }) => {
+const ProjectCard: FC<ProjectCardProps> = ({ title, description, image, period, role, category, imageClassName }) => {
     return (
         <a className="relative h-[300px] md:h-[500px] flex flex-col group rounded-xl overflow-hidden border border-gray-300 bg-black">
             <div
                 className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
                 style={{ backgroundImage: `url(${image})` }}
             />
-            <div className="absolute inset-0 h-full transition-colors duration-300 group-hover:bg-black/60" />
+            <div className={`absolute inset-0 h-full transition-colors duration-300 group-hover:bg-black/60 ${imageClassName}`} />
 
-            <div className="p-4 h-full max-w-md flex flex-col justify-end z-10">
+            <div className="p-4 h-full max-w-xl flex flex-col justify-end z-10">
                 <div className="transition-colors duration-300 flex flex-col rounded-xl overflow-hidden">
-                    <div className="flex flex-col grow justify-end p-4 space-y-2 transform transition-all duration-300 group-hover:-translate-y-2">
+                    <div className="rounded-xl flex flex-col grow justify-end p-4 space-y-2 transform transition-all duration-300 group-hover:-translate-y-2">
                         <Title variant="h4" className="font-semibold text-white">{title}</Title>
-                        <p className="text-sm text-gray-200">{period} | {role} | {category}</p>
-                        <p className="text-gray-200">{description}</p>
+                        <p className="text-sm font-normal text-gray-200">{period} | {role} | {category}</p>
+                        <p className="text-sm font-normal text-gray-200">{description}</p>
 
                         <div className="hidden group-hover:block transition-all duration-300">
                             <div className="pt-4 transform transition-all duration-300 translate-y-4 group-hover:translate-y-0">

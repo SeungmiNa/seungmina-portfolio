@@ -12,10 +12,9 @@ const HomePage: FC<HomePageProps> = ({
 }) => {
 
     return (
-        <PageLayout>
-            <div className={`${className} flex flex-col text-gray-800 text-base container mx-auto`}>
-                <div className="flex flex-col gap-12 items-center">
-                    {/* <div className="w-full">
+        <div className={`${className} flex flex-col text-gray-800 text-base mx-auto`}>
+            <div className="flex flex-col gap-12 items-center">
+                {/* <div className="w-full">
                     <p className="text-center mb-4 text-2xl">My name is</p>
                     <div className="flex justify-center items-end mb-8">
                         <div className="text-center">
@@ -42,14 +41,13 @@ const HomePage: FC<HomePageProps> = ({
                     As a UX/UI designer, I'm passionate about creating beautiful and user-centric designs. I specialize in crafting visually appealing interfaces that enhance the overall user experience. My expertise in HTML and CSS allows me to design flexible layouts that adapt seamlessly to various screen sizes and devices. Every design decision I make is driven by the goal of improving usability and creating delightful digital experiences.
                     </p>
                 </div> */}
-                    <HomeHero />
-                </div>
-
-                <section id="projects" className="px-4 py-24">
-                    <ProjectList />
-                </section>
+                <HomeHero />
             </div>
-        </PageLayout>
+
+            <section id="projects" className="px-4 py-24 container mx-auto">
+                <ProjectList />
+            </section>
+        </div>
     );
 }
 

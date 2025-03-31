@@ -9,21 +9,18 @@ const InizioCaseStudy = () => {
         {
             id: 'intro',
             content: (
-                <div className="w-full h-full flex flex-col justify-center px-8 py-12 rounded-xl border border-gray-100">
+                <div className="w-full h-full flex flex-col justify-center px-4 lg:px-8 py-12 rounded-xl border border-gray-100">
                     {/* Content Grid */}
-                    <div className="overflow-auto py-3 grid grid-cols-1 md:grid-cols-2 gap-8 items-start max-w-6xl mx-auto w-full">
+                    <div className="overflow-auto no-scrollbar grid grid-cols-1 lg:grid-cols-2 gap-8 items-start max-w-6xl mx-auto w-full">
                         {/* Left side - Original Design */}
-                        <div className="relative w-full h-full aspect-square rounded-3xl overflow-hidden border border-gray-300">
-                            {/* <div className="absolute inset-0 flex items-center justify-center">
-                                <div className="w-3/4 h-3/4 bg-white rounded-2xl shadow-xl">
-                                    
-                                </div>
-                            </div> */}
-                            <ImageContainer
-                                image="/images/inizio/inizio-case-study-original.svg"
-                                alt="Case Study Original Design"
-                                className="object-cover w-full h-full absolute top-0 left-0"
-                            />
+                        <div className="relative w-auto h-full shrink-0">
+                            <div className="flex items-center justify-center overflow-hidden rounded-3xl border border-gray-300 aspect-3/2 lg:aspect-square">
+                                <ImageContainer
+                                    image="/images/inizio/inizio-case-study-original.svg"
+                                    alt="Case Study Original Design"
+                                    className="object-cover w-full h-full absolute top-0 left-0"
+                                />
+                            </div>
                             <div className="absolute bottom-6 left-6 right-6 bg-gray-800/50 backdrop-blur-sm rounded-xl py-3 px-4">
                                 <p className="text-sm font-semibold text-white pb-1">Original Design</p>
                                 <p className="text-xs text-gray-100">Before user feedback implementation</p>
@@ -35,9 +32,9 @@ const InizioCaseStudy = () => {
                             {/* Title Section */}
                             <div className="mb-8">
                                 <div className="text-[#5465FF] text-base">Problem</div>
-                                <h2 className="text-3xl font-bold text-gray-900 mb-2">
+                                <Title variant="h4" className="font-semibold text-gray-900 mb-2">
                                     What Our Users Say
-                                </h2>
+                                </Title>
                                 <p className="text-gray-600 max-w-2xl mx-auto">
                                     Real feedback from our users that helped shape our design decisions
                                 </p>
@@ -73,7 +70,7 @@ const InizioCaseStudy = () => {
         {
             id: 'design-challenge',
             content: (
-                <div className="w-full h-full flex flex-col justify-center px-8 py-12 bg-white/60 rounded-xl border border-gray-100">
+                <div className="w-full h-full flex flex-col justify-center px-8 py-12 rounded-xl border border-gray-100">
                     <div className="max-w-6xl mx-auto w-full">
                         {/* Header Section */}
 
@@ -88,10 +85,9 @@ const InizioCaseStudy = () => {
                             </p>
                         </div>
 
-                        <div className="flex flex-col md:flex-row gap-4">
+                        <div className="flex flex-col lg:flex-row gap-4">
                             {/* Left Column */}
-
-                            <div className="w-full md:w-1/3 bg-gray-100 rounded-xl p-8 border border-gray-300">
+                            <div className="w-full lg:w-1/3 bg-gray-200 rounded-xl p-8 border border-gray-300">
                                 <h3 className="text-xl font-semibold mb-6 text-gray-900">Current Limitations</h3>
                                 <ul className="space-y-2">
                                     {[
@@ -110,7 +106,7 @@ const InizioCaseStudy = () => {
                                 </ul>
                             </div>
                             {/* Right Column */}
-                            <div className="h-full w-full md:w-2/3 bg-white rounded-xl p-8 border border-gray-300">
+                            <div className="h-full w-full lg:w-2/3 bg-white rounded-xl p-8 border border-gray-300">
                                 <h3 className="text-xl font-semibold mb-5 text-gray-900"> Challenge</h3>
                                 <p className="text-gray-800 text-base">
                                     Users may want to adjust the generated project ideas, including the Problem Statement, Mission, Vision, or Goals.
@@ -124,7 +120,7 @@ const InizioCaseStudy = () => {
                                             </svg>
                                             <h3 className="font-semibold text-gray-900">Varied Edit Types</h3>
                                         </div>
-                                        <p className="text-gray-600 pl-8">
+                                        <div className="text-gray-600 pl-8">
                                             <ul className="space-y-2 py-2">
                                                 {[
                                                     'Replacing specific keywords',
@@ -138,7 +134,7 @@ const InizioCaseStudy = () => {
                                                     </li>
                                                 ))}
                                             </ul>
-                                        </p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -150,7 +146,7 @@ const InizioCaseStudy = () => {
         {
             id: 'solution',
             content: (
-                <div className="w-full h-full flex flex-col justify-center px-8 py-12 bg-white/60 rounded-xl border border-gray-100">
+                <div className="w-full h-full flex flex-col justify-center px-8 py-12 rounded-xl border border-gray-100">
                     {/* Header */}
                     {/* <div className="max-w-6xl mx-auto w-full mb-8">
                         <div className="text-[#5465FF] text-base mb-2">Solution & Collaboration</div>
@@ -158,9 +154,9 @@ const InizioCaseStudy = () => {
                         <p className="text-gray-600 text-lg">See how we transformed user feedback into an intuitive editing experience</p>
                     </div> */}
 
-                    <div className="flex flex-col md:flex-row gap-8 max-w-6xl mx-auto w-full">
+                    <div className="flex flex-col lg:flex-row gap-8 max-w-6xl mx-auto w-full">
                         {/* Left Column - Video (Fixed) */}
-                        <div className="w-full md:w-3/5 flex-shrink-0">
+                        <div className="w-full lg:w-3/5 flex-shrink-0">
                             <div className="mb-8">
                                 <div className="text-[#5465FF] text-base">Solution</div>
                                 <h2 className="text-3xl font-bold text-gray-900 mb-2">
@@ -188,11 +184,11 @@ const InizioCaseStudy = () => {
                         </div>
 
                         {/* Right Column - Solution & Collaboration (Scrollable) */}
-                        <div className="w-full md:w-2/5 overflow-y-auto space-y-3 max-h-[600px] no-scrollbar pb-4">
+                        <div className="w-full lg:w-2/5 overflow-y-auto space-y-3 max-h-[600px] no-scrollbar pb-4">
 
 
                             {/* Solution Features */}
-                            <div className="bg-gray-100 rounded-xl p-4 border border-gray-200">
+                            <div className="bg-white rounded-xl p-4 border border-gray-300">
                                 <div className="flex items-center gap-4 mb-4">
                                     <div className="p-2.5 bg-[#5465FF]/10 rounded-lg">
                                         <svg className="w-5 h-5 text-[#5465FF]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -202,19 +198,19 @@ const InizioCaseStudy = () => {
                                     <h3 className="text-lg font-semibold text-gray-900">Key Features</h3>
                                 </div>
                                 <div className="space-y-1.5">
-                                    <div className="bg-white rounded-lg p-4 border border-gray-100">
+                                    <div className="bg-gray-100 rounded-lg p-4 border border-gray-100">
                                         <h4 className="font-medium text-gray-900 mb-1 text-sm">Side-Panel Chat Interface</h4>
                                         <p className="text-gray-600 text-sm leading-relaxed">
                                             Intuitive chat interface powered by LLM for natural conversation-based content revision.
                                         </p>
                                     </div>
-                                    <div className="bg-white rounded-lg p-4 border border-gray-100">
+                                    <div className="bg-gray-100 rounded-lg p-4 border border-gray-100">
                                         <h4 className="font-medium text-gray-900 mb-1 text-sm">Real-Time Iteration</h4>
                                         <p className="text-gray-600 text-sm leading-relaxed">
                                             Instant updates and version comparison for seamless content refinement.
                                         </p>
                                     </div>
-                                    <div className="bg-white rounded-lg p-4 border border-gray-100">
+                                    <div className="bg-gray-100 rounded-lg p-4 border border-gray-100">
                                         <h4 className="font-medium text-gray-900 mb-1 text-sm">Flexible Workspace</h4>
                                         <p className="text-gray-600 text-sm leading-relaxed">
                                             Collapsible side chat provides optimal space management while maintaining AI assistance.
@@ -223,7 +219,7 @@ const InizioCaseStudy = () => {
                                 </div>
                             </div>
                             {/* Engineering Collaboration Card */}
-                            <div className="bg-gray-100 rounded-xl p-4 border border-gray-200">
+                            <div className="bg-white rounded-xl p-4 border border-gray-300">
                                 <div className="flex items-center gap-4 mb-4">
                                     <div className="p-2.5 bg-[#5465FF]/10 rounded-lg">
                                         <svg className="w-5 h-5 text-[#5465FF]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -251,15 +247,15 @@ const InizioCaseStudy = () => {
                         <span className="text-sm font-medium text-[#5465FF]">Case Study</span>
                     </div>
                 </div>
-                <Title variant="h1" className="text-4xl md:text-5xl font-bold to-gray-700 mt-2 mb-6">
+                <Title variant="h2" className="font-bold to-gray-700 mt-2 mb-6">
                     Behind the Design
                 </Title>
-                <p className="text-gray-600 text-lg">
+                <p className="text-gray-600 text-base lg:text-lg">
                     Transforming user insights into intuitive design solutions
                 </p>
             </div>
 
-            <section className="relative w-full h-[700px] bg-white/60 rounded-3xl shadow-xl overflow-hidden mx-auto max-w-7xl">
+            <section className="relative w-full bg-white/60 rounded-3xl shadow-xl overflow-hidden mx-auto max-w-7xl">
                 <Carousel
                     className="rounded-xl h-full"
                     prevArrow={({ handlePrev, activeIndex }) => (
@@ -271,7 +267,7 @@ const InizioCaseStudy = () => {
                                 color="white"
                                 size="lg"
                                 onClick={handlePrev}
-                                className="!absolute top-1/2 left-4 -translate-y-1/2 bg-white/95 hover:bg-[#5465FF] shadow-lg hover:shadow-xl transition-all duration-300 rounded-full border border-gray-200 hover:border-[#5465FF] group"
+                                className="!absolute top-1/2 left-4 -translate-y-1/2 bg-white/95 hover:bg-[#5465FF] shadow-xl hover:shadow-xl transition-all duration-300 rounded-full border border-gray-200 hover:border-[#5465FF] group"
                                 placeholder={undefined}
                                 onPointerEnterCapture={undefined}
                                 onPointerLeaveCapture={undefined}
@@ -302,7 +298,7 @@ const InizioCaseStudy = () => {
                                 color="white"
                                 size="lg"
                                 onClick={handleNext}
-                                className="!absolute top-1/2 right-4 -translate-y-1/2 bg-white/95 hover:bg-[#5465FF] shadow-lg hover:shadow-xl transition-all duration-300 rounded-full border border-gray-200 hover:border-[#5465FF] group"
+                                className="!absolute top-1/2 right-4 -translate-y-1/2 bg-white/95 hover:bg-[#5465FF] shadow-xl hover:shadow-xl transition-all duration-300 rounded-full border border-gray-200 hover:border-[#5465FF] group"
                                 placeholder={undefined}
                                 onPointerEnterCapture={undefined}
                                 onPointerLeaveCapture={undefined}
