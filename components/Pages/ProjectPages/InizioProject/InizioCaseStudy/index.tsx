@@ -14,11 +14,11 @@ const InizioCaseStudy = () => {
                     <div className="overflow-auto no-scrollbar grid grid-cols-1 lg:grid-cols-2 gap-8 items-start max-w-6xl mx-auto w-full">
                         {/* Left side - Original Design */}
                         <div className="relative w-auto h-full shrink-0">
-                            <div className="flex items-center justify-center overflow-hidden rounded-3xl border border-gray-300 aspect-3/2 lg:aspect-square">
+                            <div className="flex items-center justify-center overflow-hidden rounded-3xl border border-gray-300 aspect-[3/2] lg:aspect-square">
                                 <ImageContainer
                                     image="/images/inizio/inizio-case-study-original.svg"
                                     alt="Case Study Original Design"
-                                    className="object-cover w-full h-full absolute top-0 left-0"
+                                    className="object-cover w-full h-full absolute top-0 left-0 object-top"
                                 />
                             </div>
                             <div className="absolute bottom-6 left-6 right-6 bg-gray-800/50 backdrop-blur-sm rounded-xl py-3 px-4">

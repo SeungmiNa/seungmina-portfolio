@@ -100,11 +100,11 @@ const InizioDev: React.FC = () => {
                             <span className="text-sm font-medium text-[#5465FF]">Development</span>
                         </div>
                     </div>
-                    <Title variant="h1" className="text-4xl md:text-5xl font-bold text-gray-900">
+                    <Title variant="h2" className="font-bold text-gray-900">
                         Development
                     </Title>
                 </div>
-                <p className="text-gray-500 max-w-3xl text-lg w-full">
+                <p className="text-gray-600 max-w-3xl text-base lg:text-lg w-full">
                     A comprehensive tech stack for building a modern and efficient web application.
                 </p>
             </div>
@@ -198,7 +198,7 @@ const InizioDev: React.FC = () => {
             </section> */}
 
             {/* 수정된 기술 스택 섹션 */}
-            <section className="mb-16 space-y-4">
+            <section className="space-y-4">
                 <p className="text-gray-500 text-xl font-semibold">Skills Used:</p>
                 <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
                     {techStack.map((tech) => (
@@ -225,11 +225,11 @@ const InizioDev: React.FC = () => {
             </section>
 
             {/* 재사용 가능한 컴포넌트 섹션 */}
-            <section className="py-16">
+            <section className="py-16 lg:pt-32">
                 <div className="space-y-4 mb-12">
                     <Title variant="h3">UI Component System</Title>
                     <div className="max-w-4xl">
-                        <p className="text-base text-gray-500 mb-4">
+                        <p className="text-base text-gray-600 mb-4">
                             A modular UI system built with Tailwind CSS and React, featuring dark/light mode support 
                             and responsive design. Includes reusable buttons, modals, badges, and theme controls.
                         </p>

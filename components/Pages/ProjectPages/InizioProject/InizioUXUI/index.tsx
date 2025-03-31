@@ -23,7 +23,7 @@ const InizioUXUI = () => {
                             Interactive UI Elements
                         </Title>
                     </div>
-                    <p className="text-gray-500 max-w-2xl text-base lg:text-lg w-full mx-auto">
+                    <p className="text-gray-600 max-w-2xl text-base lg:text-lg w-full mx-auto">
                         Enhancing user experience through modern UI implementations.
                     </p>
                 </div>
