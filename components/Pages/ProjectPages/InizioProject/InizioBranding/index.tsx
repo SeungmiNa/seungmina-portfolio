@@ -26,7 +26,7 @@ const InizioBranding = () => {
             </div>
 
             {/* Main Content */}
-            <div className="max-w-7xl mx-auto px-4 pb-12">
+            <div className="max-w-7xl mx-auto pb-12">
                 {/* Typography & Logo Types */}
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                     <div className="flex flex-col justify-center gap-5">

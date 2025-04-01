@@ -255,7 +255,7 @@ const InizioCaseStudy = () => {
                 </p>
             </div>
 
-            <section className="relative w-full bg-white/60 rounded-3xl shadow-xl overflow-hidden mx-auto max-w-7xl">
+            <section className="relative w-full bg-white/60 rounded-3xl shadow-xl overflow-hidden mx-auto w-full">
                 <Carousel
                     className="rounded-xl h-full"
                     prevArrow={({ handlePrev, activeIndex }) => (

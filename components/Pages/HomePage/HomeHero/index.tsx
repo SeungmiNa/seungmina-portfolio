@@ -26,7 +26,7 @@ const HomeHero: FC = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5 }}
                     >
-                        <span className="inline-block px-5 py-2 bg-white/70 backdrop-blur-sm rounded-full text-sm font-medium text-gray-600 border border-gray-300/50 shadow-sm">
+                        <span className="inline-block px-5 py-2 bg-white/70 backdrop-blur-sm rounded-full text-sm font-medium text-gray-700 border border-gray-300/50 shadow-sm">
                             Hello, I&apos;m Seungmi 👋
                         </span>
                     </motion.div>

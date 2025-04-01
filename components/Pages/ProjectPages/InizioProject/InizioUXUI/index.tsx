@@ -8,7 +8,7 @@ import { MdOutlineAnimation } from 'react-icons/md';
 
 const InizioUXUI = () => {
     return (
-        <div className="max-w-7xl mx-auto w-full px-4 py-12">
+        <div className="max-w-7xl mx-auto w-full py-12">
             {/* Hero Section */}
             {/* <div className="relative bg-gradient-to-br from-[#0DB9B9]/60 to-[#5465FF]/60 rounded-2xl px-8 py-24 mb-12 overflow-hidden"> */}
             <div className="relative rounded-2xl px-8 pt-24 mb-6 overflow-hidden text-center">
