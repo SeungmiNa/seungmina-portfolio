@@ -19,14 +19,14 @@ const HomeHero: FC = () => {
             <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:60px_60px] dark:bg-grid-black/[0.02]" />
 
             {/* Main Content */}
-            <div className="container mx-auto px-8 pb-24 z-10">
+            <div className="container mx-auto px-8 py-12 md:py-24 z-10">
                 <div className="max-w-4xl mx-auto text-center">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5 }}
                     >
-                        <span className="inline-block px-5 py-2 bg-white/80 backdrop-blur-sm rounded-full text-sm font-medium text-neutral-600 border border-neutral-200/50 shadow-sm">
+                        <span className="inline-block px-5 py-2 bg-white/70 backdrop-blur-sm rounded-full text-sm font-medium text-gray-700 border border-gray-300/50 shadow-sm">
                             Hello, I&apos;m Seungmi 👋
                         </span>
                     </motion.div>
@@ -37,7 +37,10 @@ const HomeHero: FC = () => {
                         transition={{ duration: 0.5, delay: 0.1 }}
                         className="mt-8"
                     >
-                        <Title variant="h1" className="text-5xl md:text-6xl lg:text-7xl font-bold text-black !leading-[1.2]">
+                        <Title 
+                            variant="h1" 
+                            className="text-4xl md:text-6xl lg:text-7xl font-bold !leading-[1.2] bg-gradient-to-r from-black via-gray-800 to-black text-transparent bg-clip-text"
+                        >
                             Bridging Design & Development
                         </Title>
                     </motion.div>
@@ -48,7 +51,7 @@ const HomeHero: FC = () => {
                         transition={{ duration: 0.5, delay: 0.15 }}
                         className="mt-10"
                     >
-                        <span className="text-xl md:text-2xl text-neutral-800 dark:text-neutral-200 font-light tracking-wide">
+                        <span className="text-lg md:text-2xl text-neutral-800 dark:text-neutral-200 font-light tracking-wide">
                             UX/UI Designer & UI Developer
                         </span>
                     </motion.div>

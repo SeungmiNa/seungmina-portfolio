@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from 'react';
 import DeliviousBranding from './DeliviousBranding';
 import DeliviousDev from './DeliviousDev';
 import DeliviousUXUI from './DeliviousUXUI';
+import Title from '@/components/Font/Title';
 
 interface DeliviousProjectProps {
     project: Project;
@@ -122,7 +123,7 @@ export default function DeliviousProject({ project }: DeliviousProjectProps) {
     return (
         <div className="min-h-screen bg-[#FAFAFA]">
             <div>
-                <div className='relative -mt-16 mb-12 h-[600px]'>
+                <div className='relative -mt-16 mb-12 pt-16 md:pt-12 lg:pt-0 bg-[#EEF0F1]'>
                     {/* <div
                         className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
                         style={{ backgroundImage: `url(${project.image})` }}
@@ -136,15 +137,15 @@ export default function DeliviousProject({ project }: DeliviousProjectProps) {
                     />
                 </div>
 
-                <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-56'>
+                <div className='container mx-auto px-6 lg:px-4 flex flex-col gap-4 md:gap-16 lg:gap-24'>
                     {/* Introduction Section */}
-                    <div>
+                    <div className='py-24'>
                         {/* Project Title & Description */}
                         <div className="mb-20">
-                            <h1 className="text-[100px] leading-tight font-[Courgette]">
+                            <Title variant="h1" className="!text-5xl md:!text-6xl lg:!text-7xl font-medium leading-tight font-[Courgette]">
                                 Deliv<span className="text-[#4963AE]">ious</span>
-                            </h1>
-                            <h2 className="text-3xl text-stone-800 mb-12 font-medium">
+                            </Title>
+                            <h2 className="text-3xl text-stone-800 pt-6 mb-12 font-medium">
                                 Ordering & Dining with seamless delivery robot service
                             </h2>
                             <div className="max-w-4xl space-y-4">
@@ -158,7 +159,7 @@ export default function DeliviousProject({ project }: DeliviousProjectProps) {
                         </div>
 
                         {/* Project Details Grid */}
-                        <div className="grid grid-cols-1 md:grid-cols-4 gap-x-12 gap-y-8">
+                        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
                             {/* My Role */}
                             <div>
                                 <h3 className="text-[#4963AE] text-base mb-4 font-semibold">My Role</h3>
@@ -203,31 +204,31 @@ export default function DeliviousProject({ project }: DeliviousProjectProps) {
                     </div>
 
                     {/* Approach & Goal Section */}
-                    <div>
+                    <div className='pb-24'>
                         <div className="mb-2">
                             <h2 className="text-base font-medium text-[#4963AE]">Approach & Goal</h2>
                         </div>
 
                         <div className="space-y-1">
-                            <div className="flex items-center gap-2">
-                                <h3 className="text-3xl font-semibold text-stone-800">
+                            <div className="flex items-start gap-2">
+                                <span className="text-[#4963AE] font-semibold text-sm bg-[#DAE0F2] rounded-full px-2 py-0.5 mt-0.5">Who</span>
+                                <Title variant='h4' className="font-medium text-stone-800">
                                     Diners seeking convenience and restaurants wanting efficiency
-                                </h3>
-                                <span className="text-[#4963AE] font-semibold text-sm">Who</span>
+                                </Title>
                             </div>
 
-                            <div className="flex items-center gap-2">
-                                <h3 className="text-3xl font-semibold text-stone-800">
+                            <div className="flex items-start gap-2">
+                                <span className="text-[#4963AE] font-semibold text-sm bg-[#DAE0F2] rounded-full px-2 py-0.5 mt-0.5">How</span>
+                           <Title variant='h4' className="font-medium text-stone-800">
                                     Through an app and kiosk with robot delivery
-                                </h3>
-                                <span className="text-[#4963AE] font-semibold text-sm">How</span>
+                                </Title>
                             </div>
 
-                            <div className="flex items-center gap-2">
-                                <h3 className="text-3xl font-semibold text-stone-800">
+                            <div className="flex items-start gap-2">
+                                <span className="text-[#4963AE] font-semibold text-sm bg-[#DAE0F2] rounded-full px-2 py-0.5 mt-0.5">What</span>
+                           <Title variant='h4' className="font-medium text-stone-800">
                                     A smoother, tech-driven dining experience.
-                                </h3>
-                                <span className="text-[#4963AE] font-semibold text-sm">What</span>
+                                </Title>
                             </div>
 
                             {/* <p className="text-stone-500 text-base text-gray-300 pt-6">
@@ -236,11 +237,11 @@ export default function DeliviousProject({ project }: DeliviousProjectProps) {
                         </div>
 
                         {/* Key Features Section */}
-                        <div className="mt-20">
+                        <div className="mt-12">
                             <h3 className="text-base font-semibold text-stone-400 mb-2">KEY FEATURES</h3>
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                                 {/* Feature 1 */}
-                                <div className="p-8 rounded-lg border border-stone-200 bg-white">
+                                <div className="p-6 lg:p-8 rounded-lg border border-stone-200 bg-white">
                                     <div className="text-blue-400 mb-6 flex items-center gap-2 text-sm">
                                         <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none">
                                             <rect width="24" height="24" fill="currentColor" fillOpacity="0.2" rx="4" />
@@ -256,7 +257,7 @@ export default function DeliviousProject({ project }: DeliviousProjectProps) {
                                 </div>
 
                                 {/* Feature 2 */}
-                                <div className="p-8 rounded-lg border border-stone-200 bg-white">
+                                <div className="p-6 lg:p-8 rounded-lg border border-stone-200 bg-white">
                                     <div className="text-blue-400 mb-6 flex items-center gap-2 text-sm">
                                         <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none">
                                             <rect width="24" height="24" fill="currentColor" fillOpacity="0.2" rx="4" />
@@ -272,7 +273,7 @@ export default function DeliviousProject({ project }: DeliviousProjectProps) {
                                 </div>
 
                                 {/* Feature 3 */}
-                                <div className="p-8 rounded-lg border border-stone-200 bg-white">
+                                <div className="p-6 lg:p-8 rounded-lg border border-stone-200 bg-white">
                                     <div className="text-blue-400 mb-6 flex items-center gap-2 text-sm">
                                         <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none">
                                             <rect width="24" height="24" fill="currentColor" fillOpacity="0.2" rx="4" />

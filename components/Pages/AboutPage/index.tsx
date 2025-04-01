@@ -1,4 +1,5 @@
 "use client";
+import Title from "@/components/Font/Title";
 import { Button } from "@/components/ui/button";
 import { withBasePath } from "@/utils/paths";
 import { Github, Linkedin, Mail, MapPin } from 'lucide-react';
@@ -92,9 +93,9 @@ const AboutPage: FC<AboutPageProps> = ({ /*className = ""*/ }) => {
                 <section className="space-y-12">
                     {/* Profile Content */}
                     <div className="max-w-3xl space-y-6">
-                        <h1 className="text-5xl font-bold tracking-tight text-foreground">
+                        <Title variant="h2" className="font-bold tracking-tight text-foreground">
                             Hello, I&apos;m Seungmi.
-                        </h1>
+                        </Title>
                         <p className="text-xl text-foreground/80 font-medium">
                             A UX/UI Designer based in the Bay Area, passionate about creating
                             intuitive and delightful digital experiences.
@@ -129,7 +130,7 @@ const AboutPage: FC<AboutPageProps> = ({ /*className = ""*/ }) => {
                                 variant="default"
                                 className="rounded-full px-6 hover:scale-105 transition-transform"
                                 // onClick={() => window.location.href = "mailto:naissme0@gmail.com"}>
-                                onClick={()=>window.location.href = "mailto:naissme0@gmail.com"}>
+                                onClick={() => window.location.href = "mailto:naissme0@gmail.com"}>
                                 Contact Me 👋
                             </Button>
                             <Button

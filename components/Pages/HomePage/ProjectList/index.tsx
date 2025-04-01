@@ -44,6 +44,7 @@ const ProjectList: React.FC = () => {
             period: "2022.04 ~ 2022.06",
             role: "UX/UI Designer, Frontend Developer",
             category: "Kiosk Design",
+            imageClassName: "bg-black/20",
         },
         // {
         //     Icon: FileTextIcon,
@@ -102,6 +103,7 @@ const ProjectList: React.FC = () => {
                         period={pr.period}
                         role={pr.role}
                         category={pr.category}
+                        imageClassName={pr.imageClassName}
                     />
                 </div>
             ))}

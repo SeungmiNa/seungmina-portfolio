@@ -14,7 +14,7 @@ const SolidButton: FC<SolidButtonProps> = ({
 }) => {
     return (
         <button
-            className="bg-[#2563EB] text-white font-semibold py-2 px-5 rounded-full shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105"
+            className="bg-[#2563EB] text-white font-semibold py-2 px-4 lg:px-5 rounded-full shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105"
             onClick={onClick}
         >
             {icon}{title}
