@@ -1,4 +1,3 @@
-import PageLayout from "@/components/Layouts/PageLayout";
 import { FC } from "react";
 import HomeHero from "./HomeHero";
 import ProjectList from "./ProjectList";
