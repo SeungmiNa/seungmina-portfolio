@@ -17,7 +17,7 @@ const InizioProject = () => {
                                 className="absolute inset-0 w-full h-full object-cover"
                             />
                         </div>                    
-                            <div className="max-w-7xl mx-auto relative h-full z-20 px-6 md:px-4">
+                            <div className="max-w-7xl mx-auto relative h-full z-20 px-6 lg:px-4">
                                 <div className="h-full flex flex-col justify-center container mx-auto">
                                     <div className="space-y-6 mt-12 ">
                                         <h1 className="text-4xl md:text-6xl lg:text-6xl font-bold text-white">
@@ -79,7 +79,7 @@ const InizioProject = () => {
             </div>
 
             <div className="container mx-auto flex flex-col">
-                <div className="w-full mx-auto px-6 md:px-4 py-16">
+                <div className="w-full mx-auto px-6 lg:px-4 py-16">
                     {/* <h1 className="text-4xl font-bold mb-4">Inizio</h1> */}
                     <h2 className="text-3xl text-stone-800 mb-12 font-medium">AI-Powered Idea-to-Project Platform</h2>
                     <div className="space-y-4 text-stone-500 mb-20 max-w-4xl">
@@ -137,7 +137,7 @@ const InizioProject = () => {
                 </div>
             </div>
 
-            <div className="container mx-auto px-6 md:px-4 flex flex-col gap-4 md:gap-16 lg:gap-24">
+            <div className="container mx-auto px-6 lg:px-4 flex flex-col gap-4 md:gap-16 lg:gap-24">
                 <InizioBranding />
                 <InizioUXUI />
                 <InizioCaseStudy />
