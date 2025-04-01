@@ -33,15 +33,21 @@ const InizioBranding = () => {
                         {/* varient */}
                         <div className="p-8 bg-white/60 rounded-xl">
                             <h3 className="text-2xl font-semibold text-gray-900 mb-6">App Logo</h3>
-                            <div className="flex flex-wrap gap-2 items-center max-w-sm">
-                                <div className="w-16 h-16 xl:w-20 xl:h-20 bg-white rounded-xl xl:rounded-2xl shadow-md flex items-center justify-center p-3 xl:p-4 hover:shadow-lg transition-shadow">
-                                    <InizioSymbolLogo />
+                            <div className="flex flex-wrap gap-4 items-center">
+                                <div className="w-16 h-16 bg-white rounded-xl shadow-md flex items-center justify-center p-3 hover:shadow-lg transition-shadow">
+                                    <div className="w-full h-full">
+                                        <InizioSymbolLogo />
+                                    </div>
                                 </div>
-                                <div className="w-16 h-16 xl:w-20 xl:h-20 bg-[#0DB9B9] rounded-xl xl:rounded-2xl shadow-md flex items-center justify-center p-3 xl:p-4 hover:shadow-lg transition-shadow">
-                                    <InizioSymbolLogo variant="white" />
+                                <div className="w-16 h-16 bg-[#0DB9B9] rounded-xl shadow-md flex items-center justify-center p-3 hover:shadow-lg transition-shadow">
+                                    <div className="w-full h-full">
+                                        <InizioSymbolLogo variant="white" />
+                                    </div>
                                 </div>
-                                <div className="w-16 h-16 xl:w-20 xl:h-20 bg-[#212121] rounded-xl xl:rounded-2xl shadow-md flex items-center justify-center p-3 xl:p-4 hover:shadow-lg transition-shadow">
-                                    <InizioSymbolLogo />
+                                <div className="w-16 h-16 bg-[#212121] rounded-xl shadow-md flex items-center justify-center p-3 hover:shadow-lg transition-shadow">
+                                    <div className="w-full h-full">
+                                        <InizioSymbolLogo />
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -101,11 +107,11 @@ const InizioBranding = () => {
                         </div>
 
                         {/* logo */}
-                        <div className="relative aspect-square flex items-center justify-center bg-white/60 p-8 bg-white/60 rounded-xl">
+                        <div className="relative w-full aspect-square bg-white/60 rounded-xl overflow-hidden">
                             <ImageContainer
                                 image="/images/inizio/inizio-branding-logo.svg"
                                 alt="inizio-branding-logo"
-                                className="absolute inset-0 w-full h-full object-contain"
+                                className="w-full h-auto object-contain p-8"
                             />
                         </div>
                     </div>
