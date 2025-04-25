@@ -5,6 +5,7 @@ import DeliviousProject from '../../../components/Pages/ProjectPages/DeliviousPr
 import { Project, ProjectData } from '../../types/project';
 import ProjectFooter from '../../../components/ProjectFooter';
 import InizioProject from '../../../components/Pages/ProjectPages/InizioProject';
+import Clean71Project from '@/components/Pages/ProjectPages/Clean71Project';
 
 // This would typically come from a database or API
 const getProjectData = (slug: string): Project | undefined => {
@@ -25,6 +26,14 @@ const getProjectData = (slug: string): Project | undefined => {
             type: 'delivious',
             slug: 'delivious',
         },
+        'clean71': {
+            title: 'Clean71',
+            description: 'A modern food delivery platform',
+            fullDescription: 'Delivious revolutionizes the way people order and enjoy their favorite meals.',
+            image: "https://images.unsplash.com/photo-1472214103451-9374bd1c798e?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            type: 'clean71',
+            slug: 'clean71',
+        },
         // 'branding-project': {
         //     title: 'Brand Identity Design',
         //     description: 'Creating memorable brand experiences',
@@ -40,7 +49,7 @@ const getProjectData = (slug: string): Project | undefined => {
 
 // Add this new function to get adjacent projects
 const getAdjacentProjects = (currentSlug: string): { previous?: Project; next?: Project } => {
-    const projectOrder = ['delivious', 'inizio-conceptcraft'];
+    const projectOrder = ['delivious', 'inizio-conceptcraft', 'clean71'];
     const currentIndex = projectOrder.indexOf(currentSlug);
     
     return {
@@ -70,6 +79,7 @@ const ProjectPage: React.FC<ProjectPageProps> = ({ params }) => {
             // case 'default': return <DefaultProject/>;
             case 'inizio': return <InizioProject />;
             case 'delivious': return <DeliviousProject project={project} />;
+            case 'clean71': return <Clean71Project />;
             // case 'branding': return <BrandingProject project={project} />;
         }
     }
@@ -89,7 +99,7 @@ export default ProjectPage;
 
 export async function generateStaticParams() {
   // Use the same slugs defined in getAdjacentProjects
-  const projectSlugs = ['delivious', 'inizio-conceptcraft'];
+  const projectSlugs = ['delivious', 'inizio-conceptcraft', 'clean71'];
   
   return projectSlugs.map((slug) => ({
     slug: slug,
