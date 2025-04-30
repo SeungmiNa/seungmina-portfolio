@@ -151,7 +151,7 @@ const InizioProject = () => {
                     <div className='py-16  lg:py-24'>
                     <div className="mb-16 pt-8">
                         <h2 className="text-3xl text-stone-800 font-medium mb-4">
-                            Clean71 – The Earth's Water Heritage
+                            Clean71 – The Earth&apos;s Water Heritage
                         </h2>
                         <div className="inline-block py-2 bg-stone-100 rounded-full">
                             <span className="text-stone-600">Senior BA Design Class Group Project | San José State University</span>
@@ -226,7 +226,7 @@ const InizioProject = () => {
                                     <h3 className="text-base font-medium uppercase tracking-wider text-blue-600 mb-2 text-[#357B87]">Research</h3>
                                     <p className="pt-2 text-base text-stone-600 leading-relaxed mb-6">
                                         Through research, we learned that cruise ships are major polluters — often worse than cities —
-                                        because ocean pollution regulations are weak. This helped us shape Clean71's purpose:
+                                        because ocean pollution regulations are weak. This helped us shape Clean71&#39;s purpose:
                                     </p>
                                     <ul className="space-y-2 pt-4">
                                         {[
@@ -265,8 +265,8 @@ const InizioProject = () => {
                                             <span className="text-6xl font-bold bg-gradient-to-r from-[#00758D] to-[#92B7BC]
                                                     bg-clip-text text-transparent">Clean71</span>
                                             <p className="text-stone-600 leading-relaxed flex-1 pt-4">
-                                                The name Clean71 reflects the fact that 71% of the Earth's surface is covered by water.
-                                                It's a reminder of the ocean's vast presence and the urgent need to protect it.
+                                                The name Clean71 reflects the fact that 71% of the Earth&#39;s surface is covered by water.
+                                                It&#39;s a reminder of the ocean&#39;s vast presence and the urgent need to protect it.
                                             </p>
                                         </div>
                                     </div>
