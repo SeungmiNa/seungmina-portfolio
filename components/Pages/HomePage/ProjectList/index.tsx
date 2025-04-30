@@ -50,7 +50,7 @@ const ProjectList: React.FC = () => {
             Icon: FileTextIcon,
             name: "Clean71",
             slug: "clean71",
-            description: "Al Delivery and Order Services in Restaurant",
+            description: "The Earth's Water Heritage non-profit organization",
             href: "/",
             cta: "Learn more",
             background: withBasePath("/images/clean71/clean71-brochure-mockup1-1.png"),
