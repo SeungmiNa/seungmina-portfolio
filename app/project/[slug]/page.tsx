@@ -6,6 +6,7 @@ import { Project, ProjectData } from '../../types/project';
 import ProjectFooter from '../../../components/ProjectFooter';
 import InizioProject from '../../../components/Pages/ProjectPages/InizioProject';
 import Clean71Project from '@/components/Pages/ProjectPages/Clean71Project';
+import KoalaProject from '@/components/Pages/ProjectPages/KoalaProject';
 
 // This would typically come from a database or API
 const getProjectData = (slug: string): Project | undefined => {
@@ -14,15 +15,20 @@ const getProjectData = (slug: string): Project | undefined => {
             title: 'Inizio - ConceptCraft',
             description: 'We automatically save your files as you type.',
             fullDescription: 'A comprehensive project management tool that helps teams collaborate effectively.',
-            image: "https://images.unsplash.com/photo-1509343256512-d77a5cb3791b?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             type: 'inizio',
             slug: 'inizio-conceptcraft',
+        },
+        'koala': {
+            title: 'koala',
+            description: 'Animated branding video expressing design through playful storytelling.',
+            fullDescription: 'A one-minute animated video created using AI tools to reflect my design values—simplicity, charm, and attention to detail. The baby koala captures my personality and design philosophy in a light, engaging way.',
+            type: 'koala',
+            slug: 'koala',
         },
         'delivious': {
             title: 'Delivious',
             description: 'A modern food delivery platform',
             fullDescription: 'Delivious revolutionizes the way people order and enjoy their favorite meals.',
-            image: "https://images.unsplash.com/photo-1472214103451-9374bd1c798e?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             type: 'delivious',
             slug: 'delivious',
         },
@@ -30,7 +36,6 @@ const getProjectData = (slug: string): Project | undefined => {
             title: 'Clean71',
             description: 'A modern food delivery platform',
             fullDescription: 'Delivious revolutionizes the way people order and enjoy their favorite meals.',
-            image: "https://images.unsplash.com/photo-1472214103451-9374bd1c798e?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             type: 'clean71',
             slug: 'clean71',
         },
@@ -49,7 +54,7 @@ const getProjectData = (slug: string): Project | undefined => {
 
 // Add this new function to get adjacent projects
 const getAdjacentProjects = (currentSlug: string): { previous?: Project; next?: Project } => {
-    const projectOrder = ['delivious', 'inizio-conceptcraft', 'clean71'];
+    const projectOrder = ['delivious', 'inizio-conceptcraft', 'clean71', 'koala'];
     const currentIndex = projectOrder.indexOf(currentSlug);
     
     return {
@@ -80,6 +85,7 @@ const ProjectPage: React.FC<ProjectPageProps> = ({ params }) => {
             case 'inizio': return <InizioProject />;
             case 'delivious': return <DeliviousProject project={project} />;
             case 'clean71': return <Clean71Project />;
+            case 'koala': return <KoalaProject />;
             // case 'branding': return <BrandingProject project={project} />;
         }
     }
@@ -99,7 +105,7 @@ export default ProjectPage;
 
 export async function generateStaticParams() {
   // Use the same slugs defined in getAdjacentProjects
-  const projectSlugs = ['delivious', 'inizio-conceptcraft', 'clean71'];
+  const projectSlugs = ['delivious', 'inizio-conceptcraft', 'clean71', 'koala'];
   
   return projectSlugs.map((slug) => ({
     slug: slug,
