@@ -39,7 +39,7 @@ const ProjectList: React.FC = () => {
             description: "A short animated video expressing my design style and detail-driven mindset through a playful AI-generated koala.",
             href: "/projects/koala",
             cta: "Watch the video",
-            background: withBasePath("/images/koala/koala-in-detail-cover.jpg"),
+            background: withBasePath("/images/koala/koala-in-detail-cover-without-text.jpg"),
             className: "lg:col-start-1 lg:col-end-2 lg:row-start-1 lg:row-end-3",
             period: "2025.6",
             role: "Concept, Direction, Visual Design",
