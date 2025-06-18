@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import ImageContainer from '@/components/ImageContainer';
 import { motion, useScroll, useTransform } from "framer-motion";
+import KoalaBehindScenes from './KoalaBehindScenes';
 
 const KoalaProject: React.FC = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -340,82 +341,9 @@ const KoalaProject: React.FC = () => {
                 </div>
             </section>
 
-            <section className="py-24 bg-black">
-                <div className="container mx-auto px-4">
-                    <motion.h2 
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8 }}
-                        className="text-4xl md:text-5xl font-bold text-white mb-8 text-center"
-                    >
-                        🎬 Behind the Scenes
-                    </motion.h2>
-                    <motion.p 
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 0.2 }}
-                        className="text-white/80 text-lg text-center max-w-2xl mx-auto mb-16"
-                    >
-                        Every masterpiece has its journey. Here's a peek into the creative process — the trials, errors, and moments that shaped the final piece.
-                    </motion.p>
+            <KoalaBehindScenes failImages={failImages} failGifs={failGifs} />
 
-                    <motion.div 
-                        variants={staggerContainer}
-                        initial="hidden"
-                        whileInView="visible"
-                        className="grid grid-cols-6 grid-rows-[repeat(6,minmax(100px,auto))] gap-2 p-4"
-                    >
-                        <div className="col-start-2 col-end-3 row-start-1 row-end-2">
-                            <img src={failImages[0]} alt="Failed attempt 1" className="w-full h-full object-cover rounded-lg" />
-                        </div>
-                        <div className="col-start-3 col-end-4 row-start-1 row-end-2">
-                            <img src={failGifs[3]} alt="Failed attempt 4 GIF" className="w-full h-full object-cover rounded-lg" />
-                        </div>
-                        <div className="col-start-4 col-end-5 row-start-1 row-end-3">
-                            <img src={failImages[1]} alt="Failed attempt 2" className="w-full h-full object-cover rounded-lg" />
-                        </div>
-                        <div className="col-start-5 col-end-6 row-start-1 row-end-2">
-                            <img src={failImages[2]} alt="Failed attempt 3" className="w-full h-full object-cover rounded-lg" />
-                        </div>
-                        <div className="col-start-1 col-end-2 row-start-2 row-end-4">
-                            <img src={failGifs[5]} alt="Failed attempt 6 GIF" className="w-full h-full object-cover rounded-lg" />
-                        </div>
-                        <div className="col-start-2 col-end-4 row-start-2 row-end-4">
-                            <img src={failGifs[0]} alt="Failed attempt 1 GIF" className="w-full h-full object-cover rounded-lg" />
-                        </div>
-                        <div className="col-start-5 col-end-6 row-start-2 row-end-3">
-                            <img src={failGifs[1]} alt="Failed attempt 2 GIF" className="w-full h-full object-cover rounded-lg" />
-                        </div>
-                        <div className="col-start-4 col-end-6 row-start-3 row-end-5">
-                            <img src={failGifs[2]} alt="Failed attempt 3 GIF" className="w-full h-full object-cover rounded-lg" />
-                        </div>
-                        <div className="col-start-2 col-end-3 row-start-4 row-end-6">
-                            <img src={failImages[3]} alt="Failed attempt 4" className="w-full h-full object-cover rounded-lg" />
-                        </div>
-                        <div className="col-start-3 col-end-4 row-start-4 row-end-5">
-                            <img src={failImages[4]} alt="Failed attempt 5" className="w-full h-full object-cover rounded-lg" />
-                        </div>
-                        <div className="col-start-3 col-end-4 row-start-4 row-end-5">
-                            <img src={failGifs[4]} alt="Failed attempt 5 GIF" className="w-full h-full object-cover rounded-lg" />
-                        </div>
-                        <div className="col-start-3 col-end-4 row-start-5 row-end-6">
-                            <img src={failGifs[5]} alt="Failed attempt 6 GIF" className="w-full h-full object-cover rounded-lg" />
-                        </div>
-                        <div className="col-start-4 col-end-5 row-start-5 row-end-6">
-                            <img src={failGifs[1]} alt="Failed attempt 2 GIF" className="w-full h-full object-cover rounded-lg" />
-                        </div>
-                        <div className="col-start-5 col-end-6 row-start-5 row-end-6">
-                            <img src={failImages[5]} alt="Failed attempt 6" className="w-full h-full object-cover rounded-lg" />
-                        </div>
-                        <div className="col-start-6 col-end-7 row-start-3 row-end-5">
-                            <img src={failImages[6]} alt="Failed attempt 7" className="w-full h-full object-cover rounded-lg" />
-                        </div>
-                    </motion.div>
-                </div>
-            </section>
-
-
-            <div className="container mx-auto px-4 py-16">
+            <div className="mx-auto px-4 lg:px-16 py-16">
                 {/* Project Background */}
                 <section className="mb-24">
                     <div className="max-w-4xl mx-auto">
