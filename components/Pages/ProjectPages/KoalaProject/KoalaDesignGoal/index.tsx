@@ -1,6 +1,6 @@
 "use client";
-import React, { useRef, useEffect, useState } from 'react';
-import { motion, useScroll, useTransform, useInView, AnimatePresence, MotionValue } from "framer-motion";
+import React, { useRef } from 'react';
+import { motion, useScroll, useTransform, useInView, MotionValue } from "framer-motion";
 
 interface AnimatedSentenceProps {
     children: React.ReactNode;
@@ -12,17 +12,16 @@ interface AnimatedSentenceProps {
 // Floating Particles Component
 const FloatingParticles: React.FC = () => {
     const particles = Array.from({ length: 15 }, (_, i) => i);
-    
+
     return (
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
             {particles.map((i) => (
                 <motion.div
                     key={i}
-                    className={`absolute w-1 h-1 rounded-full opacity-40 ${
-                        i % 3 === 0 ? 'bg-gradient-to-r from-rose-300 to-pink-400' :
+                    className={`absolute w-1 h-1 rounded-full opacity-40 ${i % 3 === 0 ? 'bg-gradient-to-r from-rose-300 to-pink-400' :
                         i % 3 === 1 ? 'bg-gradient-to-r from-amber-300 to-orange-400' :
-                        'bg-gradient-to-r from-violet-300 to-purple-400'
-                    }`}
+                            'bg-gradient-to-r from-violet-300 to-purple-400'
+                        }`}
                     initial={{
                         x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1200),
                         y: Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 800),
@@ -51,8 +50,8 @@ const DynamicLighting: React.FC<{ scrollProgress: MotionValue<number> }> = ({ sc
     const lightIntensity = useTransform(scrollProgress, [0, 0.3, 0.7, 1], [0.1, 0.25, 0.4, 0.15]);
     const lightPosition = useTransform(scrollProgress, [0, 1], [0, 100]);
     const lightColor = useTransform(
-        scrollProgress, 
-        [0, 0.25, 0.5, 0.75, 1], 
+        scrollProgress,
+        [0, 0.25, 0.5, 0.75, 1],
         ['#fef3c7', '#fecaca', '#f3e8ff', '#fef3c7', '#fecaca']
     );
 
@@ -76,10 +75,10 @@ const DynamicLighting: React.FC<{ scrollProgress: MotionValue<number> }> = ({ sc
 
 const AnimatedSentence: React.FC<AnimatedSentenceProps> = ({ children, index, isLast = false, scrollProgress }) => {
     const ref = useRef<HTMLDivElement>(null);
-    const isInView = useInView(ref, { 
-        once: true, 
+    const isInView = useInView(ref, {
+        once: true,
         margin: "-25% 0px -25% 0px",
-        amount: 0.3 
+        amount: 0.3
     });
 
     // Subtle parallax effect for each sentence
@@ -88,12 +87,12 @@ const AnimatedSentence: React.FC<AnimatedSentenceProps> = ({ children, index, is
     const highlightKeywords = (text: string) => {
         const keywords = ['details', 'emotion', 'crafted', 'intentional', 'rhythm', 'care', 'whimsical', 'gentle'];
         const parts = text.split(/(\b\w+\b)/);
-        
+
         return parts.map((part, i) => {
-            const isKeyword = keywords.some(keyword => 
+            const isKeyword = keywords.some(keyword =>
                 part.toLowerCase().includes(keyword.toLowerCase())
             );
-            
+
             if (isKeyword) {
                 const colorVariants = [
                     'from-rose-400 via-pink-400 to-fuchsia-400',
@@ -102,19 +101,19 @@ const AnimatedSentence: React.FC<AnimatedSentenceProps> = ({ children, index, is
                     'from-rose-400 via-pink-400 to-fuchsia-400'
                 ];
                 const selectedColor = colorVariants[i % colorVariants.length];
-                
+
                 return (
                     <motion.span
                         key={i}
                         className={`relative inline-block font-semibold text-gray-800`}
                         initial={{ opacity: 0, scale: 0.95 }}
                         animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
-                        transition={{ 
+                        transition={{
                             delay: 0.4 + index * 0.2,
                             duration: 0.8,
                             ease: "easeOut"
                         }}
-                        whileHover={{ 
+                        whileHover={{
                             scale: 1.02,
                             transition: { duration: 0.3 }
                         }}
@@ -124,8 +123,8 @@ const AnimatedSentence: React.FC<AnimatedSentenceProps> = ({ children, index, is
                             className={`absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r ${selectedColor} rounded-full opacity-70`}
                             initial={{ scaleX: 0 }}
                             animate={isInView ? { scaleX: 1 } : { scaleX: 0 }}
-                            transition={{ 
-                                delay: 0.8 + index * 0.2, 
+                            transition={{
+                                delay: 0.8 + index * 0.2,
                                 duration: 1.0,
                                 ease: "easeOut"
                             }}
@@ -141,24 +140,23 @@ const AnimatedSentence: React.FC<AnimatedSentenceProps> = ({ children, index, is
     return (
         <motion.div
             ref={ref}
-            className={`mb-16 leading-loose ${
-                isLast 
-                    ? 'text-center text-4xl md:text-5xl font-bold text-gray-900' 
-                    : 'text-xl md:text-2xl font-light text-gray-700'
-            }`}
+            className={`mb-16 leading-loose ${isLast
+                ? 'text-center text-4xl md:text-5xl font-bold text-gray-900'
+                : 'text-xl md:text-2xl font-light text-gray-700'
+                }`}
             style={{ y }}
             initial={{ opacity: 0, y: 40, rotateX: 10 }}
-            animate={isInView ? { 
-                opacity: 1, 
-                y: 0, 
-                rotateX: 0 
-            } : { 
-                opacity: 0, 
-                y: 40, 
-                rotateX: 10 
+            animate={isInView ? {
+                opacity: 1,
+                y: 0,
+                rotateX: 0
+            } : {
+                opacity: 0,
+                y: 40,
+                rotateX: 10
             }}
-            transition={{ 
-                duration: 1.4, 
+            transition={{
+                duration: 1.4,
                 delay: index * 0.25,
                 ease: [0.25, 0.46, 0.45, 0.94]
             }}
@@ -188,7 +186,7 @@ const KoalaDesignGoal: React.FC = () => {
     ];
 
     return (
-        <section 
+        <section
             ref={containerRef}
             className="relative min-h-screen flex items-center justify-center px-6 md:px-12 py-24 overflow-hidden"
             style={{ backgroundColor: '#FAF8F5' }}
@@ -214,8 +212,8 @@ const KoalaDesignGoal: React.FC = () => {
             <div className="relative z-10 max-w-6xl mx-auto">
                 <div className="space-y-16">
                     {sentences.map((sentence, index) => (
-                        <AnimatedSentence 
-                            key={index} 
+                        <AnimatedSentence
+                            key={index}
                             index={index}
                             isLast={index === sentences.length - 1}
                             scrollProgress={scrollYProgress}
@@ -223,7 +221,7 @@ const KoalaDesignGoal: React.FC = () => {
                             {sentence}
                         </AnimatedSentence>
                     ))}
-                    
+
                     {/* Enhanced Signature */}
                     <motion.div
                         className="text-center mt-20"
@@ -266,7 +264,7 @@ const KoalaDesignGoal: React.FC = () => {
                 transition={{ delay: 2.5, duration: 2.0 }}
                 viewport={{ once: true }}
             >
-                <motion.div 
+                <motion.div
                     className="absolute bottom-1/4 left-1/2 transform -translate-x-1/2 w-[700px] h-[700px] rounded-full blur-3xl"
                     animate={{
                         background: [

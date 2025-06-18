@@ -1,40 +1,12 @@
 "use client";
 import React, { useState } from 'react';
-import ImageContainer from '@/components/ImageContainer';
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import KoalaBehindScenes from './KoalaBehindScenes';
 import KoalaDesignGoal from './KoalaDesignGoal';
-import KoalaSceneBreakdown from './KoalaSceneBreakdown';
+// import KoalaSceneBreakdown from './KoalaSceneBreakdown';
 
 const KoalaProject: React.FC = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const { scrollY } = useScroll();
-    const fadeUp = {
-        hidden: { opacity: 0, y: 40 },
-        visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
-    };
-
-    const slowZoom = {
-        hover: { scale: 1.05, transition: { duration: 1.2, ease: "easeInOut" } },
-    };
-
-    const cardHover = {
-        initial: { scale: 1 },
-        hover: {
-            scale: 1.1,
-            transition: { duration: 0.3, ease: "easeOut" }
-        }
-    };
-
-    const staggerContainer = {
-        hidden: { opacity: 0 },
-        visible: {
-            opacity: 1,
-            transition: {
-                staggerChildren: 0.1
-            }
-        }
-    };
 
     const failImages = [
         "/images/koala/koala-fail1.png",
