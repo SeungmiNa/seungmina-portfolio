@@ -6,31 +6,195 @@ import { motion, useScroll, useTransform } from "framer-motion";
 const KoalaProject: React.FC = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const { scrollY } = useScroll();
-    const scale = useTransform(scrollY, [0, 300], [1, 1]);
-    const opacity = useTransform(scrollY, [0, 300], [1, 1.5]);
+    const fadeUp = {
+        hidden: { opacity: 0, y: 40 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+    };
 
+    const slowZoom = {
+        hover: { scale: 1.05, transition: { duration: 1.2, ease: "easeInOut" } },
+    };
+
+    const cardHover = {
+        initial: { scale: 1 },
+        hover: { 
+            scale: 1.1,
+            transition: { duration: 0.3, ease: "easeOut" }
+        }
+    };
+
+    const staggerContainer = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.1
+            }
+        }
+    };
+
+    const failImages = [
+        "/images/koala/koala-fail1.png",
+        "/images/koala/koala-fail2.png",
+        "/images/koala/koala-fail3.png",
+        "/images/koala/koala-fail4.png",
+        "/images/koala/koala-fail5.png",
+        "/images/koala/koala-fail6.png",
+        "/images/koala/koala-fail7.png",
+    ];
+
+    const failGifs = [
+        "/images/koala/koala-fail-video1.gif",
+        "/images/koala/koala-fail-video2.gif",
+        "/images/koala/koala-fail-video3.gif",
+        "/images/koala/koala-fail-video4.gif",
+        "/images/koala/koala-fail-video5.gif",
+        "/images/koala/koala-fail-video6.gif",
+        "/images/koala/koala-fail-video7.gif"
+    ];
+
+    const galleryItems = [
+        { 
+            type: 'image', 
+            src: failImages[0], 
+            alt: 'Failed attempt 1', 
+            title: 'First Attempt', 
+            description: 'Too much detail, lost the cute factor',
+            aspect: 'tall'
+        },
+        { 
+            type: 'gif', 
+            src: failGifs[0], 
+            alt: 'Failed attempt 1 GIF', 
+            title: 'First Attempt Motion', 
+            description: 'Initial animation test',
+            aspect: 'wide'
+        },
+        { 
+            type: 'image', 
+            src: failImages[1], 
+            alt: 'Failed attempt 2', 
+            title: 'Second Attempt', 
+            description: 'Lighting issues',
+            aspect: 'wide'
+        },
+        { 
+            type: 'gif', 
+            src: failGifs[1], 
+            alt: 'Failed attempt 2 GIF', 
+            title: 'Second Attempt Motion', 
+            description: 'Character movement test',
+            aspect: 'tall'
+        },
+        { 
+            type: 'image', 
+            src: failImages[2], 
+            alt: 'Failed attempt 3', 
+            title: 'Third Attempt', 
+            description: 'Style mismatch',
+            aspect: 'tall'
+        },
+        { 
+            type: 'gif', 
+            src: failGifs[2], 
+            alt: 'Failed attempt 3 GIF', 
+            title: 'Third Attempt Motion', 
+            description: 'Timing adjustment',
+            aspect: 'wide'
+        },
+        { 
+            type: 'image', 
+            src: failImages[3], 
+            alt: 'Failed attempt 4', 
+            title: 'Fourth Attempt', 
+            description: 'Composition issues',
+            aspect: 'wide'
+        },
+        { 
+            type: 'gif', 
+            src: failGifs[3], 
+            alt: 'Failed attempt 4 GIF', 
+            title: 'Fourth Attempt Motion', 
+            description: 'Camera angle test',
+            aspect: 'tall'
+        },
+        { 
+            type: 'image', 
+            src: failImages[4], 
+            alt: 'Failed attempt 5', 
+            title: 'Fifth Attempt', 
+            description: 'Character design iteration',
+            aspect: 'tall'
+        },
+        { 
+            type: 'gif', 
+            src: failGifs[4], 
+            alt: 'Failed attempt 5 GIF', 
+            title: 'Fifth Attempt Motion', 
+            description: 'Expression test',
+            aspect: 'wide'
+        },
+        { 
+            type: 'image', 
+            src: failImages[5], 
+            alt: 'Failed attempt 6', 
+            title: 'Sixth Attempt', 
+            description: 'Environment design',
+            aspect: 'wide'
+        },
+        { 
+            type: 'gif', 
+            src: failGifs[5], 
+            alt: 'Failed attempt 6 GIF', 
+            title: 'Sixth Attempt Motion', 
+            description: 'Scene transition test',
+            aspect: 'tall'
+        },
+        { 
+            type: 'image', 
+            src: failImages[6], 
+            alt: 'Failed attempt 7', 
+            title: 'Final Attempt', 
+            description: 'Final iteration',
+            aspect: 'tall'
+        },
+        { 
+            type: 'gif', 
+            src: failGifs[6], 
+            alt: 'Failed attempt 7 GIF', 
+            title: 'Final Attempt Motion', 
+            description: 'Complete sequence test',
+            aspect: 'wide'
+        },
+    ];
+      
     return (
         <div>
-            <div className="relative w-full h-[100vh] bg-cover bg-center -mt-16">
-                <ImageContainer
-                    image="/images/koala/koala-in-detail-cover-without-text.jpg"
-                    alt="Koala Cover"
-                    className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-b from-black/70 to-black/50 flex flex-col items-center justify-center text-white text-center px-6">
-                    <motion.h1 
+            {/* Hero Section */}
+            <section className="relative w-full h-[60vh] lg:h-[80vh] bg-cover bg-center -mt-16">
+                <div className="absolute inset-0 w-full h-full overflow-hidden">
+                    <iframe
+                        className="w-full h-full object-cover scale-105"
+                        src="https://www.youtube.com/embed/BfwGZ-JexuI?start=1&end=30&autoplay=1&mute=1&controls=0&loop=1&playlist=BfwGZ-JexuI"
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                    />
+                </div>
+                <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center text-white text-center px-6">
+                    <motion.h1
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
-                        className="text-8xl md:text-6xl font-bold mb-8 tracking-tight"
+                        className="text-4xl lg:text-6xl font-bold mb-4 lg:mb-8 tracking-tight"
                     >
-                        Details build emotion
+                        I believe details build emotion.
                     </motion.h1>
-                    <motion.p 
+                    <motion.p
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.2 }}
-                        className="text-xl md:text-2xl mb-12 max-w-2xl font-light"
+                        className="text-base lg:text-2xl mb-6 lg:mb-12 max-w-2xl font-light"
                     >
                         A one-minute animated video capturing my design identity through a playful koala
                     </motion.p>
@@ -38,15 +202,12 @@ const KoalaProject: React.FC = () => {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.4 }}
-                        className="bg-white text-black font-medium py-4 px-8 rounded-full shadow-lg hover:bg-opacity-90 transition-all duration-300 text-lg"
+                        className="bg-white text-black font-medium py-4 px-8 rounded-full shadow-lg hover:bg-opacity-90 transition-all duration-300 text-sm md:text-lg"
                         onClick={() => setIsModalOpen(true)}
                     >
                         ▶ Watch Full Video
                     </motion.button>
                 </div>
-            </div>
-
-            <div className="container mx-auto px-4 py-16">
                 {/* 모달에서 iframe 열기 */}
                 {isModalOpen && (
                     <div className="fixed inset-0 bg-black/90 backdrop-blur-sm flex items-center justify-center z-50">
@@ -58,8 +219,8 @@ const KoalaProject: React.FC = () => {
                                 allow="autoplay; encrypted-media"
                                 allowFullScreen
                             />
-                            <button 
-                                className="absolute -top-12 right-0 text-white text-2xl hover:text-gray-300 transition-colors duration-300" 
+                            <button
+                                className="absolute -top-12 right-0 text-white text-2xl hover:text-gray-300 transition-colors duration-300"
                                 onClick={() => setIsModalOpen(false)}
                             >
                                 ✕
@@ -67,116 +228,194 @@ const KoalaProject: React.FC = () => {
                         </div>
                     </div>
                 )}
+            </section>
 
-                <motion.div 
-                    className="mb-24"
-                    style={{ scale, opacity }}
-                >
-                    <ImageContainer
-                        image="/images/koala/koala-in-detail-cover-without-text.jpg"
-                        alt="Koala Detail"
-                        className="w-full h-full object-cover rounded-2xl shadow-xl"
-                    />
-                </motion.div>
+            {/* Project Summary Section */}
+            <section className="container mx-auto flex flex-col">
+                <div className="w-full mx-auto px-6 lg:px-4 py-24">
+                    <h2 className="text-4xl lg:text-5xl text-stone-800 mb-8 font-semibold">Koala in Details</h2>
+                    <div className="space-y-4 text-stone-500 mb-16 max-w-4xl">
+                        <p className='text-lg font-noraml text-gray-600'>
+                            A self-initiated animated branding video that reflects my design identity through a detail-loving koala. From visual concept to editing,
+                            I crafted a playful yet polished piece using AI tools and motion design to express how small details can shape emotional experiences.
+                        </p>
+                    </div>
 
-                {/* Project Summary Table */}
-                <section className="container mx-auto flex flex-col">
-                    <div className="w-full mx-auto px-6 lg:px-4 py-24">
-                        <h2 className="text-4xl text-stone-800 mb-16 font-medium tracking-tight">Koala in Details</h2>
-                        <div className="space-y-6 text-stone-600 mb-24 max-w-4xl text-lg leading-relaxed">
-                            <p>
-                                A self-initiated animated branding video that reflects my design identity through a detail-loving koala. From visual concept to editing,
-                                I crafted a playful yet polished piece using AI tools and motion design to express how small details can shape emotional experiences.
-                            </p>
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+                        <div>
+                            <h3 className="text-gray-600 font-semibold mb-4">My Role</h3>
+                            <ul className="text-gray-900 space-y-1">
+                                <li>Concept Creator</li>
+                                <li>Visual Director</li>
+                                <li>Motion Editor</li>
+                            </ul>
                         </div>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-                            <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-                                <h3 className="text-[#0A9494] text-xl font-semibold mb-6">My Role</h3>
-                                <ul className="text-gray-600 space-y-3">
-                                    <li className="flex items-center">
-                                        <span className="w-2 h-2 bg-[#0A9494] rounded-full mr-3"></span>
-                                        Concept Creator
-                                    </li>
-                                    <li className="flex items-center">
-                                        <span className="w-2 h-2 bg-[#0A9494] rounded-full mr-3"></span>
-                                        Visual Director
-                                    </li>
-                                    <li className="flex items-center">
-                                        <span className="w-2 h-2 bg-[#0A9494] rounded-full mr-3"></span>
-                                        Motion Editor
-                                    </li>
-                                </ul>
-                            </div>
+                        <div>
+                            <h3 className="text-gray-600 font-semibold mb-4">Responsibility</h3>
+                            <ul className="text-gray-900 space-y-1">
+                                <li>Concept & Visual Direction</li>
+                                <li>AI Image Generation</li>
+                                <li>Motion Editing</li>
+                                <li>Sound Design</li>
+                                <li>Character Development</li>
+                            </ul>
+                        </div>
 
-                            <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-                                <h3 className="text-[#0A9494] text-xl font-semibold mb-6">Responsibility</h3>
-                                <ul className="text-gray-600 space-y-3">
-                                    <li className="flex items-center">
-                                        <span className="w-2 h-2 bg-[#0A9494] rounded-full mr-3"></span>
-                                        Concept and visual direction
-                                    </li>
-                                    <li className="flex items-center">
-                                        <span className="w-2 h-2 bg-[#0A9494] rounded-full mr-3"></span>
-                                        AI image generation
-                                    </li>
-                                    <li className="flex items-center">
-                                        <span className="w-2 h-2 bg-[#0A9494] rounded-full mr-3"></span>
-                                        Motion editing and sound design
-                                    </li>
-                                    <li className="flex items-center">
-                                        <span className="w-2 h-2 bg-[#0A9494] rounded-full mr-3"></span>
-                                        Character and story development
-                                    </li>
-                                    <li className="flex items-center">
-                                        <span className="w-2 h-2 bg-[#0A9494] rounded-full mr-3"></span>
-                                        Personal branding through animation
-                                    </li>
-                                </ul>
-                            </div>
+                        <div>
+                            <h3 className="text-gray-600 font-semibold mb-4">Skills</h3>
+                            <ul className="text-gray-900 space-y-1">
+                                <li>Visual Storytelling</li>
+                                <li>AI Image Generation</li>
+                                <li>Motion Editing</li>
+                                <li>Sound Design</li>
+                                <li>Character Design</li>
+                            </ul>
+                        </div>
 
-                            <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-                                <h3 className="text-[#0A9494] text-xl font-semibold mb-6">Skills</h3>
-                                <ul className="text-gray-600 space-y-3">
-                                    <li className="flex items-center">
-                                        <span className="w-2 h-2 bg-[#0A9494] rounded-full mr-3"></span>
-                                        Visual storytelling
-                                    </li>
-                                    <li className="flex items-center">
-                                        <span className="w-2 h-2 bg-[#0A9494] rounded-full mr-3"></span>
-                                        AI-based image generation
-                                    </li>
-                                    <li className="flex items-center">
-                                        <span className="w-2 h-2 bg-[#0A9494] rounded-full mr-3"></span>
-                                        Motion editing
-                                    </li>
-                                    <li className="flex items-center">
-                                        <span className="w-2 h-2 bg-[#0A9494] rounded-full mr-3"></span>
-                                        Branding through animation
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-                                <h3 className="text-[#0A9494] text-xl font-semibold mb-6">Timeline</h3>
-                                <div className="text-gray-600 space-y-3">
-                                    <p className="font-medium">2 Weeks (2025.06)</p>
-                                    <div className="space-y-2">
-                                        <p className="flex items-center">
-                                            <span className="w-2 h-2 bg-[#0A9494] rounded-full mr-3"></span>
-                                            Week 1: Ideation, visual generation, mood setup
-                                        </p>
-                                        <p className="flex items-center">
-                                            <span className="w-2 h-2 bg-[#0A9494] rounded-full mr-3"></span>
-                                            Week 2: Editing, sound design, refinement
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
+                        <div>
+                            <h3 className="text-gray-600 font-semibold mb-4">Timeline</h3>
+                            <p className="text-gray-900">Week 1: Ideation, visual generation</p>
+                            <p className="text-gray-900">Week 2: Editing, sound design</p>
                         </div>
                     </div>
-                </section>
+                </div>
+            </section>
 
+            {/* Project Background */}
+            <section className="bg-gray-50 py-12">
+                <div className="max-w-4xl mx-auto px-4">
+                    <h2 className="text-2xl font-bold mb-8">🧠 Moodboard & Prompting Process</h2>
+
+                    <motion.div
+                        variants={fadeUp}
+                        initial="hidden"
+                        whileInView="visible"
+                        className="bg-black/40 text-white p-6 rounded-xl mb-8 shadow-lg backdrop-blur"
+                    >
+                        <p className="text-sm uppercase text-gray-300 mb-2">Initial Prompt</p>
+                        <p className="text-lg italic">“a cute baby koala with Pixar style, baking a cake in a forest cottage...”</p>
+                    </motion.div>
+
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+                        <motion.div
+                            variants={fadeUp}
+                            initial="hidden"
+                            whileInView="visible"
+                            className="overflow-hidden rounded-lg shadow-xl"
+                        >
+                            <img src="/before.jpg" className="object-cover w-full h-full" />
+                            <p className="text-sm text-red-400 mt-2">❌ Too messy — lighting everywhere!</p>
+                        </motion.div>
+
+                        <motion.div
+                            variants={fadeUp}
+                            initial="hidden"
+                            whileInView="visible"
+                            className="overflow-hidden rounded-lg shadow-xl"
+                        >
+                            <img src="/after.jpg" className="object-cover w-full h-full" />
+                            <p className="text-sm text-green-400 mt-2">✅ Final concept — sunlight, focus, emotion</p>
+                        </motion.div>
+                    </div>
+
+
+                    <div className="bg-white p-4 rounded-xl shadow">
+                        <motion.div
+                            variants={fadeUp}
+                            initial="hidden"
+                            whileInView="visible"
+                            className="bg-white/10 text-white p-6 rounded-xl shadow-inner border border-white/20"
+                        >
+                            <p className="text-sm uppercase text-gray-300 mb-1">🎯 Final Prompt</p>
+                            <p className="text-md italic mb-3">“A cute 3D baby koala in Pixar style with big shiny eyes, subtle blush, standing in a cozy forest kitchen...”</p>
+                            <ul className="list-disc list-inside text-sm text-gray-300">
+                                <li>Soft natural lighting</li>
+                                <li>Facial detail: blush & eye sparkles</li>
+                                <li>Framed like a cinematic close-up</li>
+                            </ul>
+                        </motion.div>
+                    </div>
+                </div>
+            </section>
+
+            <section className="py-24 bg-black">
+                <div className="container mx-auto px-4">
+                    <motion.h2 
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8 }}
+                        className="text-4xl md:text-5xl font-bold text-white mb-8 text-center"
+                    >
+                        🎬 Behind the Scenes
+                    </motion.h2>
+                    <motion.p 
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: 0.2 }}
+                        className="text-white/80 text-lg text-center max-w-2xl mx-auto mb-16"
+                    >
+                        Every masterpiece has its journey. Here's a peek into the creative process — the trials, errors, and moments that shaped the final piece.
+                    </motion.p>
+
+                    <motion.div 
+                        variants={staggerContainer}
+                        initial="hidden"
+                        whileInView="visible"
+                        className="grid grid-cols-6 grid-rows-[repeat(6,minmax(100px,auto))] gap-2 p-4"
+                    >
+                        <div className="col-start-2 col-end-3 row-start-1 row-end-2">
+                            <img src={failImages[0]} alt="Failed attempt 1" className="w-full h-full object-cover rounded-lg" />
+                        </div>
+                        <div className="col-start-3 col-end-4 row-start-1 row-end-2">
+                            <img src={failGifs[3]} alt="Failed attempt 4 GIF" className="w-full h-full object-cover rounded-lg" />
+                        </div>
+                        <div className="col-start-4 col-end-5 row-start-1 row-end-3">
+                            <img src={failImages[1]} alt="Failed attempt 2" className="w-full h-full object-cover rounded-lg" />
+                        </div>
+                        <div className="col-start-5 col-end-6 row-start-1 row-end-2">
+                            <img src={failImages[2]} alt="Failed attempt 3" className="w-full h-full object-cover rounded-lg" />
+                        </div>
+                        <div className="col-start-1 col-end-2 row-start-2 row-end-4">
+                            <img src={failGifs[5]} alt="Failed attempt 6 GIF" className="w-full h-full object-cover rounded-lg" />
+                        </div>
+                        <div className="col-start-2 col-end-4 row-start-2 row-end-4">
+                            <img src={failGifs[0]} alt="Failed attempt 1 GIF" className="w-full h-full object-cover rounded-lg" />
+                        </div>
+                        <div className="col-start-5 col-end-6 row-start-2 row-end-3">
+                            <img src={failGifs[1]} alt="Failed attempt 2 GIF" className="w-full h-full object-cover rounded-lg" />
+                        </div>
+                        <div className="col-start-4 col-end-6 row-start-3 row-end-5">
+                            <img src={failGifs[2]} alt="Failed attempt 3 GIF" className="w-full h-full object-cover rounded-lg" />
+                        </div>
+                        <div className="col-start-2 col-end-3 row-start-4 row-end-6">
+                            <img src={failImages[3]} alt="Failed attempt 4" className="w-full h-full object-cover rounded-lg" />
+                        </div>
+                        <div className="col-start-3 col-end-4 row-start-4 row-end-5">
+                            <img src={failImages[4]} alt="Failed attempt 5" className="w-full h-full object-cover rounded-lg" />
+                        </div>
+                        <div className="col-start-3 col-end-4 row-start-4 row-end-5">
+                            <img src={failGifs[4]} alt="Failed attempt 5 GIF" className="w-full h-full object-cover rounded-lg" />
+                        </div>
+                        <div className="col-start-3 col-end-4 row-start-5 row-end-6">
+                            <img src={failGifs[5]} alt="Failed attempt 6 GIF" className="w-full h-full object-cover rounded-lg" />
+                        </div>
+                        <div className="col-start-4 col-end-5 row-start-5 row-end-6">
+                            <img src={failGifs[1]} alt="Failed attempt 2 GIF" className="w-full h-full object-cover rounded-lg" />
+                        </div>
+                        <div className="col-start-5 col-end-6 row-start-5 row-end-6">
+                            <img src={failImages[5]} alt="Failed attempt 6" className="w-full h-full object-cover rounded-lg" />
+                        </div>
+                        <div className="col-start-6 col-end-7 row-start-3 row-end-5">
+                            <img src={failImages[6]} alt="Failed attempt 7" className="w-full h-full object-cover rounded-lg" />
+                        </div>
+                    </motion.div>
+                </div>
+            </section>
+
+
+            <div className="container mx-auto px-4 py-16">
                 {/* Project Background */}
                 <section className="mb-24">
                     <div className="max-w-4xl mx-auto">
