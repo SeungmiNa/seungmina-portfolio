@@ -14,7 +14,6 @@ interface DeliviousProjectProps {
 interface ContentItem {
     title: string;
     description: string;
-    image: string;
     technologies: string[];
 }
 
@@ -35,7 +34,6 @@ export default function DeliviousProject({ project }: DeliviousProjectProps) {
             content: [{
                 title: 'Brand Identity',
                 description: project.description,
-                image: project.image,
                 technologies: ['Logo Design', 'Color System', 'Typography']
             }]
         },
@@ -44,7 +42,6 @@ export default function DeliviousProject({ project }: DeliviousProjectProps) {
             content: [{
                 title: 'User Experience',
                 description: project.description,
-                image: project.image,
                 technologies: ['Wireframes', 'Prototypes', 'User Flow']
             }]
         },
@@ -53,7 +50,6 @@ export default function DeliviousProject({ project }: DeliviousProjectProps) {
             content: [{
                 title: 'Web Development',
                 description: project.description,
-                image: project.image,
                 technologies: ['React', 'TypeScript', 'Tailwind']
             }]
         }
