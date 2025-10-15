@@ -1,6 +1,7 @@
 import { FC } from "react";
 import HomeHero from "./HomeHero";
 import ProjectList from "./ProjectList";
+import SectionTimeTracker from "@/components/Analytics/SectionTimeTracker";
 
 interface HomePageProps {
     className?: string;
@@ -43,9 +44,11 @@ const HomePage: FC<HomePageProps> = ({
                 <HomeHero />
             </div>
 
-            <section id="projects" className="px-4 py-24 container mx-auto">
-                <ProjectList />
-            </section>
+            <SectionTimeTracker sectionName="home_projects">
+                <section id="projects" className="px-4 py-24 container mx-auto">
+                    <ProjectList />
+                </section>
+            </SectionTimeTracker>
         </div>
     );
 }

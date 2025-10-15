@@ -5,6 +5,8 @@ import { withBasePath } from "@/utils/paths";
 import { Github, Linkedin, Mail, MapPin } from 'lucide-react';
 import Link from "next/link";
 import { FC } from "react";
+import { trackDownload, trackEmailClick, trackSocialMediaClick } from "@/lib/analytics";
+import SectionTimeTracker from "@/components/Analytics/SectionTimeTracker";
 
 interface AboutPageProps {
     className?: string;
@@ -90,7 +92,8 @@ const AboutPage: FC<AboutPageProps> = ({ /*className = ""*/ }) => {
         <main className="min-h-screen">
             <div className="container max-w-5xl mx-auto px-4 py-16 lg:py-24 space-y-24">
                 {/* Hero Section */}
-                <section className="space-y-12">
+                <SectionTimeTracker sectionName="about_hero">
+                    <section className="space-y-12">
                     {/* Profile Content */}
                     <div className="max-w-3xl space-y-6">
                         <Title variant="h2" className="font-bold tracking-tight text-foreground">
@@ -118,7 +121,8 @@ const AboutPage: FC<AboutPageProps> = ({ /*className = ""*/ }) => {
                                 <div className="flex items-center gap-2">
                                     <Mail className="w-4 h-4" />
                                     <a href="mailto:naissme0@gmail.com"
-                                        className="hover:text-foreground hover:underline transition-colors">
+                                        className="hover:text-foreground hover:underline transition-colors"
+                                        onClick={() => trackEmailClick('naissme0@gmail.com', 'about_page_header')}>
                                         naissme0@gmail.com
                                     </a>
                                 </div>
@@ -129,37 +133,46 @@ const AboutPage: FC<AboutPageProps> = ({ /*className = ""*/ }) => {
                             <Button
                                 variant="default"
                                 className="rounded-full px-6 hover:scale-105 transition-transform"
-                                // onClick={() => window.location.href = "mailto:naissme0@gmail.com"}>
-                                onClick={() => window.location.href = "mailto:naissme0@gmail.com"}>
+                                onClick={() => {
+                                    trackEmailClick('naissme0@gmail.com', 'about_page_contact_button');
+                                    window.location.href = "mailto:naissme0@gmail.com";
+                                }}>
                                 Contact Me 👋
                             </Button>
                             <Button
                                 variant="outline"
                                 className="bg-white rounded-full px-6 hover:scale-105 transition-transform"
-                                onClick={() => window.open(withBasePath('/2025-seungmi-na.pdf'), '_blank')}
+                                onClick={() => {
+                                    trackDownload('2025-seungmi-na.pdf');
+                                    window.open(withBasePath('/2025-seungmi-na.pdf'), '_blank');
+                                }}
                             >
                                 View Resume
                             </Button>
                             <div className="flex gap-2">
                                 <Link href="https://linkedin.com/in/seungmi-na" target="_blank">
                                     <Button variant="ghost" size="icon"
-                                        className="hover:!bg-white rounded-full hover:scale-105 transition-transform">
+                                        className="hover:!bg-white rounded-full hover:scale-105 transition-transform"
+                                        onClick={() => trackSocialMediaClick('linkedin', 'about_page_social_buttons')}>
                                         <Linkedin className="w-5 h-5" />
                                     </Button>
                                 </Link>
                                 <Link href="https://github.com/SeungmiNa" target="_blank">
                                     <Button variant="ghost" size="icon"
-                                        className="hover:!bg-white rounded-full hover:scale-105 transition-transform">
+                                        className="hover:!bg-white rounded-full hover:scale-105 transition-transform"
+                                        onClick={() => trackSocialMediaClick('github', 'about_page_social_buttons')}>
                                         <Github className="w-5 h-5" />
                                     </Button>
                                 </Link>
                             </div>
                         </div>
                     </div>
-                </section>
+                    </section>
+                </SectionTimeTracker>
 
                 {/* Skills Section */}
-                <section className="space-y-12">
+                <SectionTimeTracker sectionName="about_skills">
+                    <section className="space-y-12">
                     <div className="space-y-4">
                         <h2 className="text-3xl font-semibold tracking-tight">
                             Skills & Expertise
@@ -210,7 +223,8 @@ const AboutPage: FC<AboutPageProps> = ({ /*className = ""*/ }) => {
                             </div>
                         ))}
                     </div>
-                </section>
+                    </section>
+                </SectionTimeTracker>
 
                 {/* Hobbies Section */}
                 {/* <section className="space-y-8">
@@ -248,12 +262,14 @@ const AboutPage: FC<AboutPageProps> = ({ /*className = ""*/ }) => {
                     <div className="flex gap-6">
                         <Link href="https://www.linkedin.com/in/seungmi-na/"
                             target="_blank"
-                            className="hover:text-foreground transition-colors">
+                            className="hover:text-foreground transition-colors"
+                            onClick={() => trackSocialMediaClick('linkedin', 'about_page_footer')}>
                             <Linkedin className="w-5 h-5" />
                         </Link>
                         <Link href="https://github.com/SeungmiNa"
                             target="_blank"
-                            className="hover:text-foreground transition-colors">
+                            className="hover:text-foreground transition-colors"
+                            onClick={() => trackSocialMediaClick('github', 'about_page_footer')}>
                             <Github className="w-5 h-5" />
                         </Link>
                     </div>

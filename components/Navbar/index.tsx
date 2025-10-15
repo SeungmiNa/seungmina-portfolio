@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
 import SolidButton from "../Buttons/SolidButton";
+import { trackEmailClick } from '@/lib/analytics';
 
 interface NavbarProps {
   className?: string;
@@ -36,6 +37,7 @@ const Navbar: React.FC<NavbarProps> = ({ className = "" }) => {
 
   const handleContactClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
+    trackEmailClick('naissme0@gmail.com', 'navbar_contact_button');
     window.location.href = "mailto:naissme0@gmail.com";
   };
 

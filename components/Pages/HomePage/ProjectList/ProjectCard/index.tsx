@@ -1,6 +1,7 @@
 import Title from "@/components/Font/Title";
 import { ArrowRightIcon } from "lucide-react";
 import { FC } from "react";
+import { trackButtonClick } from "@/lib/analytics";
 
 type ProjectCardProps = {
     title: string;
@@ -13,8 +14,15 @@ type ProjectCardProps = {
 };
 
 const ProjectCard: FC<ProjectCardProps> = ({ title, description, image, period, role, category, imageClassName }) => {
+    const handleProjectClick = () => {
+        trackButtonClick(`project_card_${title.toLowerCase().replace(/\s+/g, '_')}`, 'home_page');
+    };
+
     return (
-        <a className="relative h-[300px] md:h-[500px] flex flex-col group rounded-xl overflow-hidden border border-gray-300 bg-black">
+        <a 
+            className="relative h-[300px] md:h-[500px] flex flex-col group rounded-xl overflow-hidden border border-gray-300 bg-black"
+            onClick={handleProjectClick}
+        >
             <div
                 className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
                 style={{ backgroundImage: `url(${image})` }}

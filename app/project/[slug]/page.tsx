@@ -7,6 +7,7 @@ import ProjectFooter from '../../../components/ProjectFooter';
 import InizioProject from '../../../components/Pages/ProjectPages/InizioProject';
 import Clean71Project from '@/components/Pages/ProjectPages/Clean71Project';
 import KoalaProject from '@/components/Pages/ProjectPages/KoalaProject';
+import ProjectViewTracker from '@/components/Analytics/ProjectViewTracker';
 
 // This would typically come from a database or API
 const getProjectData = (slug: string): Project | undefined => {
@@ -92,6 +93,7 @@ const ProjectPage: React.FC<ProjectPageProps> = ({ params }) => {
 
     return (
         <>
+            <ProjectViewTracker project={project} />
             {renderProject()}
             <ProjectFooter
                 previousProject={previous}
