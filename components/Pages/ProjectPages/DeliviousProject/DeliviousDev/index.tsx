@@ -3,6 +3,7 @@ import Title from "@/components/Font/Title";
 import React from "react";
 import { FaReact } from "react-icons/fa";
 import { SiEslint, SiFigma, SiPrettier, SiTailwindcss, SiTypescript } from "react-icons/si";
+// import { trackExternalLinkClick } from "@/lib/analytics";
 
 interface TechStack {
     name: string;
@@ -123,6 +124,7 @@ const DeliviousDev: React.FC = () => {
                             className="text-blue-400 hover:text-blue-300 transition-colors duration-200"
                             target="_blank"
                             rel="noopener noreferrer"
+                            // onClick={() => trackExternalLinkClick('https://github.com/yourusername/delivious', 'GitHub Repository', 'delivious_project_dev')}
                         >
                             View on GitHub →
                         </Link>

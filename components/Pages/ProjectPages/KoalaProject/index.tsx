@@ -3,10 +3,22 @@ import React, { useState } from 'react';
 import { motion } from "framer-motion";
 import KoalaBehindScenes from './KoalaBehindScenes';
 import KoalaDesignGoal from './KoalaDesignGoal';
+import { trackVideoPlay, trackButtonClick } from '@/lib/analytics';
 // import KoalaSceneBreakdown from './KoalaSceneBreakdown';
 
 const KoalaProject: React.FC = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const handleModalOpen = () => {
+        trackButtonClick('watch_full_video', 'koala_project_hero');
+        trackVideoPlay('koala-youtube-demo', 'youtube', 'koala_project_hero');
+        setIsModalOpen(true);
+    };
+
+    const handleModalClose = () => {
+        trackButtonClick('close_video_modal', 'koala_project_modal');
+        setIsModalOpen(false);
+    };
 
     const failImages = [
         "/images/koala/koala-fail1.png",
@@ -63,7 +75,7 @@ const KoalaProject: React.FC = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.4 }}
                         className="bg-white text-black font-medium py-4 px-8 rounded-full shadow-lg hover:bg-opacity-90 transition-all duration-300 text-sm md:text-lg"
-                        onClick={() => setIsModalOpen(true)}
+                        onClick={handleModalOpen}
                     >
                         ▶ Watch Full Video
                     </motion.button>
@@ -81,7 +93,7 @@ const KoalaProject: React.FC = () => {
                             />
                             <button
                                 className="absolute -top-12 right-0 text-white text-2xl hover:text-gray-300 transition-colors duration-300"
-                                onClick={() => setIsModalOpen(false)}
+                                onClick={handleModalClose}
                             >
                                 ✕
                             </button>

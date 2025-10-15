@@ -1,10 +1,29 @@
 "use client";
-import React from "react";
+import React, { useRef } from "react";
 import { Carousel, IconButton } from "@material-tailwind/react";
 import Title from "@/components/Font/Title";
 import ImageContainer from "@/components/ImageContainer";
+import { trackVideoPlay, trackVideoPause, trackVideoComplete } from "@/lib/analytics";
 
 const InizioCaseStudy = () => {
+    const videoRef = useRef<HTMLVideoElement>(null);
+
+    const handleVideoPlay = () => {
+        trackVideoPlay('inizio-case-study-result', 'mp4', 'inizio_project_case_study');
+    };
+
+    const handleVideoPause = () => {
+        if (videoRef.current) {
+            trackVideoPause('inizio-case-study-result', videoRef.current.currentTime, 'inizio_project_case_study');
+        }
+    };
+
+    const handleVideoEnded = () => {
+        if (videoRef.current) {
+            trackVideoComplete('inizio-case-study-result', videoRef.current.duration, 'inizio_project_case_study');
+        }
+    };
+
     const steps = [
         {
             id: 'intro',
@@ -168,12 +187,16 @@ const InizioCaseStudy = () => {
                             </div>
                             <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-lg bg-gray-100">
                                 <video
+                                    ref={videoRef}
                                     className="w-full h-full object-cover"
                                     autoPlay
                                     loop
                                     muted
                                     playsInline
                                     controls
+                                    onPlay={handleVideoPlay}
+                                    onPause={handleVideoPause}
+                                    onEnded={handleVideoEnded}
                                 >
                                     <source src="/images/inizio/inizio-case-study-result.mp4" type="video/mp4" />
                                     <p className="text-gray-600 text-center p-4">

@@ -1,13 +1,18 @@
+'use client';
+
 import ImageContainer from '@/components/ImageContainer';
 import InizioBranding from "./InizioBranding";
 import InizioDev from "./InizioDev";
 import InizioUXUI from "./InizioUXUI";
 import InizioCaseStudy from './InizioCaseStudy';
+import { trackExternalLinkClick } from "@/lib/analytics";
+import SectionTimeTracker from "@/components/Analytics/SectionTimeTracker";
 
 const InizioProject = () => {
     return (
         <>
-            <div className="bg-[#141414]">
+            <SectionTimeTracker sectionName="inizio_hero">
+                <div className="bg-[#141414]">
                     <div className="relative -mt-16 mb-12 h-[500px]">
                         <div className="max-w-4xl absolute right-0 w-full h-full">
                             <div className="absolute inset-0 bg-gradient-to-r from-[#141414] via-transparent to-transparent z-10" />
@@ -38,6 +43,7 @@ const InizioProject = () => {
                                                 className="group bg-[#2A3333] hover:bg-[#353d3d] transition-all 
                                                     py-2.5 px-6 rounded-full text-sm inline-flex items-center
                                                     hover:shadow-lg border border-[#3A4444]"
+                                                onClick={() => trackExternalLinkClick('https://conceptcraft.ai', 'Visit Website', 'inizio_project_hero')}
                                             >
                                                 <span className="text-[#A3B3B3] group-hover:text-white transition-colors">Visit Website</span>
                                                 <svg
@@ -135,7 +141,8 @@ const InizioProject = () => {
                         </div>
                     </div>
                 </div>
-            </div>
+                </div>
+            </SectionTimeTracker>
 
             <div className="container mx-auto px-6 lg:px-4 flex flex-col gap-4 md:gap-16 lg:gap-24">
                 <InizioBranding />
