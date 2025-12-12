@@ -30,9 +30,9 @@ const OpportunitySection = forwardRef<HTMLDivElement>((props, ref) => {
                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
                 transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
             >
-                Struggle with too many steps when creating events? <br />
-                <span className='text-[#0075FA]'>If event creation felt simpler and more seamless, <br /></span>
-                Users could plan their schedules quickly and confidently. <br />
+                Struggle with <span className='text-[#FE0000]'>too many steps</span> when creating events? <br />
+                If event creation felt <span className='text-[#FFB31C]'>simpler and more seamless</span>,<br />
+                Users could plan their schedules <span className='text-[#009D32]'>quickly and confidently</span>.<br />
             </motion.p>
             <motion.p 
                 className="lg:text-lg text-base text-[#747474] leading-[32px] max-w-3xl mt-12"

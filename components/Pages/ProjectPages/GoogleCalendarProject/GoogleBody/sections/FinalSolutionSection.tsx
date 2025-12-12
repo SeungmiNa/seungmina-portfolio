@@ -70,7 +70,7 @@ const FinalSolutionSection = forwardRef<HTMLDivElement>((props, ref) => {
                     </div>
                     <div className='w-full flex items-center justify-center'>
                         <ImageContainer
-                            image="/images/google/google-interaction.png"
+                            image="/images/google/google-interaction1.png"
                             alt="Google Calendar Final Solution"
                             className="w-full max-w-3xl h-auto"
                         />
@@ -82,7 +82,8 @@ const FinalSolutionSection = forwardRef<HTMLDivElement>((props, ref) => {
                         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                         transition={{ duration: 0.6, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
                     >
-                        A voice-first event creation flow that feels fast, clear, and reassuring - allowing users to create events without unnecessary steps.
+                        The interface provides continuous visual feedback as users speak,
+                        helping them understand what the system has captured and what’s coming next.
                     </motion.p>
 
                     {/* Interactive Glassmorphism Layout */}

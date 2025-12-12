@@ -21,7 +21,7 @@ const GoogleOverview: React.FC = () => {
             <div className="flex flex-col md:flex-row gap-8">
                 {/* Left Side - Icon and Name */}
                 <motion.div
-                    className="flex flex-col items-start gap-4 w-full lg:w-72  flex items-center justify-center"
+                    className="flex flex-col items-start gap-4 w-full md:w-72  flex items-center justify-center"
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
                     transition={{ duration: 0.5, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}

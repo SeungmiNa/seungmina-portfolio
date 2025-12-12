@@ -53,7 +53,7 @@ const GoogleHero: React.FC = () => {
                     animate="visible"
                     className="relative"
                 >
-                    <div className='flex flex-col flex-col-reverse lg:flex-row items-center pt-16'>
+                    <div className='flex flex-col flex-col-reverse lg:flex-row pt-16'>
                         <motion.div variants={textVariants} className='max-w-2xl w-full py-24 z-10'>
                             <motion.h1 
                                 className="text-4xl lg:text-[64px] xl:text-[80px] leading-[1.2] text-[#202124]"
@@ -66,7 +66,7 @@ const GoogleHero: React.FC = () => {
                                 < br /> Mobile App
                             </motion.h1>
                             <motion.p 
-                                className="font-normal mt-10 text-base lg:text-lg text-[#6E6E6E] leading-[1.5]"
+                                className="max-w-lg font-normal mt-10 text-base lg:text-lg text-[#6E6E6E] leading-[1.5]"
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
@@ -77,7 +77,7 @@ const GoogleHero: React.FC = () => {
 
                         <motion.div 
                             variants={imageVariants}
-                            className="absolute -right-20 lg:right-0 -top-20 w-full flex-1 flex justify-end items-center overflow-hidden lg:overflow-visible"
+                            className="absolute -right-20 md:right-0 -top-20 w-full flex-1 flex justify-end items-center overflow-hidden lg:overflow-visible"
                         >
                             <ImageContainer
                                 image="/images/google/google-hero-image.png"
