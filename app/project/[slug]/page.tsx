@@ -7,6 +7,7 @@ import ProjectFooter from '../../../components/ProjectFooter';
 import InizioProject from '../../../components/Pages/ProjectPages/InizioProject';
 import Clean71Project from '@/components/Pages/ProjectPages/Clean71Project';
 import KoalaProject from '@/components/Pages/ProjectPages/KoalaProject';
+import GoogleCalendarProject from '@/components/Pages/ProjectPages/GoogleCalendarProject';
 import ProjectViewTracker from '@/components/Analytics/ProjectViewTracker';
 
 // This would typically come from a database or API
@@ -40,6 +41,13 @@ const getProjectData = (slug: string): Project | undefined => {
             type: 'clean71',
             slug: 'clean71',
         },
+        'google-calendar': {
+            title: 'Google Calendar Mobile App',
+            description: 'Redesigning event creation with conversational AI',
+            fullDescription: 'I explore how conversational AI can simplify event creation, helping users set up events in seconds while still feeling confident and in control.',
+            type: 'google-calendar',
+            slug: 'google-calendar',
+        },
         // 'branding-project': {
         //     title: 'Brand Identity Design',
         //     description: 'Creating memorable brand experiences',
@@ -55,7 +63,7 @@ const getProjectData = (slug: string): Project | undefined => {
 
 // Add this new function to get adjacent projects
 const getAdjacentProjects = (currentSlug: string): { previous?: Project; next?: Project } => {
-    const projectOrder = ['delivious', 'inizio-conceptcraft', 'clean71', 'koala'];
+    const projectOrder = ['delivious', 'inizio-conceptcraft', 'google-calendar', 'clean71', 'koala'];
     const currentIndex = projectOrder.indexOf(currentSlug);
     
     return {
@@ -87,6 +95,7 @@ const ProjectPage: React.FC<ProjectPageProps> = ({ params }) => {
             case 'delivious': return <DeliviousProject project={project} />;
             case 'clean71': return <Clean71Project />;
             case 'koala': return <KoalaProject />;
+            case 'google-calendar': return <GoogleCalendarProject />;
             // case 'branding': return <BrandingProject project={project} />;
         }
     }
@@ -107,7 +116,7 @@ export default ProjectPage;
 
 export async function generateStaticParams() {
   // Use the same slugs defined in getAdjacentProjects
-  const projectSlugs = ['delivious', 'inizio-conceptcraft', 'clean71', 'koala'];
+  const projectSlugs = ['delivious', 'inizio-conceptcraft', 'google-calendar', 'clean71', 'koala'];
   
   return projectSlugs.map((slug) => ({
     slug: slug,
