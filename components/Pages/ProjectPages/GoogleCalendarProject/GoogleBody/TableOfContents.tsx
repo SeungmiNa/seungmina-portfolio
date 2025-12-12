@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 interface TableOfContentsProps {
     tocItems: Array<{ id: string; label: string }>;
@@ -11,14 +11,14 @@ interface TableOfContentsProps {
 
 const TableOfContents: React.FC<TableOfContentsProps> = ({ tocItems, activeSection, onItemClick }) => {
     return (
-        <div className="lg:col-span-2 hidden lg:block">
+        <div className="lg:col-span-2 hidden lg:block lg:pt-24">
             <motion.div 
                 className="sticky top-24"
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
             >
-                <ol className="space-y-3">
+                <ol className="space-y-3 font-normal">
                     {tocItems.map((item, index) => (
                         <motion.li
                             key={item.id}
@@ -37,17 +37,6 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({ tocItems, activeSecti
                             }}
                             whileHover={{ x: 4, transition: { duration: 0.2 } }}
                         >
-                            <AnimatePresence>
-                                {activeSection === item.id && (
-                                    <motion.span
-                                        className="absolute left-[-12px] top-1/2 -translate-y-1/2 w-1.5 h-1.5 bg-[#0075FA] rounded-full"
-                                        initial={{ scale: 0, opacity: 0 }}
-                                        animate={{ scale: 1, opacity: 1 }}
-                                        exit={{ scale: 0, opacity: 0 }}
-                                        transition={{ duration: 0.2 }}
-                                    />
-                                )}
-                            </AnimatePresence>
                             {item.label}
                         </motion.li>
                     ))}

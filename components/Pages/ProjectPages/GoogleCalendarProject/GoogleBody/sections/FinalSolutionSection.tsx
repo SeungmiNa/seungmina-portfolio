@@ -27,7 +27,7 @@ const FinalSolutionSection = forwardRef<HTMLDivElement>((props, ref) => {
         <motion.div
             id="final-solution"
             ref={ref}
-            className=""
+            className="pt-2 lg:pt-24"
             initial={{ opacity: 0, y: 40 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
@@ -42,7 +42,7 @@ const FinalSolutionSection = forwardRef<HTMLDivElement>((props, ref) => {
                 </motion.div>
                 <div className='flex flex-col gap-12'>
                     <motion.div
-                        className="space-y-6 mb-12"
+                        className="space-y-6"
                         initial={{ opacity: 0, y: 20 }}
                         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                         transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
@@ -51,16 +51,24 @@ const FinalSolutionSection = forwardRef<HTMLDivElement>((props, ref) => {
                             A voice-first event creation flow that feels fast, clear, and reassuring - allowing users to create events without unnecessary steps.
                         </p>
                     </motion.div>
-                    <div>
-                        image1
+                    <div className='lg:pr-8'>
+                        <VideoContainer
+                            video="/videos/google/google-interaction-overview.mov"
+                            className="!h-auto overflow-clip"
+                            innerClassName="scale-[1.03]"
+                            autoplay={true}
+                            controls={false}
+                            loop={true}
+                            muted={true}
+                        />
                     </div>
-                    <div className='w-full flex items-center justify-center'>
-                        <div className="flex flex-col gap-4 mb-12 max-w-xl items-center justify-center text-center">
+                    <div className='w-full flex items-center justify-center pt-6 lg:pt-12'>
+                        <div className="flex flex-col gap-4 mb-4 max-w-xl items-center justify-center text-center">
                             <h3 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 leading-[1.25] font-semibold">Designing the <br /> Detail-Level Interaction</h3>
                             <p className="text-base lg:text-lg text-[#747474] leading-[1.5] lg:leading-[1.5] max-w-4xl">I designed how spoken intent turns into tangible UI — extracting key details, visualizing feedback, and guiding users through the process.</p>
                         </div>
                     </div>
-                    <div className='w-full flex items-center justify-center mb-12'>
+                    <div className='w-full flex items-center justify-center'>
                         <ImageContainer
                             image="/images/google/google-interaction.png"
                             alt="Google Calendar Final Solution"
@@ -68,7 +76,7 @@ const FinalSolutionSection = forwardRef<HTMLDivElement>((props, ref) => {
                         />
                     </div>
 
-                    <motion.p 
+                    <motion.p
                         className="text-lg text-[#747474] leading-[32px] max-w-3xl"
                         initial={{ opacity: 0, y: 20 }}
                         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}

@@ -16,7 +16,7 @@ const GoogleOverview: React.FC = () => {
             initial={{ opacity: 0, y: 40 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className="my-16 lg:my-28 bg-[#F2F3F4] rounded-[28px] py-10 px-4 max-w-4xl"
+            className="mb-8 lg:my-24 bg-[#F2F3F4] rounded-[28px] py-10 px-4 max-w-4xl"
         >
             <div className="flex flex-col md:flex-row gap-8">
                 {/* Left Side - Icon and Name */}

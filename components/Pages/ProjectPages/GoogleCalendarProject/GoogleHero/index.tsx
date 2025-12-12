@@ -46,15 +46,15 @@ const GoogleHero: React.FC = () => {
     return (
         <SectionTimeTracker sectionName="google_calendar_hero">
             {/* Hero Section */}
-            <div className="relative">
+            <div className="overflow-hidden max-w-7xl mx-auto px-8">
                 <motion.div
                     variants={containerVariants}
                     initial="hidden"
                     animate="visible"
-                    className=""
+                    className="relative"
                 >
                     <div className='flex flex-col flex-col-reverse lg:flex-row items-center pt-16'>
-                        <motion.div variants={textVariants} className='max-w-2xl w-full py-20 z-10'>
+                        <motion.div variants={textVariants} className='max-w-2xl w-full py-24 z-10'>
                             <motion.h1 
                                 className="text-4xl lg:text-[64px] xl:text-[80px] leading-[1.2] text-[#202124]"
                                 initial={{ opacity: 0, y: 20 }}
@@ -77,7 +77,7 @@ const GoogleHero: React.FC = () => {
 
                         <motion.div 
                             variants={imageVariants}
-                            className="absolute -right-24 lg:right-0 -top-20 w-full flex-1 flex justify-end items-center"
+                            className="absolute -right-20 lg:right-0 -top-20 w-full flex-1 flex justify-end items-center overflow-hidden lg:overflow-visible"
                         >
                             <ImageContainer
                                 image="/images/google/google-hero-image.png"

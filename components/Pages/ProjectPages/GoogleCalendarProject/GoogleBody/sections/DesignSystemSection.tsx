@@ -17,7 +17,7 @@ const DesignSystemSection = forwardRef<HTMLDivElement>((props, ref) => {
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         >
-            <div className="">
+            <div className="pt-2 lg:pt-24">
                 <motion.div 
                     className="flex gap-12 mb-12"
                     initial={{ opacity: 0, y: 20 }}

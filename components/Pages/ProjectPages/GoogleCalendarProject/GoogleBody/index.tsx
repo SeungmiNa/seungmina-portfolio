@@ -32,56 +32,84 @@ const GoogleBody: React.FC = () => {
     ], []);
 
     useEffect(() => {
-        const handleScroll = () => {
-            const scrollPosition = window.scrollY + window.innerHeight / 3; // 화면 상단 1/3 지점
+        // Intersection Observer를 사용하여 더 정확하고 빠른 섹션 감지
+        const observerOptions = {
+            root: null,
+            rootMargin: '-33% 0px -33% 0px', // 화면 상단 1/3 지점 기준
+            threshold: [0, 0.1, 0.5, 1] // 여러 threshold로 더 정확한 감지
+        };
 
-            // 각 섹션의 위치를 확인하고 현재 보이는 섹션 찾기
-            let currentSection = 'overview';
-            let maxVisibleRatio = 0;
-            
+        const observer = new IntersectionObserver((entries) => {
+            // 현재 보이는 섹션들을 찾기
+            const visibleSections = entries
+                .filter(entry => entry.isIntersecting)
+                .map(entry => ({
+                    id: entry.target.getAttribute('data-section-id') || '',
+                    intersectionRatio: entry.intersectionRatio,
+                    boundingClientRect: entry.boundingClientRect
+                }))
+                .sort((a, b) => {
+                    // 화면 상단 1/3 지점에 더 가까운 섹션 우선
+                    const targetY = window.innerHeight / 3;
+                    const distanceA = Math.abs(a.boundingClientRect.top - targetY);
+                    const distanceB = Math.abs(b.boundingClientRect.top - targetY);
+                    return distanceA - distanceB;
+                });
+
+            if (visibleSections.length > 0) {
+                // 가장 많이 보이고 화면 상단 1/3 지점에 가까운 섹션 선택
+                const bestSection = visibleSections.reduce((prev, current) => {
+                    const prevDistance = Math.abs(prev.boundingClientRect.top - window.innerHeight / 3);
+                    const currentDistance = Math.abs(current.boundingClientRect.top - window.innerHeight / 3);
+                    
+                    // 거리가 비슷하면 intersectionRatio가 큰 것 선택
+                    if (Math.abs(prevDistance - currentDistance) < 50) {
+                        return current.intersectionRatio > prev.intersectionRatio ? current : prev;
+                    }
+                    return currentDistance < prevDistance ? current : prev;
+                });
+                
+                setActiveSection(bestSection.id);
+            }
+        }, observerOptions);
+
+        // 모든 섹션을 observer에 등록
+        sections.forEach(({ id, ref }) => {
+            if (ref.current) {
+                ref.current.setAttribute('data-section-id', id);
+                observer.observe(ref.current);
+            }
+        });
+
+        // 초기 상태 설정을 위한 fallback
+        const handleInitialScroll = () => {
+            let closestSection = 'overview';
+            let minDistance = Infinity;
+
             sections.forEach(({ id, ref }) => {
                 if (ref.current) {
-                    const element = ref.current;
-                    const rect = element.getBoundingClientRect();
-                    const elementTop = rect.top + window.scrollY;
-                    const elementBottom = elementTop + rect.height;
-                    
-                    // 화면 상단 1/3 지점이 섹션 내에 있는지 확인
-                    if (scrollPosition >= elementTop && scrollPosition <= elementBottom) {
-                        // 섹션이 얼마나 보이는지 계산
-                        const visibleTop = Math.max(elementTop, window.scrollY);
-                        const visibleBottom = Math.min(elementBottom, window.scrollY + window.innerHeight);
-                        const visibleRatio = (visibleBottom - visibleTop) / rect.height;
-                        
-                        // 더 많이 보이는 섹션을 선택
-                        if (visibleRatio > maxVisibleRatio) {
-                            maxVisibleRatio = visibleRatio;
-                            currentSection = id;
+                    const rect = ref.current.getBoundingClientRect();
+                    const targetY = window.innerHeight / 3;
+
+                    // 섹션이 화면에 보이는 경우
+                    if (rect.top < window.innerHeight && rect.bottom > 0) {
+                        const distance = Math.abs(rect.top - targetY);
+                        if (distance < minDistance) {
+                            minDistance = distance;
+                            closestSection = id;
                         }
                     }
                 }
             });
 
-            setActiveSection(currentSection);
+            setActiveSection(closestSection);
         };
 
-        // 스크롤 이벤트 리스너 추가 (throttle 적용)
-        let ticking = false;
-        const throttledHandleScroll = () => {
-            if (!ticking) {
-                window.requestAnimationFrame(() => {
-                    handleScroll();
-                    ticking = false;
-                });
-                ticking = true;
-            }
-        };
-
-        window.addEventListener('scroll', throttledHandleScroll, { passive: true });
-        handleScroll(); // 초기 상태 설정
+        // 초기 상태 설정
+        handleInitialScroll();
 
         return () => {
-            window.removeEventListener('scroll', throttledHandleScroll);
+            observer.disconnect();
         };
     }, [sections]);
 
@@ -117,7 +145,7 @@ const GoogleBody: React.FC = () => {
             <div className="max-w-7xl mx-auto">
                 <div className="grid lg:grid-cols-12 gap-8">
                     {/* Main Content - Left Side */}
-                    <div className="lg:col-span-10 space-y-24 lg:space-y-52">
+                    <div className="lg:col-span-10 space-y-24 lg:space-y-40">
                         <OverviewSection ref={overviewRef} />
                         <ProblemSection ref={problemRef} />
                         <OpportunitySection ref={opportunityRef} />

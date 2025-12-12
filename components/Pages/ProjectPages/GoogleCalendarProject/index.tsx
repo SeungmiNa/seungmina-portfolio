@@ -28,8 +28,9 @@ const GoogleCalendarProject: React.FC = () => {
             
             {/* <div className="google-calendar-project bg-[#FAFAFA] -mt-16"> */}
             <div className="google-calendar-project bg-[#FFFFFF] -mt-16">
+            <GoogleHero />
                 <div className="max-w-7xl mx-auto px-8">
-                    <GoogleHero />
+                    
                     <GoogleOverview />
                     <GoogleBody />
                 </div>
