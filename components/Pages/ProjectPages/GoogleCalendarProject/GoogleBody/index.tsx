@@ -113,11 +113,11 @@ const GoogleBody: React.FC = () => {
     ];
 
     return (
-        <div className="px-6 lg:px-4">
+        <div className="pt-8">
             <div className="max-w-7xl mx-auto">
                 <div className="grid lg:grid-cols-12 gap-8">
                     {/* Main Content - Left Side */}
-                    <div className="lg:col-span-10 space-y-40">
+                    <div className="lg:col-span-10 space-y-24 lg:space-y-52">
                         <OverviewSection ref={overviewRef} />
                         <ProblemSection ref={problemRef} />
                         <OpportunitySection ref={opportunityRef} />

@@ -1,32 +1,40 @@
 'use client';
 
 import React from 'react';
-import { Roboto } from 'next/font/google';
 import GoogleHero from './GoogleHero';
 import GoogleOverview from './GoogleOverview';
 import GoogleBody from './GoogleBody';
 
-const roboto = Roboto({
-    weight: ['300', '400', '500', '700'],
-    subsets: ['latin'],
-    display: 'swap',
-});
-
 const GoogleCalendarProject: React.FC = () => {
     return (
-        <div className="bg-[#FAFAFA] -mt-16">
+        <>
             <style jsx global>{`
-                .google-sans-flex {
-                    font-family: 'Google Sans', ${roboto.style.fontFamily}, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+                @font-face {
+                    font-family: 'Google Sans Flex';
+                    src: url('https://fonts.gstatic.com/s/googlesans/v58/4UaOrEtFpBISc6GmX8aNt8j6KCAJOAiW3ZtYjJhQ.woff2') format('woff2');
+                    font-weight: 400;
+                    font-style: normal;
+                    font-display: swap;
+                }
+                
+                .google-calendar-project {
+                    font-family: 'Google Sans Flex', 'Google Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+                }
+                
+                .google-calendar-project * {
+                    font-family: inherit;
                 }
             `}</style>
-
-            <div className={`google-sans-flex max-w-7xl mx-auto px-8 ${roboto.className}`}>
-                <GoogleHero />
-                <GoogleOverview />
-                <GoogleBody />
+            
+            {/* <div className="google-calendar-project bg-[#FAFAFA] -mt-16"> */}
+            <div className="google-calendar-project bg-[#FFFFFF] -mt-16">
+                <div className="max-w-7xl mx-auto px-8">
+                    <GoogleHero />
+                    <GoogleOverview />
+                    <GoogleBody />
+                </div>
             </div>
-        </div>
+        </>
     );
 };
 
