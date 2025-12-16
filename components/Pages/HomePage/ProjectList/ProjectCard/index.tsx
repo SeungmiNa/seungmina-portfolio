@@ -9,21 +9,25 @@ type ProjectCardProps = {
     image: string;
     period: string;
     category: string;
+    categoryColor?: string;
+    role: string;
+    impact: string;
+    hint?: string;
     imageClassName?: string;
     size?: "small" | "medium" | "large";
 };
 
-const ProjectCard: FC<ProjectCardProps> = ({ title, description, image, period, category, imageClassName, size = "medium" }) => {
+const ProjectCard: FC<ProjectCardProps> = ({ title, description, image, period, category, categoryColor, role, impact, hint, imageClassName, size = "medium" }) => {
     const handleProjectClick = () => {
         trackButtonClick(`project_card_${title.toLowerCase().replace(/\s+/g, '_')}`, 'home_page');
     };
 
     // 모바일/태블릿에서는 모든 카드가 같은 높이, 데스크톱(lg)에서만 크기별로 다른 높이
     const heightClass = size === "large"
-        ? "h-[380px] lg:h-[620px]" 
+        ? "h-[340px] lg:h-[520px]" 
         : size === "small"
-        ? "h-[380px] lg:h-[340px]"
-        : "h-[380px] lg:h-[440px]";
+        ? "h-[340px] lg:h-[280px]"
+        : "h-[340px] lg:h-[380px]";
 
     return (
         <a 
@@ -36,44 +40,50 @@ const ProjectCard: FC<ProjectCardProps> = ({ title, description, image, period, 
                 style={{ backgroundImage: `url(${image})` }}
             />
             
-            {/* Gradient Overlay */}
-            <div className={`absolute inset-0 bg-gradient-to-t from-black/30 via-black/10 to-transparent transition-opacity duration-500 group-hover:from-black/50 group-hover:via-black/25 group-hover:to-transparent ${imageClassName}`} />
+            {/* Gradient Overlay - 호버 시 더 진하게 */}
+            <div className={`absolute inset-0 bg-gradient-to-t from-black/20 via-black/5 to-transparent transition-all duration-500 group-hover:from-black/90 group-hover:via-black/70 group-hover:to-black/50 ${imageClassName}`} />
             
             {/* Shine Effect on Hover */}
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
             
             {/* Content */}
-            <div className="relative p-5 md:p-6 h-full flex flex-col justify-end z-10">
-                <div className="space-y-3 md:space-y-4 transform transition-all duration-500 group-hover:-translate-y-1">
-                    {/* Category Badge */}
-                    <div className="inline-block">
-                        <span className="px-2.5 py-1 bg-white/15 backdrop-blur-sm rounded-full text-[10px] md:text-xs font-medium text-white/90 border border-white/20">
+            <div className="relative p-5 md:p-6 h-full flex flex-col justify-end items-start z-10 text-left">
+                <div className="space-y-2.5 md:space-y-3 transform transition-all duration-500 group-hover:-translate-y-1 w-full">
+                    {/* Category & Period Badges - 항상 표시 */}
+                    <div className="flex items-center gap-2 flex-wrap">
+                        <span className={`px-2.5 py-1 backdrop-blur-sm rounded-full text-[10px] md:text-xs font-medium border ${categoryColor || "bg-gray-700/20 border-gray-400/40 text-gray-200"}`}>
                             {category}
+                        </span>
+                        <span className="px-2.5 py-1 bg-white/15 backdrop-blur-sm rounded-full text-[10px] md:text-xs font-medium text-white/90 border border-white/20">
+                            {period}
                         </span>
                     </div>
                     
-                    {/* Title */}
-                    <Title variant="h4" className="font-bold text-white text-xl md:text-2xl lg:text-3xl leading-tight group-hover:text-white">
-                        {title}
-                    </Title>
-                    
-                    {/* Period - 더 명확하게 구분 */}
-                    <p className="text-xs md:text-sm font-medium text-white/80">
-                        {period}
-                    </p>
-                    
-                    {/* Description - 큰 카드에서만 표시하거나 선택적으로 */}
-                    {size === "large" && (
-                        <p className="text-sm md:text-base text-gray-200/90 leading-relaxed line-clamp-2">
+                    {/* 호버 시에만 표시되는 정보들 - 간결하게 */}
+                    <div className="hidden group-hover:block space-y-2">
+                        {/* Title - 호버 시에만 표시 */}
+                        <Title variant="h4" className="font-bold text-white text-lg md:text-xl lg:text-2xl leading-tight text-left w-full">
+                            {title}
+                        </Title>
+                        
+                        {/* Description - 가장 중요: 문제 해결 방식과 결과 */}
+                        <p className="text-sm md:text-base text-white/95 leading-snug font-medium line-clamp-2">
                             {description}
                         </p>
-                    )}
+                        
+                        {/* Impact */}
+                        <div className="text-xs md:text-sm">
+                            <span className="font-medium text-white/80">
+                                {impact}
+                            </span>
+                        </div>
 
-                    {/* CTA Button - 항상 보이지만 호버시 강조 */}
-                    <div className="pt-2 md:pt-3 transform transition-all duration-500 translate-y-2 opacity-70 group-hover:translate-y-0 group-hover:opacity-100">
-                        <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-lg text-white font-semibold text-sm border border-white/20 group-hover:bg-white group-hover:text-black transition-all duration-300">
-                            View Project
-                            <ArrowRightIcon className="w-4 h-4 shrink-0 group-hover:translate-x-1 transition-transform" />
+                        {/* CTA Button */}
+                        <div className="pt-1">
+                            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-white font-semibold text-sm border border-white/20 group-hover:bg-white group-hover:text-black transition-all duration-300">
+                                View Project
+                                <ArrowRightIcon className="w-4 h-4 shrink-0 group-hover:translate-x-1 transition-transform" />
+                            </div>
                         </div>
                     </div>
                 </div>

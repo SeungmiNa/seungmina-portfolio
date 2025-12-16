@@ -44,11 +44,10 @@ const Navbar: React.FC<NavbarProps> = ({ className = "" }) => {
   return (
     <div className="mx-2">
       <nav className={`container mx-auto w-full shadow bg-white/50 backdrop-blur-md rounded-full flex justify-between items-center p-2 mt-2 sticky top-2 z-[100] ${className}`}>
-        <Link href="/" className="tracking-tight ml-3 text-lg tracking-noraml font-semibold text-gray-950 hover:text-gray-700 transition-colors">
-          SEUNGMI 
-          <span className="hidden md:inline pl-1">
-            NA
-          </span>
+        <Link href="/" className="tracking-tight ml-3 text-lg font-bold text-gray-950 hover:text-gray-700 transition-colors uppercase">
+          <span className="text-[#2563EB]">NA</span>
+          <span className="text-black"> SEUNG</span>
+          <span className="text-[#2563EB]">ME</span>
         </Link>
         <div className="flex space-x-3 lg:space-x-6">
           <NavLink onClick={goToProjects} active={isHome}>

@@ -1,6 +1,7 @@
 import { FC } from "react";
 import HomeHero from "./HomeHero";
 import ProjectList from "./ProjectList";
+import HomeFooter from "./HomeFooter";
 import SectionTimeTracker from "@/components/Analytics/SectionTimeTracker";
 
 interface HomePageProps {
@@ -19,10 +20,13 @@ const HomePage: FC<HomePageProps> = ({
 
             {/* Featured Projects Preview - Hero 바로 아래 */}
             <SectionTimeTracker sectionName="home_projects">
-                <section id="projects" className="px-4 md:px-8 lg:px-16 pb-12 md:pb-16 lg:pb-28 mx-auto">
+                <section id="projects" className="px-8 md:px-12 lg:px-20 py-20 md:py-24 lg:py-28 mx-auto">
                     <ProjectList />
                 </section>
             </SectionTimeTracker>
+
+            {/* Footer Links */}
+            <HomeFooter />
         </div>
     );
 }
