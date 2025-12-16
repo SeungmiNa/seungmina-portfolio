@@ -22,7 +22,6 @@ const ProjectCard: FC<ProjectCardProps> = ({ title, description, image, period, 
         trackButtonClick(`project_card_${title.toLowerCase().replace(/\s+/g, '_')}`, 'home_page');
     };
 
-    // 모바일/태블릿에서는 모든 카드가 같은 높이, 데스크톱(lg)에서만 크기별로 다른 높이
     const heightClass = size === "large"
         ? "h-[340px] lg:h-[520px]" 
         : size === "small"
@@ -59,14 +58,12 @@ const ProjectCard: FC<ProjectCardProps> = ({ title, description, image, period, 
                         </span>
                     </div>
                     
-                    {/* 호버 시에만 표시되는 정보들 - 간결하게 */}
+                    {/* on hover */}
                     <div className="hidden group-hover:block space-y-2">
-                        {/* Title - 호버 시에만 표시 */}
                         <Title variant="h4" className="font-bold text-white text-lg md:text-xl lg:text-2xl leading-tight text-left w-full">
                             {title}
                         </Title>
                         
-                        {/* Description - 가장 중요: 문제 해결 방식과 결과 */}
                         <p className="text-sm md:text-base text-white/95 leading-snug font-medium line-clamp-2">
                             {description}
                         </p>

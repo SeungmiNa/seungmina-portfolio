@@ -47,15 +47,7 @@ const getProjectData = (slug: string): Project | undefined => {
             fullDescription: 'I explore how conversational AI can simplify event creation, helping users set up events in seconds while still feeling confident and in control.',
             type: 'google-calendar',
             slug: 'google-calendar',
-        },
-        // 'branding-project': {
-        //     title: 'Brand Identity Design',
-        //     description: 'Creating memorable brand experiences',
-        //     fullDescription: 'A comprehensive brand identity project that encompasses logo design, color palette, and brand guidelines.',
-        //     image: "path/to/branding-image.jpg",
-        //     type: 'branding',
-        //     slug: 'branding-project',
-        // },
+        }
     };
 
     return projects[slug as keyof typeof projects];
@@ -63,12 +55,22 @@ const getProjectData = (slug: string): Project | undefined => {
 
 // Add this new function to get adjacent projects
 const getAdjacentProjects = (currentSlug: string): { previous?: Project; next?: Project } => {
-    const projectOrder = ['delivious', 'inizio-conceptcraft', 'google-calendar', 'clean71', 'koala'];
+    const projectOrder = ['inizio-conceptcraft', 'google-calendar', 'koala', 'delivious', 'clean71'];
     const currentIndex = projectOrder.indexOf(currentSlug);
     
+    if (currentIndex === -1) {
+        return { previous: undefined, next: undefined };
+    }
+    
+    // First project has no previous, last project links to first project
+    const previous = currentIndex > 0 ? getProjectData(projectOrder[currentIndex - 1]) : undefined;
+    const next = currentIndex < projectOrder.length - 1 
+        ? getProjectData(projectOrder[currentIndex + 1]) 
+        : getProjectData(projectOrder[0]); // Last project links to first project
+    
     return {
-        previous: currentIndex > 0 ? getProjectData(projectOrder[currentIndex - 1]) : undefined,
-        next: currentIndex < projectOrder.length - 1 ? getProjectData(projectOrder[currentIndex + 1]) : undefined
+        previous,
+        next
     };
 };
 
@@ -116,7 +118,7 @@ export default ProjectPage;
 
 export async function generateStaticParams() {
   // Use the same slugs defined in getAdjacentProjects
-  const projectSlugs = ['delivious', 'inizio-conceptcraft', 'google-calendar', 'clean71', 'koala'];
+  const projectSlugs = ['inizio-conceptcraft', 'google-calendar', 'koala', 'delivious', 'clean71'];
   
   return projectSlugs.map((slug) => ({
     slug: slug,

@@ -2,7 +2,7 @@
 
 import { FC } from "react";
 import Link from "next/link";
-import { Github, Linkedin, Mail } from 'lucide-react';
+import { Linkedin, Mail } from 'lucide-react';
 
 import { Button } from "@/components/ui/button";
 import { withBasePath } from "@/utils/paths";
@@ -97,11 +97,11 @@ const AboutPage: FC = () => {
                                 muted={true}
                             />
                             </div>
-                            <div className="w-full flex flex-col items-center z-10 mt-6 space-y-4">
+                            <div className="px-16 lg:px-0 w-full flex flex-col items-center z-10 mt-6 space-y-4">
                                 <ImageContainer
                                     image="/images/seungmi-na-logo.png"
                                     alt="Seungmi Na Logo"
-                                    className="w-64 md:w-72 h-auto opacity-90"
+                                    className="w-64 md:w-72 h-auto"
                                 />
                                 <a
                                     href={`mailto:${EMAIL}`}
@@ -168,16 +168,6 @@ const AboutPage: FC = () => {
                                                 onClick={() => trackSocialMediaClick('linkedin', 'about_page_social_buttons')}
                                             >
                                                 <Linkedin className="w-5 h-5" />
-                                            </Button>
-                                        </Link>
-                                        <Link href="https://github.com/SeungmiNa" target="_blank">
-                                            <Button
-                                                variant="ghost"
-                                                size="icon"
-                                                className="h-12 w-12 rounded-full hover:bg-accent hover:scale-110 transition-all duration-300"
-                                                onClick={() => trackSocialMediaClick('github', 'about_page_social_buttons')}
-                                            >
-                                                <Github className="w-5 h-5" />
                                             </Button>
                                         </Link>
                                     </div>

@@ -4,8 +4,6 @@ import { getBasePath } from '@/utils/paths';
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
-import SolidButton from "../Buttons/SolidButton";
-import { trackEmailClick } from '@/lib/analytics';
 
 interface NavbarProps {
   className?: string;
@@ -31,20 +29,17 @@ const Navbar: React.FC<NavbarProps> = ({ className = "" }) => {
   const pathname = usePathname();
   const basePath = getBasePath();
 
+  // Normalize pathname by removing trailing slash and basePath
+  const normalizedPath = pathname.replace(/\/$/, '').replace(basePath, '') || '/';
+  
   // Update the active state check to account for basePath
-  const isHome = pathname === `${basePath}/` || pathname === '/';
-  const isAbout = pathname === `${basePath}/about` || pathname === '/about';
-
-  const handleContactClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
-    trackEmailClick('naissme0@gmail.com', 'navbar_contact_button');
-    window.location.href = "mailto:naissme0@gmail.com";
-  };
+  const isHome = normalizedPath === '/';
+  const isAbout = normalizedPath === '/about' || normalizedPath.startsWith('/about');
 
   return (
     <div className="mx-2">
-      <nav className={`container mx-auto w-full shadow bg-white/50 backdrop-blur-md rounded-full flex justify-between items-center p-2 mt-2 sticky top-2 z-[100] ${className}`}>
-        <Link href="/" className="tracking-tight ml-3 text-lg font-bold text-gray-950 hover:text-gray-700 transition-colors uppercase">
+      <nav className={`container mx-auto w-full shadow bg-white/50 backdrop-blur-md rounded-full flex justify-between items-center py-3 px-8 mt-2 sticky top-2 z-[100] ${className}`}>
+        <Link href="/" className="tracking-tight text-lg font-bold text-gray-950 hover:text-gray-700 transition-colors uppercase">
           <span className="text-[#2563EB]">NA</span>
           <span className="text-black"> SEUNG</span>
           <span className="text-[#2563EB]">ME</span>
@@ -58,10 +53,10 @@ const Navbar: React.FC<NavbarProps> = ({ className = "" }) => {
           </NavLink>
           {/* Add more navigation links as needed */}
         </div>
-        <SolidButton
+        {/* <SolidButton
           title="Contact"
           onClick={handleContactClick}
-        />
+        /> */}
       </nav>
     </div>
   );
