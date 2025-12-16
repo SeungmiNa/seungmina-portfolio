@@ -10,7 +10,6 @@ import { trackDownload, trackEmailClick, trackSocialMediaClick } from "@/lib/ana
 import SectionTimeTracker from "@/components/Analytics/SectionTimeTracker";
 import ImageContainer from "@/components/ImageContainer";
 import VideoContainer from "@/components/VideoContainer";
-import HomeFooter from "../HomePage/HomeFooter";
 
 interface SkillCategory {
     title: string;

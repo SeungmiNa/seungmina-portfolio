@@ -17,7 +17,7 @@ type ProjectCardProps = {
     size?: "small" | "medium" | "large";
 };
 
-const ProjectCard: FC<ProjectCardProps> = ({ title, description, image, period, category, categoryColor, role, impact, hint, imageClassName, size = "medium" }) => {
+const ProjectCard: FC<ProjectCardProps> = ({ title, description, image, period, category, categoryColor, impact, imageClassName, size = "medium" }) => {
     const handleProjectClick = () => {
         trackButtonClick(`project_card_${title.toLowerCase().replace(/\s+/g, '_')}`, 'home_page');
     };
