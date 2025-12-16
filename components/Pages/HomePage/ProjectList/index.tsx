@@ -18,137 +18,149 @@ import { withBasePath } from "@/utils/paths";
 const ProjectList: React.FC = () => {
     const router = useRouter();
 
+    // 카테고리별 색상 매핑
+    const categoryColors: Record<string, string> = {
+        "Product Design": "bg-blue-800/40 border-blue-400/40 text-blue-100",
+        "Video Design": "bg-green-900/60 border-green-500/40 text-green-100",
+        "Print Design": "bg-cyan-500/20 border-cyan-400/40 text-cyan-200",
+    };
+
     const projectList = [
         {
             Icon: FileTextIcon,
             name: "Inizio - ConceptCraft",
             slug: "inizio-conceptcraft",
-            description: "AI-Powered Idea-to-Project Platform",
+            description: "Turned vague ideas into structured projects in under 5 minutes",
             href: "/",
             cta: "Learn more",
-            background: withBasePath("/images/inizio/inizio-cover.png"),
+            background: withBasePath("/images/inizio/inizio-cover-image.png"),
             className: "lg:row-start-1 lg:row-end-4 lg:col-start-2 lg:col-end-3",
-            period: "2023.02 ~ Present",
-            role: "UX/UI Designer, UI Developer",
-            category: "Web Design",
+            period: "2023.02 ~ 2025.02",
+            role: "Lead Product Designer",
+            category: "Product Design",
+            impact: "Startup / 0 → 1",
+            hint: "Complex AI UX simplified",
         },
         {
             Icon: FileTextIcon,
             name: "Google - Mobile Calendar",
             slug: "google-calendar",
-            description: "AI-Powered Idea-to-Project Platform",
+            description: "Redesigned event creation to reduce setup time by 40%",
             href: "/",
             cta: "Learn more",
-            background: withBasePath("/images/inizio/inizio-cover.png"),
+            background: withBasePath("/images/google/google-cover-image.png"),
             className: "lg:row-start-1 lg:row-end-4 lg:col-start-2 lg:col-end-3",
             period: "2025.10 ~ 2025.11",
-            role: "UX/UI Designer, UI Developer",
-            category: "Web Design",
+            role: "UX/UI Designer",
+            category: "Product Design",
+            impact: "Concept / Case Study",
+            hint: "Heavy interaction & system design",
         },
         {
             Icon: FileTextIcon,
             name: "Koala in Details",
             slug: "koala",
-            description: "A short animated video expressing my design style and detail-driven mindset through a playful AI-generated koala.",
+            description: "Expressed design philosophy through playful storytelling in 60 seconds",
             href: "/projects/koala",
             cta: "Watch the video",
             background: withBasePath("/images/koala/koala-in-detail-cover-without-text.jpg"),
             className: "lg:col-start-1 lg:col-end-2 lg:row-start-1 lg:row-end-3",
             period: "2025.6",
             role: "Concept, Direction, Visual Design",
-            category: "AI Motion / Personal Branding",
+            category: "Video Design",
+            impact: "Personal Project",
+            hint: "AI-driven creative direction",
             imageClassName: "bg-black/20",
         },
         {
             Icon: FileTextIcon,
             name: "Delivious",
             slug: "delivious",
-            description: "Al Delivery and Order Services in Restaurant",
+            description: "Streamlined restaurant ordering with intuitive kiosk interface",
             href: "/",
             cta: "Learn more",
             background: withBasePath("/images/delivious/delivious-cover.png"),
             className: "lg:col-start-1 lg:col-end-2 lg:row-start-1 lg:row-end-3",
             period: "2022.04 ~ 2022.06",
             role: "UX/UI Designer, Frontend Developer",
-            category: "Kiosk Design",
+            category: "Product Design",
+            impact: "Shipped / In production",
+            hint: "End-to-end design & development",
             imageClassName: "bg-black/20",
         },
         {
             Icon: FileTextIcon,
             name: "Clean71",
             slug: "clean71",
-            description: "The Earth's Water Heritage non-profit organization",
+            description: "Designed visual identity for ocean conservation non-profit",
             href: "/",
             cta: "Learn more",
             background: withBasePath("/images/clean71/clean71-brochure-mockup1-1.png"),
             className: "lg:col-start-1 lg:col-end-2 lg:row-start-1 lg:row-end-3",
             period: "2022.11",
-            role: "Cover blooklet and logo and color",
-            category: "Blooket Design",
+            role: "Brand Designer",
+            category: "Print Design",
+            impact: "Shipped",
+            hint: "Brand identity & print design",
             imageClassName: "bg-black/20",
         },
-        // {
-        //     Icon: FileTextIcon,
-        //     name: "Landing Page",
-        //     slug: "landing-page",
-        //     description: "Supports 100+ languages and counting.",
-        //     href: "/",
-        //     cta: "Learn more",
-        //     background: "https://images.unsplash.com/photo-1465189684280-6a8fa9b19a7a?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        //     className: "lg:col-start-1 lg:col-end-2 lg:row-start-3 lg:row-end-4",
-        //     period: "2024.01 ~ 2024.03",
-        //     role: "UX/UI Designer",
-        //     category: "Web Design",
-        // },
-        // {
-        //     Icon: CalendarIcon,
-        //     name: "Branding Design",
-        //     slug: "branding-design",
-        //     description: "Use the calendar to filter your files by date.",
-        //     href: "/",
-        //     cta: "Learn more",
-        //     background: "https://images.unsplash.com/photo-1509343256512-d77a5cb3791b?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        //     className: "lg:col-start-3 lg:col-end-3 lg:row-start-1 lg:row-end-2",
-        //     period: "2024.01 ~ 2024.03",
-        //     role: "Branding Designer",
-        //     category: "Branding Design",
-        // },
-        // {
-        //     Icon: BellIcon,
-        //     name: "Notifications",
-        //     description:
-        //         "Get notified when someone shares a file or mentions you in a comment.",
-        //     href: "/",
-        //     cta: "Learn more",
-        //     background: <img className="absolute -right-20 -top-20 opacity-60" />,
-        //     className: "lg:col-start-3 lg:col-end-3 lg:row-start-2 lg:row-end-4",
-        // },
     ];
 
     const handleProjectClick = (slug: string) => {
         router.push(`/project/${slug}`);
     };
 
+    const projectsWithLayout = [
+        {
+            ...projectList.find(p => p.slug === "inizio-conceptcraft")!,
+            layout: "lg:col-span-2 lg:row-span-2", // 큰 카드 - 왼쪽 상단
+            size: "large" as const
+        },
+        {
+            ...projectList.find(p => p.slug === "google-calendar")!,
+            layout: "lg:col-span-2 lg:row-span-2", // 큰 카드 - 중앙
+            size: "large" as const
+        },
+        {
+            ...projectList.find(p => p.slug === "koala")!,
+            layout: "lg:col-span-2 lg:row-span-1", // 작은 카드 - 오른쪽 상단
+            size: "small" as const
+        },
+        {
+            ...projectList.find(p => p.slug === "delivious")!,
+            layout: "lg:col-span-1 lg:row-span-1", // 작은 카드
+            size: "small" as const
+        },
+        {
+            ...projectList.find(p => p.slug === "clean71")!,
+            layout: "lg:col-span-1 lg:row-span-1", // 작은 카드
+            size: "small" as const
+        },
+    ];
+
     return (
-        <div className="flex flex-col gap-7">
-            {projectList.map((pr) => (
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 md:gap-5 lg:gap-6" style={{ gridAutoRows: 'min-content' }}>
+            {projectsWithLayout.map((pr) => (
                 <div
                     key={pr.name}
                     onClick={() => handleProjectClick(pr.slug)}
-                    className="cursor-pointer"
+                    className={`cursor-pointer col-span-1 ${pr.layout}`}
                 >
                     <ProjectCard
                         title={pr.name}
                         description={pr.description}
                         image={pr.background}
                         period={pr.period}
-                        role={pr.role}
                         category={pr.category}
+                        categoryColor={categoryColors[pr.category]}
+                        role={pr.role}
+                        impact={pr.impact}
+                        hint={pr.hint}
                         imageClassName={pr.imageClassName}
+                        size={pr.size}
                     />
                 </div>
             ))}
-            
         </div>
     );
 };

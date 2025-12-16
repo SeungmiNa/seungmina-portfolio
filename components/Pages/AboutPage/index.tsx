@@ -1,279 +1,228 @@
 "use client";
-import Title from "@/components/Font/Title";
+
+import { FC } from "react";
+import Link from "next/link";
+import { Linkedin, Mail } from 'lucide-react';
+
 import { Button } from "@/components/ui/button";
 import { withBasePath } from "@/utils/paths";
-import { Github, Linkedin, Mail, MapPin } from 'lucide-react';
-import Link from "next/link";
-import { FC } from "react";
 import { trackDownload, trackEmailClick, trackSocialMediaClick } from "@/lib/analytics";
 import SectionTimeTracker from "@/components/Analytics/SectionTimeTracker";
+import ImageContainer from "@/components/ImageContainer";
+import VideoContainer from "@/components/VideoContainer";
 
-interface AboutPageProps {
-    className?: string;
+interface SkillCategory {
+    title: string;
+    skills: Array<{
+        name: string;
+    }>;
 }
 
-// interface Skill {
-//     name: string;
-//     category?: string;
-// }
+const SKILL_CATEGORIES: SkillCategory[] = [
+    {
+        title: "UX/UI Expertise",
+        skills: [
+            { name: "Design Systems" },
+            { name: "Responsive Design" },
+            { name: "Component Design" },
+            { name: "User Experience" },
+            { name: "User Interface" },
+            { name: "Wireframing" },
+            { name: "User Flows" },
+            { name: "Branding" },
+        ]
+    },
+    {
+        title: "Design Tools",
+        skills: [
+            { name: "Figma" },
+            { name: "Adobe Illustrator" },
+            { name: "Adobe Photoshop" },
+            { name: "Zeplin" },
+        ]
+    },
+    {
+        title: "Languages",
+        skills: [
+            { name: "JavaScript" },
+            { name: "TypeScript" },
+            { name: "Markdown(HTML/CSS)" },
+        ]
+    },
+    {
+        title: "Frameworks & Libraries",
+        skills: [
+            { name: "React" },
+            { name: "Next.js" },
+            { name: "Tailwind CSS" },
+            { name: "Storybook" },
+            { name: "shadcn/ui" },
+            { name: "Headless UI" },
+            { name: "Framer Motion" },
+        ]
+    }
+];
 
-// interface Hobby {
-//     name: string;
-//     image: string;
-//     description: string;
-// }
+const EMAIL = 'naissme0@gmail.com';
+const RESUME_PATH = '/2025-seungmi-na.pdf';
 
-const AboutPage: FC<AboutPageProps> = ({ /*className = ""*/ }) => {
+const AboutPage: FC = () => {
 
-    const skillCategories = [
-        {
-            title: "Languages",
-            skills: [
-                { name: "JavaScript", icon: "📜" },
-                { name: "TypeScript", icon: "🔷" },
-                { name: "Markdown(HTML/CSS)", icon: "📝" },
-            ]
-        },
-        {
-            title: "Frameworks & Libraries",
-            skills: [
-                { name: "React", icon: "⚛️" },
-                { name: "Next.js", icon: "▲" },
-                { name: "Tailwind CSS", icon: "🎨" },
-                { name: "Storybook", icon: "📚" },
-                { name: "shadcn/ui", icon: "🎯" },
-                { name: "Headless UI", icon: "🎭" },
-                { name: "Framer Motion", icon: "✨" },
-            ]
-        },
-        {
-            title: "Design Tools",
-            skills: [
-                { name: "Figma", icon: "🎨" },
-                { name: "Adobe Illustrator", icon: "✒️" },
-                { name: "Adobe Photoshop", icon: "🖼️" },
-                { name: "Zeplin", icon: "🎯" },
-            ]
-        },
-        {
-            title: "UX/UI Expertise",
-            skills: [
-                { name: "Design Systems", icon: "🏗️" },
-                { name: "Responsive Design", icon: "📱" },
-                { name: "Component Design", icon: "🧩" },
-                { name: "User Experience", icon: "🎯" },
-                { name: "User Interface", icon: "🖥️" },
-                { name: "Wireframing", icon: "📐" },
-                { name: "User Flows", icon: "🔄" },
-                { name: "Branding", icon: "✨" },
-            ]
-        }
-    ];
+    const handleEmailClick = () => {
+        trackEmailClick(EMAIL, 'about_page_contact_button');
+        window.location.href = `mailto:${EMAIL}`;
+    };
 
-    // const hobbies: Hobby[] = [
-    //     {
-    //         name: "Piano",
-    //         image: "/piano.jpg",
-    //         description: "Playing piano helps me find harmony in design, just like in music."
-    //     },
-    //     {
-    //         name: "Hiking",
-    //         image: "/hiking.jpg",
-    //         description: "Nature inspires my creativity and helps me maintain a fresh perspective."
-    //     },
-    //     {
-    //         name: "Drawing",
-    //         image: "/drawing.jpg",
-    //         description: "Sketching allows me to quickly visualize ideas and explore creative solutions."
-    //     },
-    // ];
+    const handleResumeClick = () => {
+        trackDownload('2025-seungmi-na.pdf');
+        window.open(withBasePath(RESUME_PATH), '_blank');
+    };
 
     return (
         <main className="min-h-screen">
-            <div className="container max-w-5xl mx-auto px-4 py-16 lg:py-24 space-y-24">
-                {/* Hero Section */}
-                <SectionTimeTracker sectionName="about_hero">
-                    <section className="space-y-12">
-                    {/* Profile Content */}
-                    <div className="max-w-3xl space-y-6">
-                        <Title variant="h2" className="font-bold tracking-tight text-foreground">
-                            Hello, I&apos;m Seungmi.
-                        </Title>
-                        <p className="text-xl text-foreground/80 font-medium">
-                            A UX/UI Designer based in the Bay Area, passionate about creating
-                            intuitive and delightful digital experiences.
-                        </p>
-                        <p className="text-muted-foreground leading-relaxed">
-                            I am passionate about creating beautiful designs that improve user experience.
-                            I specialize in developing designs that are visually striking and highly functional,
-                            with a meticulous eye for detail and a focus on the user&apos;s needs.
-                        </p>
-                    </div>
-
-                    {/* Contact Info */}
-                    <div className="flex flex-col gap-8">
-                        <div className="space-y-4">
-                            <div className="flex flex-wrap gap-6 text-sm text-muted-foreground">
-                                <div className="flex items-center gap-2">
-                                    <MapPin className="w-4 h-4" />
-                                    <span>Mountain View, CA</span>
-                                </div>
-                                <div className="flex items-center gap-2">
+            {/* Combined Hero & Skills Section */}
+            <div className="container mx-auto px-4 md:px-8 py-16 md:py-20 lg:py-24">
+                <div className="w-full flex flex-col lg:flex-row gap-12 md:gap-16 lg:gap-24">
+                    {/* Left Side - Sticky Video */}
+                    <div className="w-full lg:w-1/3 flex-shrink-0">
+                        <div className="sticky top-24">
+                            <div className="px-16 lg:px-0">
+                            <VideoContainer
+                                video="/videos/seungmi-na-profile.mov"
+                                className="!h-auto overflow-clip"
+                                innerClassName="scale-[1.015]"
+                                autoplay={true}
+                                controls={false}
+                                loop={true}
+                                muted={true}
+                            />
+                            </div>
+                            <div className="px-16 lg:px-0 w-full flex flex-col items-center z-10 mt-6 space-y-4">
+                                <ImageContainer
+                                    image="/images/seungmi-na-logo.png"
+                                    alt="Seungmi Na Logo"
+                                    className="w-64 md:w-72 h-auto"
+                                />
+                                <a
+                                    href={`mailto:${EMAIL}`}
+                                    onClick={() => trackEmailClick(EMAIL, 'about_page_left_sidebar')}
+                                    className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors duration-200"
+                                >
                                     <Mail className="w-4 h-4" />
-                                    <a href="mailto:naissme0@gmail.com"
-                                        className="hover:text-foreground hover:underline transition-colors"
-                                        onClick={() => trackEmailClick('naissme0@gmail.com', 'about_page_header')}>
-                                        naissme0@gmail.com
-                                    </a>
+                                    <span>{EMAIL}</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Right Side - Hero Content + Skills */}
+                    <div className="w-full lg:w-2/3 flex-1">
+                        {/* Hero Section */}
+                        <SectionTimeTracker sectionName="about_hero" className="max-w-xl">
+                            <section className="space-y-8 pb-8">
+                                {/* Intro Text */}
+                                <div className="text-muted-foreground leading-relaxed space-y-8 text-base md:text-lg">
+                                    <p>
+                                        Hi, I&apos;m Seungmi.
+                                        I&apos;m a UX/UI designer who enjoys figuring out why something feels confusing — and then making it simple.
+                                    </p>
+                                    <p className="text-xl md:text-2xl text-foreground font-medium leading-relaxed">
+                                        A UX/UI Designer based in the Bay Area, passionate about creating
+                                        intuitive and delightful digital experiences.
+                                    </p>
+                                    <p>
+                                        I started in visual design, but over time I became more curious about how products actually work. That curiosity led me to design systems, user flows, and working closely with engineers to turn ideas into real, usable products.
+                                    </p>
+                                    <p>
+                                        I enjoy polishing small details, thinking through edge cases, and building interfaces that feel thoughtful rather than complicated. When I&apos;m not designing, I&apos;m usually refining something just a little more than necessary — because those details matter to me.
+                                    </p>
+                                    <p>
+                                        ☕ Open to casual coffee chats about design and products.
+                                    </p>
+                                </div>
+
+                                {/* Contact Buttons */}
+                                <div className="flex flex-wrap items-center gap-4">
+                                    <Button
+                                        variant="default"
+                                        size="lg"
+                                        className="rounded-full px-8 py-6 text-base hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg"
+                                        onClick={handleEmailClick}
+                                    >
+                                        Contact Me 👋
+                                    </Button>
+                                    <Button
+                                        variant="outline"
+                                        size="lg"
+                                        className="rounded-full px-8 py-6 text-base hover:scale-105 transition-all duration-300 border-2"
+                                        onClick={handleResumeClick}
+                                    >
+                                        View Resume
+                                    </Button>
+                                    <div className="flex gap-2 ml-2">
+                                        <Link href="https://linkedin.com/in/seungmi-na" target="_blank">
+                                            <Button
+                                                variant="ghost"
+                                                size="icon"
+                                                className="h-12 w-12 rounded-full hover:bg-accent hover:scale-110 transition-all duration-300"
+                                                onClick={() => trackSocialMediaClick('linkedin', 'about_page_social_buttons')}
+                                            >
+                                                <Linkedin className="w-5 h-5" />
+                                            </Button>
+                                        </Link>
+                                    </div>
+                                </div>
+                            </section>
+                        </SectionTimeTracker>
+
+                        <SectionTimeTracker sectionName="about_skills">
+                            <div className="space-y-6 py-12">
+                                <h2 className="text-xl md:text-2xl text-foreground font-medium leading-relaxed">
+                                    I have skills...
+                                </h2>
+                                <div className="space-y-4">
+                                    <p className="text-lg text-muted-foreground leading-relaxed">
+                                        I bring a comprehensive skill set that combines technical proficiency with
+                                        design expertise, allowing me to create end-to-end solutions from concept
+                                        to implementation.
+                                    </p>
+                                    <p className="text-lg text-muted-foreground leading-relaxed">
+                                        My technical foundation combined with design expertise enables me to bridge
+                                        the gap between design and development, creating seamless and engaging user
+                                        experiences while maintaining clean, efficient code.
+                                    </p>
                                 </div>
                             </div>
-                        </div>
-
-                        <div className="flex items-center gap-4">
-                            <Button
-                                variant="default"
-                                className="rounded-full px-6 hover:scale-105 transition-transform"
-                                onClick={() => {
-                                    trackEmailClick('naissme0@gmail.com', 'about_page_contact_button');
-                                    window.location.href = "mailto:naissme0@gmail.com";
-                                }}>
-                                Contact Me 👋
-                            </Button>
-                            <Button
-                                variant="outline"
-                                className="bg-white rounded-full px-6 hover:scale-105 transition-transform"
-                                onClick={() => {
-                                    trackDownload('2025-seungmi-na.pdf');
-                                    window.open(withBasePath('/2025-seungmi-na.pdf'), '_blank');
-                                }}
-                            >
-                                View Resume
-                            </Button>
-                            <div className="flex gap-2">
-                                <Link href="https://linkedin.com/in/seungmi-na" target="_blank">
-                                    <Button variant="ghost" size="icon"
-                                        className="hover:!bg-white rounded-full hover:scale-105 transition-transform"
-                                        onClick={() => trackSocialMediaClick('linkedin', 'about_page_social_buttons')}>
-                                        <Linkedin className="w-5 h-5" />
-                                    </Button>
-                                </Link>
-                                <Link href="https://github.com/SeungmiNa" target="_blank">
-                                    <Button variant="ghost" size="icon"
-                                        className="hover:!bg-white rounded-full hover:scale-105 transition-transform"
-                                        onClick={() => trackSocialMediaClick('github', 'about_page_social_buttons')}>
-                                        <Github className="w-5 h-5" />
-                                    </Button>
-                                </Link>
-                            </div>
-                        </div>
-                    </div>
-                    </section>
-                </SectionTimeTracker>
-
-                {/* Skills Section */}
-                <SectionTimeTracker sectionName="about_skills">
-                    <section className="space-y-12">
-                    <div className="space-y-4">
-                        <h2 className="text-3xl font-semibold tracking-tight">
-                            Skills & Expertise
-                        </h2>
-                        <div className="max-w-3xl space-y-4">
-                            <p className="text-muted-foreground leading-relaxed">
-                                I bring a comprehensive skill set that combines technical proficiency with
-                                design expertise, allowing me to create end-to-end solutions from concept
-                                to implementation.
-                            </p>
-                            <p className="text-muted-foreground leading-relaxed">
-                                My technical foundation combined with design expertise enables me to bridge
-                                the gap between design and development, creating seamless and engaging user
-                                experiences while maintaining clean, efficient code.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                        {skillCategories.map((category, idx) => (
-                            <div key={idx} className="space-y-4">
-                                <h3 className="text-lg font-semibold flex items-center gap-2">
-                                    {category.title}
-                                    <div className="h-px flex-1 bg-border"></div>
-                                </h3>
-                                <div className="grid gap-3">
-                                    {category.skills.map((skill, skillIdx) => (
-                                        <div
-                                            key={skillIdx}
-                                            className="flex items-center gap-3 p-3 bg-card rounded-xl
-                                                     shadow-sm hover:shadow transition-all duration-300
-                                                     border border-border hover:border-border/80
-                                                     hover:bg-accent/50 group"
-                                        >
-                                            <span className="text-xl w-8 h-8 flex items-center justify-center
-                                                           bg-accent rounded-lg group-hover:bg-background
-                                                           transition-colors"
-                                                role="img"
-                                                aria-label={skill.name}>
-                                                {skill.icon}
-                                            </span>
-                                            <span className="text-sm font-medium">
-                                                {skill.name}
-                                            </span>
+                            <div className="space-y-10">
+                                {SKILL_CATEGORIES.map((category, idx) => (
+                                    <div
+                                        key={idx}
+                                        className="space-y-2"
+                                    >
+                                        {/* Category Header */}
+                                        <div className="border-b border-border/30">
+                                            <h3 className="text-xl font-semibold text-foreground tracking-wide uppercase text-xs">
+                                                {category.title}
+                                            </h3>
                                         </div>
-                                    ))}
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                    </section>
-                </SectionTimeTracker>
 
-                {/* Hobbies Section */}
-                {/* <section className="space-y-8">
-                    <Title variant="h6" className="font-semibold text-2xl">
-                        Beyond Design
-                    </Title>
-                    <p className="text-gray-600 max-w-2xl leading-relaxed">
-                        When I'm not designing, you can find me exploring various creative pursuits
-                        that help maintain my creative energy and bring fresh perspectives to my work.
-                    </p>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        {hobbies.map((hobby, index) => (
-                            <div key={index} 
-                                 className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md 
-                                          transition-all duration-300">
-                                <div className="aspect-video relative mb-4 rounded-lg overflow-hidden">
-                                    <Image
-                                        src={hobby.image}
-                                        alt={hobby.name}
-                                        fill
-                                        className="object-cover"
-                                    />
-                                </div>
-                                <h3 className="text-xl font-medium mb-2">{hobby.name}</h3>
-                                <p className="text-gray-600 text-sm">{hobby.description}</p>
+                                        {/* Skills List */}
+                                        <div className="flex flex-wrap gap-x-6 gap-y-1.5">
+                                            {category.skills.map((skill, skillIdx) => (
+                                                <span
+                                                    key={skillIdx}
+                                                    className="text-base text-muted-foreground hover:text-foreground transition-colors duration-200"
+                                                >
+                                                    {skill.name}
+                                                </span>
+                                            ))}
+                                        </div>
+                                    </div>
+                                ))}
                             </div>
-                        ))}
+                        </SectionTimeTracker>
                     </div>
-                </section> */}
-
-                {/* Footer */}
-                <footer className="flex flex-col sm:flex-row justify-between items-center gap-4 
-                                 pt-8 text-sm text-muted-foreground border-t border-border">
-                    <p>© 2025 Seungmi Na. All rights reserved.</p>
-                    <div className="flex gap-6">
-                        <Link href="https://www.linkedin.com/in/seungmi-na/"
-                            target="_blank"
-                            className="hover:text-foreground transition-colors"
-                            onClick={() => trackSocialMediaClick('linkedin', 'about_page_footer')}>
-                            <Linkedin className="w-5 h-5" />
-                        </Link>
-                        <Link href="https://github.com/SeungmiNa"
-                            target="_blank"
-                            className="hover:text-foreground transition-colors"
-                            onClick={() => trackSocialMediaClick('github', 'about_page_footer')}>
-                            <Github className="w-5 h-5" />
-                        </Link>
-                    </div>
-                </footer>
+                </div>
             </div>
         </main>
     );

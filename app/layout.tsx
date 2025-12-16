@@ -1,5 +1,5 @@
 import Navbar from "@/components/Navbar";
-import { Courgette, Inter } from 'next/font/google';
+import { Courgette, Inter, Playfair_Display } from 'next/font/google';
 import "../styles/globals.css";
 import { Metadata } from 'next';
 import { withBasePath } from "@/utils/paths";
@@ -13,6 +13,11 @@ const courgette = Courgette({
   weight: '400',
   subsets: ['latin'],
   variable: '--font-courgette',
+});
+const playfairDisplay = Playfair_Display({
+  weight: ['400', '500', '600', '700'],
+  subsets: ['latin'],
+  variable: '--font-playfair',
 });
 
 export const metadata: Metadata = {
@@ -32,7 +37,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} ${courgette.variable}`}>
+      <body className={`${inter.className} ${courgette.variable} ${playfairDisplay.variable}`}>
         <Navbar />
         {children}
         {isGA4Configured() && <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID!} />}
