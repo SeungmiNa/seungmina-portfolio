@@ -64,7 +64,7 @@ const SKILL_CATEGORIES: SkillCategory[] = [
 ];
 
 const EMAIL = 'naissme0@gmail.com';
-const RESUME_PATH = '/2025-seungmi-na.pdf';
+const RESUME_PATH = '/2026-seungmi-na.pdf';
 
 const AboutPage: FC = () => {
 
@@ -74,7 +74,7 @@ const AboutPage: FC = () => {
     };
 
     const handleResumeClick = () => {
-        trackDownload('2025-seungmi-na.pdf');
+        trackDownload('2026-seungmi-na.pdf');
         window.open(withBasePath(RESUME_PATH), '_blank');
     };
 
