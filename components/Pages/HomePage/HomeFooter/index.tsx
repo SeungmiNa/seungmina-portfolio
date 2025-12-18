@@ -12,8 +12,8 @@ const HomeFooter: FC = () => {
     };
 
     const handleResumeClick = () => {
-        trackDownload('2025-seungmi-na.pdf');
-        window.open(withBasePath('/2025-seungmi-na.pdf'), '_blank');
+        trackDownload('2026-seungmi-na.pdf');
+        window.open(withBasePath('/2026-seungmi-na.pdf'), '_blank');
     };
 
     const handleLinkedInClick = () => {
